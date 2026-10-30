@@ -1,0 +1,14 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+{
+  "synthetic_centroids_and_motion_correct": true,
+  "observation_reset_clears_motion": true,
+  "missing_ball_finite_and_masked": true,
+  "input_frames_not_mutated": true,
+  "official_v5_rewards_and_endings_identical": true,
+  "actual_episodes": 4,
+  "transitions_checked": 4135,
+  "action_mapping": "policy 0/1 maps to official RIGHT/LEFT 2/3",
+  "privileged_RAM_or_scripted_actions": false,
+  "synthetic_kinematic_feature_correct": true
+}

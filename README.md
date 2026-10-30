@@ -201,7 +201,9 @@ a source ZIP are not required Canvas uploads by the supplied assignment PDF.
 
 ## Single-GPU PPO follow-up
 
-Fresh PPO trials are running on exactly one Deepdish GPU. The CPU-only PPO
-campaign and its scores were removed at the author's request. Required original
-experiments and CPU environment workers for GPU training are preserved. Final
-GPU results will be documented in PPO_GPU.md after evaluation completes.
+Fresh training and evaluation used exactly one RTX PRO 5000 GPU on Deepdish.
+CartPole reached 500 in all 500 games (mean 500, sample SD 0). Pong averaged
+-6.626 (sample SD 4.9727), with 45/500 wins and no truncated games. See
+[PPO_GPU.md](PPO_GPU.md) and results/ppo_gpu/completed_audit.json for the
+methods, source/model checks, CUDA optimizer provenance, and limitations.
+The CPU-only PPO campaign is removed. The required original experiments remain.

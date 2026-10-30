@@ -1,0 +1,13 @@
+{
+  "finished_at": "2026-10-30T05:03:29.616284+00:00",
+  "training_timesteps": 600064,
+  "training_episodes": 1619,
+  "new_runs_queued": false,
+  "training_device": "cuda",
+  "evaluation_device": "cuda",
+  "all_policy_parameters_on_cuda": true,
+  "optimizer_state_tensor_devices": [
+    "cuda:0"
+  ],
+  "cuda_peak_allocated_bytes": 34112000
+}

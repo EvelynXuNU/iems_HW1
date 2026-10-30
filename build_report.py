@@ -36,10 +36,13 @@ parentheses contain sample standard deviations.
 | Part 1: REINFORCE, no baseline | 181.612 (97.2304) | -19.046 (2.5987) |
 | Part 2: REINFORCE, lagged EMA | 438.342 (95.7679) | -19.460 (0.9952) |
 | Additional CNN / EMA pilot | Not run | -18.492 (1.8722) |
+| Additional single-GPU PPO | 500.000 (0.0000) | -6.626 (4.9727) |
 
-The two required Pong runs and the CNN pilot had no wins. A separate
-single-GPU PPO study is supplementary because it changes the algorithm and
-representation. Only completed, audited results are reported.
+The two required Pong runs and the CNN pilot had no wins. Fresh single-GPU
+PPO training and evaluation produced 45/500 Pong wins and 500/500 CartPole games
+at the cap. PPO is supplementary because it changes the algorithm and Pong
+representation. These results are conditional on one training seed; Pong is
+not solved and CartPole's observed zero SD is not population certainty.
 
 **Execution overview.** Use Python 3.11 or newer. From the repository root:
 
@@ -61,6 +64,9 @@ The optional PPO study has separate dependencies in requirements-ppo.txt.
 
 '''
     sections=[(root/p).read_text() for p in ['q1_report.md','q2_report.md','q3_report.md']]
+    supplemental=root/'results/ppo_gpu/report_section.md'
+    if supplemental.exists():
+        sections.append(supplemental.read_text())
     # Normalize math delimiters for older Pandoc readers.
     sections=[s.replace('\\[','$$').replace('\\]','$$').replace('\\(','$').replace('\\)','$') for s in sections]
     markdown=temporary/'assignment1_report.md'

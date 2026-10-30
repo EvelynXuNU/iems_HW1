@@ -44,3 +44,8 @@ results/q3/comparison, and results/pong_tuning. Final checkpoints, episode CSVs,
 and figures remain available beside each experiment. The repository is private;
 Canvas submission and grader access must be handled through the course workflow.
 
+
+The separately labeled single-GPU PPO supplement reached CartPole mean 500
+(500/500 at the cap) and Pong mean -6.626 (45/500 wins). See PPO_GPU.md and
+results/ppo_gpu/completed_audit.json. PPO changes the algorithm and inputs,
+so it does not replace the required REINFORCE comparison.

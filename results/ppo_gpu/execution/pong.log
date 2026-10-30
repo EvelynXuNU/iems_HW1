@@ -1,0 +1,825 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+/nfs/home/zfl2845/iems_HW1/ppo_gpu_runtime/deps/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Training on cuda; visible GPUs=1; GPU=NVIDIA RTX PRO 5000 Blackwell
+pong steps=4096 episodes=0 mean100=0.00 best=-inf
+pong steps=8192 episodes=0 mean100=0.00 best=-inf
+pong steps=12288 episodes=0 mean100=0.00 best=-inf
+pong steps=16384 episodes=6 mean100=-21.00 best=-inf
+pong steps=20480 episodes=13 mean100=-20.54 best=-inf
+pong steps=24576 episodes=16 mean100=-20.19 best=-inf
+pong steps=28672 episodes=16 mean100=-20.19 best=-inf
+pong steps=32768 episodes=18 mean100=-20.17 best=-inf
+pong steps=36864 episodes=21 mean100=-20.29 best=-inf
+pong steps=40960 episodes=23 mean100=-20.09 best=-inf
+pong steps=45056 episodes=27 mean100=-20.11 best=-inf
+pong steps=49152 episodes=32 mean100=-19.91 best=-inf
+pong steps=53248 episodes=32 mean100=-19.91 best=-inf
+pong steps=57344 episodes=36 mean100=-19.89 best=-inf
+pong steps=61440 episodes=38 mean100=-19.84 best=-inf
+pong steps=65536 episodes=40 mean100=-19.88 best=-inf
+pong steps=69632 episodes=43 mean100=-19.84 best=-inf
+pong steps=73728 episodes=44 mean100=-19.84 best=-inf
+pong steps=77824 episodes=45 mean100=-19.78 best=-inf
+pong steps=81920 episodes=47 mean100=-19.62 best=-inf
+pong steps=86016 episodes=47 mean100=-19.62 best=-inf
+pong steps=90112 episodes=47 mean100=-19.62 best=-inf
+pong steps=94208 episodes=49 mean100=-19.49 best=-inf
+pong steps=98304 episodes=49 mean100=-19.49 best=-inf
+pong steps=102400 episodes=50 mean100=-19.40 best=-inf
+pong steps=106496 episodes=51 mean100=-19.37 best=-inf
+pong steps=110592 episodes=52 mean100=-19.33 best=-inf
+pong steps=114688 episodes=53 mean100=-19.28 best=-inf
+pong steps=118784 episodes=55 mean100=-19.20 best=-inf
+pong steps=122880 episodes=56 mean100=-19.09 best=-inf
+pong steps=126976 episodes=57 mean100=-19.00 best=-inf
+pong steps=131072 episodes=59 mean100=-18.85 best=-inf
+pong steps=135168 episodes=59 mean100=-18.85 best=-inf
+pong steps=139264 episodes=61 mean100=-18.69 best=-inf
+pong steps=143360 episodes=62 mean100=-18.66 best=-inf
+pong steps=147456 episodes=62 mean100=-18.66 best=-inf
+pong steps=151552 episodes=63 mean100=-18.63 best=-inf
+pong steps=155648 episodes=63 mean100=-18.63 best=-inf
+pong steps=159744 episodes=63 mean100=-18.63 best=-inf
+pong steps=163840 episodes=64 mean100=-18.50 best=-inf
+pong steps=167936 episodes=64 mean100=-18.50 best=-inf
+pong steps=172032 episodes=64 mean100=-18.50 best=-inf
+pong steps=176128 episodes=65 mean100=-18.37 best=-inf
+pong steps=180224 episodes=66 mean100=-18.35 best=-inf
+pong steps=184320 episodes=67 mean100=-18.33 best=-inf
+pong steps=188416 episodes=67 mean100=-18.33 best=-inf
+pong steps=192512 episodes=68 mean100=-18.22 best=-inf
+pong steps=196608 episodes=69 mean100=-18.13 best=-inf
+pong steps=200704 episodes=69 mean100=-18.13 best=-inf
+pong steps=204800 episodes=69 mean100=-18.13 best=-inf
+pong steps=208896 episodes=72 mean100=-17.99 best=-inf
+pong steps=212992 episodes=73 mean100=-17.90 best=-inf
+pong steps=217088 episodes=76 mean100=-17.66 best=-inf
+pong steps=221184 episodes=76 mean100=-17.66 best=-inf
+pong steps=225280 episodes=76 mean100=-17.66 best=-inf
+pong steps=229376 episodes=79 mean100=-17.47 best=-inf
+pong steps=233472 episodes=79 mean100=-17.47 best=-inf
+pong steps=237568 episodes=79 mean100=-17.47 best=-inf
+pong steps=241664 episodes=79 mean100=-17.47 best=-inf
+pong steps=245760 episodes=80 mean100=-17.39 best=-inf
+pong steps=249856 episodes=80 mean100=-17.39 best=-inf
+pong steps=253952 episodes=80 mean100=-17.39 best=-inf
+pong steps=258048 episodes=81 mean100=-17.31 best=-inf
+pong steps=262144 episodes=81 mean100=-17.31 best=-inf
+pong steps=266240 episodes=81 mean100=-17.31 best=-inf
+pong steps=270336 episodes=82 mean100=-17.32 best=-inf
+pong steps=274432 episodes=82 mean100=-17.32 best=-inf
+pong steps=278528 episodes=84 mean100=-17.24 best=-inf
+pong steps=282624 episodes=84 mean100=-17.24 best=-inf
+pong steps=286720 episodes=84 mean100=-17.24 best=-inf
+pong steps=290816 episodes=84 mean100=-17.24 best=-inf
+pong steps=294912 episodes=85 mean100=-17.08 best=-inf
+pong steps=299008 episodes=89 mean100=-16.66 best=-inf
+pong steps=303104 episodes=89 mean100=-16.66 best=-inf
+pong steps=307200 episodes=90 mean100=-16.62 best=-inf
+pong steps=311296 episodes=90 mean100=-16.62 best=-inf
+pong steps=315392 episodes=90 mean100=-16.62 best=-inf
+pong steps=319488 episodes=90 mean100=-16.62 best=-inf
+pong steps=323584 episodes=90 mean100=-16.62 best=-inf
+pong steps=327680 episodes=91 mean100=-16.54 best=-inf
+pong steps=331776 episodes=91 mean100=-16.54 best=-inf
+pong steps=335872 episodes=92 mean100=-16.43 best=-inf
+pong steps=339968 episodes=93 mean100=-16.38 best=-inf
+pong steps=344064 episodes=94 mean100=-16.18 best=-inf
+pong steps=348160 episodes=95 mean100=-16.12 best=-inf
+pong steps=352256 episodes=95 mean100=-16.12 best=-inf
+pong steps=356352 episodes=96 mean100=-16.08 best=-inf
+pong steps=360448 episodes=96 mean100=-16.08 best=-inf
+pong steps=364544 episodes=96 mean100=-16.08 best=-inf
+pong steps=368640 episodes=96 mean100=-16.08 best=-inf
+pong steps=372736 episodes=96 mean100=-16.08 best=-inf
+pong steps=376832 episodes=96 mean100=-16.08 best=-inf
+pong steps=380928 episodes=96 mean100=-16.08 best=-inf
+pong steps=385024 episodes=97 mean100=-16.05 best=-inf
+pong steps=389120 episodes=99 mean100=-15.76 best=-inf
+pong steps=393216 episodes=101 mean100=-15.57 best=-15.57
+pong steps=397312 episodes=101 mean100=-15.57 best=-15.57
+pong steps=401408 episodes=102 mean100=-15.44 best=-15.44
+pong steps=405504 episodes=103 mean100=-15.37 best=-15.37
+pong steps=409600 episodes=103 mean100=-15.37 best=-15.37
+pong steps=413696 episodes=106 mean100=-14.82 best=-14.82
+pong steps=417792 episodes=106 mean100=-14.82 best=-14.82
+pong steps=421888 episodes=106 mean100=-14.82 best=-14.82
+pong steps=425984 episodes=106 mean100=-14.82 best=-14.82
+pong steps=430080 episodes=107 mean100=-14.75 best=-14.75
+pong steps=434176 episodes=108 mean100=-14.58 best=-14.58
+pong steps=438272 episodes=108 mean100=-14.58 best=-14.58
+pong steps=442368 episodes=109 mean100=-14.48 best=-14.48
+pong steps=446464 episodes=109 mean100=-14.48 best=-14.48
+pong steps=450560 episodes=109 mean100=-14.48 best=-14.48
+pong steps=454656 episodes=110 mean100=-14.32 best=-14.32
+pong steps=458752 episodes=110 mean100=-14.32 best=-14.32
+pong steps=462848 episodes=110 mean100=-14.32 best=-14.32
+pong steps=466944 episodes=110 mean100=-14.32 best=-14.32
+pong steps=471040 episodes=110 mean100=-14.32 best=-14.32
+pong steps=475136 episodes=111 mean100=-14.25 best=-14.25
+pong steps=479232 episodes=111 mean100=-14.25 best=-14.25
+pong steps=483328 episodes=111 mean100=-14.25 best=-14.25
+pong steps=487424 episodes=112 mean100=-14.00 best=-14.00
+pong steps=491520 episodes=113 mean100=-13.94 best=-13.94
+pong steps=495616 episodes=113 mean100=-13.94 best=-13.94
+pong steps=499712 episodes=114 mean100=-13.80 best=-13.80
+pong steps=503808 episodes=114 mean100=-13.80 best=-13.80
+pong steps=507904 episodes=114 mean100=-13.80 best=-13.80
+pong steps=512000 episodes=116 mean100=-13.58 best=-13.58
+pong steps=516096 episodes=117 mean100=-13.33 best=-13.33
+pong steps=520192 episodes=117 mean100=-13.33 best=-13.33
+pong steps=524288 episodes=117 mean100=-13.33 best=-13.33
+pong steps=528384 episodes=118 mean100=-13.21 best=-13.21
+pong steps=532480 episodes=118 mean100=-13.21 best=-13.21
+pong steps=536576 episodes=118 mean100=-13.21 best=-13.21
+pong steps=540672 episodes=121 mean100=-12.81 best=-12.81
+pong steps=544768 episodes=121 mean100=-12.81 best=-12.81
+pong steps=548864 episodes=121 mean100=-12.81 best=-12.81
+pong steps=552960 episodes=121 mean100=-12.81 best=-12.81
+pong steps=557056 episodes=122 mean100=-12.70 best=-12.70
+pong steps=561152 episodes=122 mean100=-12.70 best=-12.70
+pong steps=565248 episodes=123 mean100=-12.59 best=-12.59
+pong steps=569344 episodes=123 mean100=-12.59 best=-12.59
+pong steps=573440 episodes=123 mean100=-12.59 best=-12.59
+pong steps=577536 episodes=123 mean100=-12.59 best=-12.59
+pong steps=581632 episodes=123 mean100=-12.59 best=-12.59
+pong steps=585728 episodes=125 mean100=-12.22 best=-12.22
+pong steps=589824 episodes=125 mean100=-12.22 best=-12.22
+pong steps=593920 episodes=125 mean100=-12.22 best=-12.22
+pong steps=598016 episodes=125 mean100=-12.22 best=-12.22
+pong steps=602112 episodes=126 mean100=-12.10 best=-12.10
+pong steps=606208 episodes=127 mean100=-11.88 best=-11.88
+pong steps=610304 episodes=127 mean100=-11.88 best=-11.88
+pong steps=614400 episodes=128 mean100=-11.76 best=-11.76
+pong steps=618496 episodes=129 mean100=-11.66 best=-11.66
+pong steps=622592 episodes=130 mean100=-11.61 best=-11.61
+pong steps=626688 episodes=130 mean100=-11.61 best=-11.61
+pong steps=630784 episodes=131 mean100=-11.47 best=-11.47
+pong steps=634880 episodes=132 mean100=-11.31 best=-11.31
+pong steps=638976 episodes=132 mean100=-11.31 best=-11.31
+pong steps=643072 episodes=135 mean100=-10.78 best=-10.78
+pong steps=647168 episodes=135 mean100=-10.78 best=-10.78
+pong steps=651264 episodes=135 mean100=-10.78 best=-10.78
+pong steps=655360 episodes=135 mean100=-10.78 best=-10.78
+pong steps=659456 episodes=136 mean100=-10.56 best=-10.56
+pong steps=663552 episodes=136 mean100=-10.56 best=-10.56
+pong steps=667648 episodes=136 mean100=-10.56 best=-10.56
+pong steps=671744 episodes=137 mean100=-10.38 best=-10.38
+pong steps=675840 episodes=137 mean100=-10.38 best=-10.38
+pong steps=679936 episodes=137 mean100=-10.38 best=-10.38
+pong steps=684032 episodes=137 mean100=-10.38 best=-10.38
+pong steps=688128 episodes=138 mean100=-10.24 best=-10.24
+pong steps=692224 episodes=138 mean100=-10.24 best=-10.24
+pong steps=696320 episodes=138 mean100=-10.24 best=-10.24
+pong steps=700416 episodes=139 mean100=-10.16 best=-10.16
+pong steps=704512 episodes=139 mean100=-10.16 best=-10.16
+pong steps=708608 episodes=140 mean100=-10.08 best=-10.08
+pong steps=712704 episodes=140 mean100=-10.08 best=-10.08
+pong steps=716800 episodes=140 mean100=-10.08 best=-10.08
+pong steps=720896 episodes=141 mean100=-9.90 best=-9.90
+pong steps=724992 episodes=142 mean100=-9.76 best=-9.76
+pong steps=729088 episodes=142 mean100=-9.76 best=-9.76
+pong steps=733184 episodes=143 mean100=-9.70 best=-9.70
+pong steps=737280 episodes=143 mean100=-9.70 best=-9.70
+pong steps=741376 episodes=146 mean100=-9.36 best=-9.36
+pong steps=745472 episodes=147 mean100=-9.26 best=-9.26
+pong steps=749568 episodes=148 mean100=-9.19 best=-9.19
+pong steps=753664 episodes=150 mean100=-8.93 best=-8.93
+pong steps=757760 episodes=150 mean100=-8.93 best=-8.93
+pong steps=761856 episodes=151 mean100=-8.86 best=-8.86
+pong steps=765952 episodes=152 mean100=-8.81 best=-8.81
+pong steps=770048 episodes=152 mean100=-8.81 best=-8.81
+pong steps=774144 episodes=152 mean100=-8.81 best=-8.81
+pong steps=778240 episodes=152 mean100=-8.81 best=-8.81
+pong steps=782336 episodes=152 mean100=-8.81 best=-8.81
+pong steps=786432 episodes=152 mean100=-8.81 best=-8.81
+pong steps=790528 episodes=152 mean100=-8.81 best=-8.81
+pong steps=794624 episodes=152 mean100=-8.81 best=-8.81
+pong steps=798720 episodes=152 mean100=-8.81 best=-8.81
+pong steps=802816 episodes=152 mean100=-8.81 best=-8.81
+pong steps=806912 episodes=153 mean100=-8.73 best=-8.73
+pong steps=811008 episodes=153 mean100=-8.73 best=-8.73
+pong steps=815104 episodes=154 mean100=-8.66 best=-8.66
+pong steps=819200 episodes=154 mean100=-8.66 best=-8.66
+pong steps=823296 episodes=154 mean100=-8.66 best=-8.66
+pong steps=827392 episodes=155 mean100=-8.54 best=-8.54
+pong steps=831488 episodes=156 mean100=-8.49 best=-8.49
+pong steps=835584 episodes=156 mean100=-8.49 best=-8.49
+pong steps=839680 episodes=157 mean100=-8.39 best=-8.39
+pong steps=843776 episodes=157 mean100=-8.39 best=-8.39
+pong steps=847872 episodes=158 mean100=-8.29 best=-8.29
+pong steps=851968 episodes=159 mean100=-8.27 best=-8.27
+pong steps=856064 episodes=160 mean100=-8.24 best=-8.24
+pong steps=860160 episodes=160 mean100=-8.24 best=-8.24
+pong steps=864256 episodes=162 mean100=-8.10 best=-8.10
+pong steps=868352 episodes=162 mean100=-8.10 best=-8.10
+pong steps=872448 episodes=163 mean100=-8.04 best=-8.04
+pong steps=876544 episodes=163 mean100=-8.04 best=-8.04
+pong steps=880640 episodes=165 mean100=-7.96 best=-7.96
+pong steps=884736 episodes=165 mean100=-7.96 best=-7.96
+pong steps=888832 episodes=166 mean100=-7.84 best=-7.84
+pong steps=892928 episodes=167 mean100=-7.66 best=-7.66
+pong steps=897024 episodes=168 mean100=-7.66 best=-7.66
+pong steps=901120 episodes=168 mean100=-7.66 best=-7.66
+pong steps=905216 episodes=169 mean100=-7.65 best=-7.65
+pong steps=909312 episodes=169 mean100=-7.65 best=-7.65
+pong steps=913408 episodes=169 mean100=-7.65 best=-7.65
+pong steps=917504 episodes=169 mean100=-7.65 best=-7.65
+pong steps=921600 episodes=169 mean100=-7.65 best=-7.65
+pong steps=925696 episodes=172 mean100=-7.53 best=-7.53
+pong steps=929792 episodes=172 mean100=-7.53 best=-7.53
+pong steps=933888 episodes=172 mean100=-7.53 best=-7.53
+pong steps=937984 episodes=172 mean100=-7.53 best=-7.53
+pong steps=942080 episodes=172 mean100=-7.53 best=-7.53
+pong steps=946176 episodes=172 mean100=-7.53 best=-7.53
+pong steps=950272 episodes=173 mean100=-7.50 best=-7.50
+pong steps=954368 episodes=173 mean100=-7.50 best=-7.50
+pong steps=958464 episodes=174 mean100=-7.46 best=-7.46
+pong steps=962560 episodes=174 mean100=-7.46 best=-7.46
+pong steps=966656 episodes=174 mean100=-7.46 best=-7.46
+pong steps=970752 episodes=174 mean100=-7.46 best=-7.46
+pong steps=974848 episodes=175 mean100=-7.44 best=-7.44
+pong steps=978944 episodes=175 mean100=-7.44 best=-7.44
+pong steps=983040 episodes=175 mean100=-7.44 best=-7.44
+pong steps=987136 episodes=176 mean100=-7.38 best=-7.38
+pong steps=991232 episodes=177 mean100=-7.26 best=-7.26
+pong steps=995328 episodes=179 mean100=-7.10 best=-7.10
+pong steps=999424 episodes=180 mean100=-7.05 best=-7.05
+pong steps=1003520 episodes=183 mean100=-6.79 best=-6.79
+pong steps=1007616 episodes=183 mean100=-6.79 best=-6.79
+pong steps=1011712 episodes=183 mean100=-6.79 best=-6.79
+pong steps=1015808 episodes=185 mean100=-6.77 best=-6.72
+pong steps=1019904 episodes=186 mean100=-6.86 best=-6.72
+pong steps=1024000 episodes=186 mean100=-6.86 best=-6.72
+pong steps=1028096 episodes=186 mean100=-6.86 best=-6.72
+pong steps=1032192 episodes=186 mean100=-6.86 best=-6.72
+pong steps=1036288 episodes=187 mean100=-6.90 best=-6.72
+pong steps=1040384 episodes=187 mean100=-6.90 best=-6.72
+pong steps=1044480 episodes=187 mean100=-6.90 best=-6.72
+pong steps=1048576 episodes=188 mean100=-6.76 best=-6.72
+pong steps=1052672 episodes=188 mean100=-6.76 best=-6.72
+pong steps=1056768 episodes=189 mean100=-6.78 best=-6.72
+pong steps=1060864 episodes=189 mean100=-6.78 best=-6.72
+pong steps=1064960 episodes=189 mean100=-6.78 best=-6.72
+pong steps=1069056 episodes=190 mean100=-6.72 best=-6.72
+pong steps=1073152 episodes=190 mean100=-6.72 best=-6.72
+pong steps=1077248 episodes=190 mean100=-6.72 best=-6.72
+pong steps=1081344 episodes=190 mean100=-6.72 best=-6.72
+pong steps=1085440 episodes=191 mean100=-6.78 best=-6.72
+pong steps=1089536 episodes=192 mean100=-6.78 best=-6.72
+pong steps=1093632 episodes=192 mean100=-6.78 best=-6.72
+pong steps=1097728 episodes=192 mean100=-6.78 best=-6.72
+pong steps=1101824 episodes=193 mean100=-6.60 best=-6.60
+pong steps=1105920 episodes=193 mean100=-6.60 best=-6.60
+pong steps=1110016 episodes=194 mean100=-6.72 best=-6.60
+pong steps=1114112 episodes=194 mean100=-6.72 best=-6.60
+pong steps=1118208 episodes=195 mean100=-6.68 best=-6.60
+pong steps=1122304 episodes=195 mean100=-6.68 best=-6.60
+pong steps=1126400 episodes=196 mean100=-6.67 best=-6.60
+pong steps=1130496 episodes=197 mean100=-6.67 best=-6.60
+pong steps=1134592 episodes=198 mean100=-6.75 best=-6.60
+pong steps=1138688 episodes=199 mean100=-6.81 best=-6.60
+pong steps=1142784 episodes=199 mean100=-6.81 best=-6.60
+pong steps=1146880 episodes=199 mean100=-6.81 best=-6.60
+pong steps=1150976 episodes=199 mean100=-6.81 best=-6.60
+pong steps=1155072 episodes=201 mean100=-6.75 best=-6.60
+pong steps=1159168 episodes=202 mean100=-6.73 best=-6.60
+pong steps=1163264 episodes=202 mean100=-6.73 best=-6.60
+pong steps=1167360 episodes=202 mean100=-6.73 best=-6.60
+pong steps=1171456 episodes=202 mean100=-6.73 best=-6.60
+pong steps=1175552 episodes=204 mean100=-6.68 best=-6.60
+pong steps=1179648 episodes=204 mean100=-6.68 best=-6.60
+pong steps=1183744 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1187840 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1191936 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1196032 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1200128 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1204224 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1208320 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1212416 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1216512 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1220608 episodes=206 mean100=-6.60 best=-6.60
+pong steps=1224704 episodes=207 mean100=-6.60 best=-6.60
+pong steps=1228800 episodes=208 mean100=-6.66 best=-6.60
+pong steps=1232896 episodes=210 mean100=-6.66 best=-6.60
+pong steps=1236992 episodes=210 mean100=-6.66 best=-6.60
+pong steps=1241088 episodes=210 mean100=-6.66 best=-6.60
+pong steps=1245184 episodes=211 mean100=-6.57 best=-6.57
+pong steps=1249280 episodes=212 mean100=-6.67 best=-6.57
+pong steps=1253376 episodes=212 mean100=-6.67 best=-6.57
+pong steps=1257472 episodes=212 mean100=-6.67 best=-6.57
+pong steps=1261568 episodes=212 mean100=-6.67 best=-6.57
+pong steps=1265664 episodes=212 mean100=-6.67 best=-6.57
+pong steps=1269760 episodes=212 mean100=-6.67 best=-6.57
+pong steps=1273856 episodes=213 mean100=-6.60 best=-6.57
+pong steps=1277952 episodes=215 mean100=-6.61 best=-6.55
+pong steps=1282048 episodes=215 mean100=-6.61 best=-6.55
+pong steps=1286144 episodes=216 mean100=-6.57 best=-6.55
+pong steps=1290240 episodes=217 mean100=-6.68 best=-6.55
+pong steps=1294336 episodes=218 mean100=-6.63 best=-6.55
+pong steps=1298432 episodes=218 mean100=-6.63 best=-6.55
+pong steps=1302528 episodes=218 mean100=-6.63 best=-6.55
+pong steps=1306624 episodes=218 mean100=-6.63 best=-6.55
+pong steps=1310720 episodes=218 mean100=-6.63 best=-6.55
+pong steps=1314816 episodes=218 mean100=-6.63 best=-6.55
+pong steps=1318912 episodes=220 mean100=-6.58 best=-6.55
+pong steps=1323008 episodes=220 mean100=-6.58 best=-6.55
+pong steps=1327104 episodes=220 mean100=-6.58 best=-6.55
+pong steps=1331200 episodes=220 mean100=-6.58 best=-6.55
+pong steps=1335296 episodes=221 mean100=-6.51 best=-6.51
+pong steps=1339392 episodes=221 mean100=-6.51 best=-6.51
+pong steps=1343488 episodes=221 mean100=-6.51 best=-6.51
+pong steps=1347584 episodes=222 mean100=-6.46 best=-6.46
+pong steps=1351680 episodes=222 mean100=-6.46 best=-6.46
+pong steps=1355776 episodes=222 mean100=-6.46 best=-6.46
+pong steps=1359872 episodes=222 mean100=-6.46 best=-6.46
+pong steps=1363968 episodes=223 mean100=-6.47 best=-6.46
+pong steps=1368064 episodes=225 mean100=-6.58 best=-6.46
+pong steps=1372160 episodes=225 mean100=-6.58 best=-6.46
+pong steps=1376256 episodes=226 mean100=-6.57 best=-6.46
+pong steps=1380352 episodes=229 mean100=-6.63 best=-6.46
+pong steps=1384448 episodes=231 mean100=-6.61 best=-6.46
+pong steps=1388544 episodes=231 mean100=-6.61 best=-6.46
+pong steps=1392640 episodes=232 mean100=-6.69 best=-6.46
+pong steps=1396736 episodes=232 mean100=-6.69 best=-6.46
+pong steps=1400832 episodes=233 mean100=-6.79 best=-6.46
+pong steps=1404928 episodes=233 mean100=-6.79 best=-6.46
+pong steps=1409024 episodes=234 mean100=-6.85 best=-6.46
+pong steps=1413120 episodes=234 mean100=-6.85 best=-6.46
+pong steps=1417216 episodes=234 mean100=-6.85 best=-6.46
+pong steps=1421312 episodes=235 mean100=-6.89 best=-6.46
+pong steps=1425408 episodes=235 mean100=-6.89 best=-6.46
+pong steps=1429504 episodes=235 mean100=-6.89 best=-6.46
+pong steps=1433600 episodes=235 mean100=-6.89 best=-6.46
+pong steps=1437696 episodes=235 mean100=-6.89 best=-6.46
+pong steps=1441792 episodes=235 mean100=-6.89 best=-6.46
+pong steps=1445888 episodes=236 mean100=-7.02 best=-6.46
+pong steps=1449984 episodes=236 mean100=-7.02 best=-6.46
+pong steps=1454080 episodes=236 mean100=-7.02 best=-6.46
+pong steps=1458176 episodes=236 mean100=-7.02 best=-6.46
+pong steps=1462272 episodes=238 mean100=-7.10 best=-6.46
+pong steps=1466368 episodes=240 mean100=-7.04 best=-6.46
+pong steps=1470464 episodes=241 mean100=-7.11 best=-6.46
+pong steps=1474560 episodes=243 mean100=-7.01 best=-6.46
+pong steps=1478656 episodes=244 mean100=-7.06 best=-6.46
+pong steps=1482752 episodes=244 mean100=-7.06 best=-6.46
+pong steps=1486848 episodes=245 mean100=-7.15 best=-6.46
+pong steps=1490944 episodes=245 mean100=-7.15 best=-6.46
+pong steps=1495040 episodes=246 mean100=-7.08 best=-6.46
+pong steps=1499136 episodes=246 mean100=-7.08 best=-6.46
+pong steps=1503232 episodes=246 mean100=-7.08 best=-6.46
+pong steps=1507328 episodes=248 mean100=-7.08 best=-6.46
+pong steps=1511424 episodes=248 mean100=-7.08 best=-6.46
+pong steps=1515520 episodes=248 mean100=-7.08 best=-6.46
+pong steps=1519616 episodes=249 mean100=-7.11 best=-6.46
+pong steps=1523712 episodes=249 mean100=-7.11 best=-6.46
+pong steps=1527808 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1531904 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1536000 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1540096 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1544192 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1548288 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1552384 episodes=251 mean100=-7.08 best=-6.46
+pong steps=1556480 episodes=252 mean100=-7.11 best=-6.46
+pong steps=1560576 episodes=252 mean100=-7.11 best=-6.46
+pong steps=1564672 episodes=252 mean100=-7.11 best=-6.46
+pong steps=1568768 episodes=252 mean100=-7.11 best=-6.46
+pong steps=1572864 episodes=253 mean100=-7.10 best=-6.46
+pong steps=1576960 episodes=255 mean100=-7.11 best=-6.46
+pong steps=1581056 episodes=256 mean100=-7.15 best=-6.46
+pong steps=1585152 episodes=256 mean100=-7.15 best=-6.46
+pong steps=1589248 episodes=256 mean100=-7.15 best=-6.46
+pong steps=1593344 episodes=256 mean100=-7.15 best=-6.46
+pong steps=1597440 episodes=256 mean100=-7.15 best=-6.46
+pong steps=1601536 episodes=257 mean100=-7.20 best=-6.46
+pong steps=1605632 episodes=257 mean100=-7.20 best=-6.46
+pong steps=1609728 episodes=258 mean100=-7.15 best=-6.46
+pong steps=1613824 episodes=258 mean100=-7.15 best=-6.46
+pong steps=1617920 episodes=260 mean100=-7.02 best=-6.46
+pong steps=1622016 episodes=261 mean100=-6.89 best=-6.46
+pong steps=1626112 episodes=261 mean100=-6.89 best=-6.46
+pong steps=1630208 episodes=262 mean100=-6.85 best=-6.46
+pong steps=1634304 episodes=263 mean100=-6.76 best=-6.46
+pong steps=1638400 episodes=263 mean100=-6.76 best=-6.46
+pong steps=1642496 episodes=263 mean100=-6.76 best=-6.46
+pong steps=1646592 episodes=263 mean100=-6.76 best=-6.46
+pong steps=1650688 episodes=265 mean100=-6.75 best=-6.46
+pong steps=1654784 episodes=265 mean100=-6.75 best=-6.46
+pong steps=1658880 episodes=265 mean100=-6.75 best=-6.46
+pong steps=1662976 episodes=268 mean100=-6.77 best=-6.46
+pong steps=1667072 episodes=268 mean100=-6.77 best=-6.46
+pong steps=1671168 episodes=269 mean100=-6.73 best=-6.46
+pong steps=1675264 episodes=270 mean100=-6.76 best=-6.46
+pong steps=1679360 episodes=270 mean100=-6.76 best=-6.46
+pong steps=1683456 episodes=270 mean100=-6.76 best=-6.46
+pong steps=1687552 episodes=271 mean100=-6.75 best=-6.46
+pong steps=1691648 episodes=271 mean100=-6.75 best=-6.46
+pong steps=1695744 episodes=271 mean100=-6.75 best=-6.46
+pong steps=1699840 episodes=271 mean100=-6.75 best=-6.46
+pong steps=1703936 episodes=271 mean100=-6.75 best=-6.46
+pong steps=1708032 episodes=272 mean100=-6.70 best=-6.46
+pong steps=1712128 episodes=272 mean100=-6.70 best=-6.46
+pong steps=1716224 episodes=272 mean100=-6.70 best=-6.46
+pong steps=1720320 episodes=273 mean100=-6.73 best=-6.46
+pong steps=1724416 episodes=275 mean100=-6.75 best=-6.46
+pong steps=1728512 episodes=276 mean100=-6.81 best=-6.46
+pong steps=1732608 episodes=277 mean100=-6.91 best=-6.46
+pong steps=1736704 episodes=277 mean100=-6.91 best=-6.46
+pong steps=1740800 episodes=277 mean100=-6.91 best=-6.46
+pong steps=1744896 episodes=278 mean100=-7.01 best=-6.46
+pong steps=1748992 episodes=278 mean100=-7.01 best=-6.46
+pong steps=1753088 episodes=278 mean100=-7.01 best=-6.46
+pong steps=1757184 episodes=279 mean100=-7.01 best=-6.46
+pong steps=1761280 episodes=279 mean100=-7.01 best=-6.46
+pong steps=1765376 episodes=280 mean100=-7.00 best=-6.46
+pong steps=1769472 episodes=281 mean100=-7.09 best=-6.46
+pong steps=1773568 episodes=283 mean100=-7.05 best=-6.46
+pong steps=1777664 episodes=283 mean100=-7.05 best=-6.46
+pong steps=1781760 episodes=283 mean100=-7.05 best=-6.46
+pong steps=1785856 episodes=284 mean100=-7.01 best=-6.46
+pong steps=1789952 episodes=284 mean100=-7.01 best=-6.46
+pong steps=1794048 episodes=286 mean100=-6.93 best=-6.46
+pong steps=1798144 episodes=286 mean100=-6.93 best=-6.46
+pong steps=1802240 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1806336 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1810432 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1814528 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1818624 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1822720 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1826816 episodes=287 mean100=-6.90 best=-6.46
+pong steps=1830912 episodes=288 mean100=-6.94 best=-6.46
+pong steps=1835008 episodes=288 mean100=-6.94 best=-6.46
+pong steps=1839104 episodes=288 mean100=-6.94 best=-6.46
+pong steps=1843200 episodes=288 mean100=-6.94 best=-6.46
+pong steps=1847296 episodes=290 mean100=-6.89 best=-6.46
+pong steps=1851392 episodes=290 mean100=-6.89 best=-6.46
+pong steps=1855488 episodes=290 mean100=-6.89 best=-6.46
+pong steps=1859584 episodes=291 mean100=-6.73 best=-6.46
+pong steps=1863680 episodes=291 mean100=-6.73 best=-6.46
+pong steps=1867776 episodes=292 mean100=-6.68 best=-6.46
+pong steps=1871872 episodes=292 mean100=-6.68 best=-6.46
+pong steps=1875968 episodes=292 mean100=-6.68 best=-6.46
+pong steps=1880064 episodes=292 mean100=-6.68 best=-6.46
+pong steps=1884160 episodes=295 mean100=-6.62 best=-6.46
+pong steps=1888256 episodes=296 mean100=-6.51 best=-6.46
+pong steps=1892352 episodes=296 mean100=-6.51 best=-6.46
+pong steps=1896448 episodes=296 mean100=-6.51 best=-6.46
+pong steps=1900544 episodes=298 mean100=-6.44 best=-6.44
+pong steps=1904640 episodes=299 mean100=-6.35 best=-6.35
+pong steps=1908736 episodes=300 mean100=-6.35 best=-6.35
+pong steps=1912832 episodes=300 mean100=-6.35 best=-6.35
+pong steps=1916928 episodes=301 mean100=-6.35 best=-6.35
+pong steps=1921024 episodes=301 mean100=-6.35 best=-6.35
+pong steps=1925120 episodes=301 mean100=-6.35 best=-6.35
+pong steps=1929216 episodes=301 mean100=-6.35 best=-6.35
+pong steps=1933312 episodes=301 mean100=-6.35 best=-6.35
+pong steps=1937408 episodes=302 mean100=-6.27 best=-6.27
+pong steps=1941504 episodes=304 mean100=-6.33 best=-6.26
+pong steps=1945600 episodes=304 mean100=-6.33 best=-6.26
+pong steps=1949696 episodes=304 mean100=-6.33 best=-6.26
+pong steps=1953792 episodes=305 mean100=-6.29 best=-6.26
+pong steps=1957888 episodes=306 mean100=-6.41 best=-6.26
+pong steps=1961984 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1966080 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1970176 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1974272 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1978368 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1982464 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1986560 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1990656 episodes=307 mean100=-6.41 best=-6.26
+pong steps=1994752 episodes=309 mean100=-6.38 best=-6.26
+pong steps=1998848 episodes=310 mean100=-6.45 best=-6.26
+pong steps=2002944 episodes=310 mean100=-6.45 best=-6.26
+pong steps=2007040 episodes=313 mean100=-6.47 best=-6.26
+pong steps=2011136 episodes=314 mean100=-6.58 best=-6.26
+pong steps=2015232 episodes=314 mean100=-6.58 best=-6.26
+pong steps=2019328 episodes=315 mean100=-6.51 best=-6.26
+pong steps=2023424 episodes=315 mean100=-6.51 best=-6.26
+pong steps=2027520 episodes=315 mean100=-6.51 best=-6.26
+pong steps=2031616 episodes=316 mean100=-6.43 best=-6.26
+pong steps=2035712 episodes=316 mean100=-6.43 best=-6.26
+pong steps=2039808 episodes=316 mean100=-6.43 best=-6.26
+pong steps=2043904 episodes=316 mean100=-6.43 best=-6.26
+pong steps=2048000 episodes=316 mean100=-6.43 best=-6.26
+pong steps=2052096 episodes=317 mean100=-6.35 best=-6.26
+pong steps=2056192 episodes=317 mean100=-6.35 best=-6.26
+pong steps=2060288 episodes=318 mean100=-6.34 best=-6.26
+pong steps=2064384 episodes=318 mean100=-6.34 best=-6.26
+pong steps=2068480 episodes=318 mean100=-6.34 best=-6.26
+pong steps=2072576 episodes=318 mean100=-6.34 best=-6.26
+pong steps=2076672 episodes=318 mean100=-6.34 best=-6.26
+pong steps=2080768 episodes=320 mean100=-6.37 best=-6.26
+pong steps=2084864 episodes=321 mean100=-6.34 best=-6.26
+pong steps=2088960 episodes=321 mean100=-6.34 best=-6.26
+pong steps=2093056 episodes=322 mean100=-6.29 best=-6.26
+pong steps=2097152 episodes=323 mean100=-6.33 best=-6.26
+pong steps=2101248 episodes=324 mean100=-6.40 best=-6.26
+pong steps=2105344 episodes=324 mean100=-6.40 best=-6.26
+pong steps=2109440 episodes=324 mean100=-6.40 best=-6.26
+pong steps=2113536 episodes=324 mean100=-6.40 best=-6.26
+pong steps=2117632 episodes=326 mean100=-6.44 best=-6.26
+pong steps=2121728 episodes=326 mean100=-6.44 best=-6.26
+pong steps=2125824 episodes=326 mean100=-6.44 best=-6.26
+pong steps=2129920 episodes=328 mean100=-6.47 best=-6.26
+pong steps=2134016 episodes=328 mean100=-6.47 best=-6.26
+pong steps=2138112 episodes=328 mean100=-6.47 best=-6.26
+pong steps=2142208 episodes=331 mean100=-6.33 best=-6.26
+pong steps=2146304 episodes=332 mean100=-6.35 best=-6.26
+pong steps=2150400 episodes=333 mean100=-6.24 best=-6.24
+pong steps=2154496 episodes=333 mean100=-6.24 best=-6.24
+pong steps=2158592 episodes=333 mean100=-6.24 best=-6.24
+pong steps=2162688 episodes=333 mean100=-6.24 best=-6.24
+pong steps=2166784 episodes=334 mean100=-6.24 best=-6.24
+pong steps=2170880 episodes=335 mean100=-6.20 best=-6.20
+pong steps=2174976 episodes=335 mean100=-6.20 best=-6.20
+pong steps=2179072 episodes=336 mean100=-6.04 best=-6.04
+pong steps=2183168 episodes=337 mean100=-6.10 best=-6.04
+pong steps=2187264 episodes=337 mean100=-6.10 best=-6.04
+pong steps=2191360 episodes=338 mean100=-6.09 best=-6.04
+pong steps=2195456 episodes=338 mean100=-6.09 best=-6.04
+pong steps=2199552 episodes=339 mean100=-6.09 best=-6.04
+pong steps=2203648 episodes=339 mean100=-6.09 best=-6.04
+pong steps=2207744 episodes=339 mean100=-6.09 best=-6.04
+pong steps=2211840 episodes=340 mean100=-6.11 best=-6.04
+pong steps=2215936 episodes=340 mean100=-6.11 best=-6.04
+pong steps=2220032 episodes=341 mean100=-6.12 best=-6.04
+pong steps=2224128 episodes=341 mean100=-6.12 best=-6.04
+pong steps=2228224 episodes=341 mean100=-6.12 best=-6.04
+pong steps=2232320 episodes=342 mean100=-6.21 best=-6.04
+pong steps=2236416 episodes=343 mean100=-6.24 best=-6.04
+pong steps=2240512 episodes=343 mean100=-6.24 best=-6.04
+pong steps=2244608 episodes=344 mean100=-6.09 best=-6.04
+pong steps=2248704 episodes=345 mean100=-5.99 best=-5.99
+pong steps=2252800 episodes=345 mean100=-5.99 best=-5.99
+pong steps=2256896 episodes=345 mean100=-5.99 best=-5.99
+pong steps=2260992 episodes=345 mean100=-5.99 best=-5.99
+pong steps=2265088 episodes=346 mean100=-5.99 best=-5.99
+pong steps=2269184 episodes=346 mean100=-5.99 best=-5.99
+pong steps=2273280 episodes=346 mean100=-5.99 best=-5.99
+pong steps=2277376 episodes=349 mean100=-6.03 best=-5.99
+pong steps=2281472 episodes=349 mean100=-6.03 best=-5.99
+pong steps=2285568 episodes=350 mean100=-6.10 best=-5.99
+pong steps=2289664 episodes=351 mean100=-6.03 best=-5.99
+pong steps=2293760 episodes=351 mean100=-6.03 best=-5.99
+pong steps=2297856 episodes=351 mean100=-6.03 best=-5.99
+pong steps=2301952 episodes=353 mean100=-5.97 best=-5.97
+pong steps=2306048 episodes=354 mean100=-5.91 best=-5.91
+pong steps=2310144 episodes=355 mean100=-5.91 best=-5.91
+pong steps=2314240 episodes=355 mean100=-5.91 best=-5.91
+pong steps=2318336 episodes=356 mean100=-5.86 best=-5.86
+pong steps=2322432 episodes=356 mean100=-5.86 best=-5.86
+pong steps=2326528 episodes=356 mean100=-5.86 best=-5.86
+pong steps=2330624 episodes=356 mean100=-5.86 best=-5.86
+pong steps=2334720 episodes=357 mean100=-5.89 best=-5.86
+pong steps=2338816 episodes=357 mean100=-5.89 best=-5.86
+pong steps=2342912 episodes=357 mean100=-5.89 best=-5.86
+pong steps=2347008 episodes=358 mean100=-5.99 best=-5.86
+pong steps=2351104 episodes=358 mean100=-5.99 best=-5.86
+pong steps=2355200 episodes=358 mean100=-5.99 best=-5.86
+pong steps=2359296 episodes=359 mean100=-6.04 best=-5.86
+pong steps=2363392 episodes=359 mean100=-6.04 best=-5.86
+pong steps=2367488 episodes=359 mean100=-6.04 best=-5.86
+pong steps=2371584 episodes=359 mean100=-6.04 best=-5.86
+pong steps=2375680 episodes=359 mean100=-6.04 best=-5.86
+pong steps=2379776 episodes=361 mean100=-6.19 best=-5.86
+pong steps=2383872 episodes=363 mean100=-6.27 best=-5.86
+pong steps=2387968 episodes=364 mean100=-6.41 best=-5.86
+pong steps=2392064 episodes=365 mean100=-6.49 best=-5.86
+pong steps=2396160 episodes=365 mean100=-6.49 best=-5.86
+pong steps=2400256 episodes=366 mean100=-6.49 best=-5.86
+pong steps=2404352 episodes=367 mean100=-6.50 best=-5.86
+pong steps=2408448 episodes=367 mean100=-6.50 best=-5.86
+pong steps=2412544 episodes=367 mean100=-6.50 best=-5.86
+pong steps=2416640 episodes=367 mean100=-6.50 best=-5.86
+pong steps=2420736 episodes=369 mean100=-6.39 best=-5.86
+pong steps=2424832 episodes=370 mean100=-6.40 best=-5.86
+pong steps=2428928 episodes=370 mean100=-6.40 best=-5.86
+pong steps=2433024 episodes=370 mean100=-6.40 best=-5.86
+pong steps=2437120 episodes=372 mean100=-6.28 best=-5.86
+pong steps=2441216 episodes=372 mean100=-6.28 best=-5.86
+pong steps=2445312 episodes=372 mean100=-6.28 best=-5.86
+pong steps=2449408 episodes=372 mean100=-6.28 best=-5.86
+pong steps=2453504 episodes=374 mean100=-6.18 best=-5.86
+pong steps=2457600 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2461696 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2465792 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2469888 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2473984 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2478080 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2482176 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2486272 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2490368 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2494464 episodes=375 mean100=-6.21 best=-5.86
+pong steps=2498560 episodes=377 mean100=-6.12 best=-5.86
+pong steps=2502656 episodes=377 mean100=-6.12 best=-5.86
+pong steps=2506752 episodes=379 mean100=-6.10 best=-5.86
+pong steps=2510848 episodes=380 mean100=-6.16 best=-5.86
+pong steps=2514944 episodes=381 mean100=-6.19 best=-5.86
+pong steps=2519040 episodes=382 mean100=-6.22 best=-5.86
+pong steps=2523136 episodes=384 mean100=-6.28 best=-5.86
+pong steps=2527232 episodes=386 mean100=-6.30 best=-5.86
+pong steps=2531328 episodes=386 mean100=-6.30 best=-5.86
+pong steps=2535424 episodes=386 mean100=-6.30 best=-5.86
+pong steps=2539520 episodes=386 mean100=-6.30 best=-5.86
+pong steps=2543616 episodes=387 mean100=-6.27 best=-5.86
+pong steps=2547712 episodes=388 mean100=-6.37 best=-5.86
+pong steps=2551808 episodes=388 mean100=-6.37 best=-5.86
+pong steps=2555904 episodes=388 mean100=-6.37 best=-5.86
+pong steps=2560000 episodes=388 mean100=-6.37 best=-5.86
+pong steps=2564096 episodes=389 mean100=-6.44 best=-5.86
+pong steps=2568192 episodes=390 mean100=-6.43 best=-5.86
+pong steps=2572288 episodes=391 mean100=-6.54 best=-5.86
+pong steps=2576384 episodes=391 mean100=-6.54 best=-5.86
+pong steps=2580480 episodes=391 mean100=-6.54 best=-5.86
+pong steps=2584576 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2588672 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2592768 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2596864 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2600960 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2605056 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2609152 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2613248 episodes=392 mean100=-6.67 best=-5.86
+pong steps=2617344 episodes=393 mean100=-6.68 best=-5.86
+pong steps=2621440 episodes=394 mean100=-6.70 best=-5.86
+pong steps=2625536 episodes=395 mean100=-6.82 best=-5.86
+pong steps=2629632 episodes=395 mean100=-6.82 best=-5.86
+pong steps=2633728 episodes=397 mean100=-6.85 best=-5.86
+pong steps=2637824 episodes=397 mean100=-6.85 best=-5.86
+pong steps=2641920 episodes=399 mean100=-6.89 best=-5.86
+pong steps=2646016 episodes=400 mean100=-6.95 best=-5.86
+pong steps=2650112 episodes=400 mean100=-6.95 best=-5.86
+pong steps=2654208 episodes=400 mean100=-6.95 best=-5.86
+pong steps=2658304 episodes=401 mean100=-6.99 best=-5.86
+pong steps=2662400 episodes=402 mean100=-7.05 best=-5.86
+pong steps=2666496 episodes=402 mean100=-7.05 best=-5.86
+pong steps=2670592 episodes=402 mean100=-7.05 best=-5.86
+pong steps=2674688 episodes=403 mean100=-7.08 best=-5.86
+pong steps=2678784 episodes=403 mean100=-7.08 best=-5.86
+pong steps=2682880 episodes=404 mean100=-6.97 best=-5.86
+pong steps=2686976 episodes=406 mean100=-6.94 best=-5.86
+pong steps=2691072 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2695168 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2699264 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2703360 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2707456 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2711552 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2715648 episodes=408 mean100=-6.94 best=-5.86
+pong steps=2719744 episodes=409 mean100=-6.81 best=-5.86
+pong steps=2723840 episodes=409 mean100=-6.81 best=-5.86
+pong steps=2727936 episodes=410 mean100=-6.82 best=-5.86
+pong steps=2732032 episodes=410 mean100=-6.82 best=-5.86
+pong steps=2736128 episodes=411 mean100=-6.87 best=-5.86
+pong steps=2740224 episodes=411 mean100=-6.87 best=-5.86
+pong steps=2744320 episodes=411 mean100=-6.87 best=-5.86
+pong steps=2748416 episodes=411 mean100=-6.87 best=-5.86
+pong steps=2752512 episodes=411 mean100=-6.87 best=-5.86
+pong steps=2756608 episodes=413 mean100=-7.01 best=-5.86
+pong steps=2760704 episodes=414 mean100=-6.96 best=-5.86
+pong steps=2764800 episodes=414 mean100=-6.96 best=-5.86
+pong steps=2768896 episodes=415 mean100=-7.02 best=-5.86
+pong steps=2772992 episodes=418 mean100=-7.34 best=-5.86
+pong steps=2777088 episodes=419 mean100=-7.32 best=-5.86
+pong steps=2781184 episodes=419 mean100=-7.32 best=-5.86
+pong steps=2785280 episodes=420 mean100=-7.35 best=-5.86
+pong steps=2789376 episodes=420 mean100=-7.35 best=-5.86
+pong steps=2793472 episodes=420 mean100=-7.35 best=-5.86
+pong steps=2797568 episodes=420 mean100=-7.35 best=-5.86
+pong steps=2801664 episodes=423 mean100=-7.38 best=-5.86
+pong steps=2805760 episodes=423 mean100=-7.38 best=-5.86
+pong steps=2809856 episodes=424 mean100=-7.44 best=-5.86
+pong steps=2813952 episodes=424 mean100=-7.44 best=-5.86
+pong steps=2818048 episodes=424 mean100=-7.44 best=-5.86
+pong steps=2822144 episodes=424 mean100=-7.44 best=-5.86
+pong steps=2826240 episodes=425 mean100=-7.39 best=-5.86
+pong steps=2830336 episodes=426 mean100=-7.47 best=-5.86
+pong steps=2834432 episodes=426 mean100=-7.47 best=-5.86
+pong steps=2838528 episodes=427 mean100=-7.52 best=-5.86
+pong steps=2842624 episodes=427 mean100=-7.52 best=-5.86
+pong steps=2846720 episodes=427 mean100=-7.52 best=-5.86
+pong steps=2850816 episodes=427 mean100=-7.52 best=-5.86
+pong steps=2854912 episodes=428 mean100=-7.61 best=-5.86
+pong steps=2859008 episodes=428 mean100=-7.61 best=-5.86
+pong steps=2863104 episodes=429 mean100=-7.63 best=-5.86
+pong steps=2867200 episodes=429 mean100=-7.63 best=-5.86
+pong steps=2871296 episodes=430 mean100=-7.74 best=-5.86
+pong steps=2875392 episodes=430 mean100=-7.74 best=-5.86
+pong steps=2879488 episodes=431 mean100=-7.77 best=-5.86
+pong steps=2883584 episodes=432 mean100=-7.73 best=-5.86
+pong steps=2887680 episodes=432 mean100=-7.73 best=-5.86
+pong steps=2891776 episodes=435 mean100=-7.91 best=-5.86
+pong steps=2895872 episodes=435 mean100=-7.91 best=-5.86
+pong steps=2899968 episodes=435 mean100=-7.91 best=-5.86
+pong steps=2904064 episodes=436 mean100=-8.07 best=-5.86
+pong steps=2908160 episodes=436 mean100=-8.07 best=-5.86
+pong steps=2912256 episodes=437 mean100=-8.02 best=-5.86
+pong steps=2916352 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2920448 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2924544 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2928640 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2932736 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2936832 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2940928 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2945024 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2949120 episodes=438 mean100=-8.02 best=-5.86
+pong steps=2953216 episodes=439 mean100=-7.97 best=-5.86
+pong steps=2957312 episodes=441 mean100=-7.88 best=-5.86
+pong steps=2961408 episodes=442 mean100=-7.78 best=-5.86
+pong steps=2965504 episodes=442 mean100=-7.78 best=-5.86
+pong steps=2969600 episodes=443 mean100=-7.73 best=-5.86
+pong steps=2973696 episodes=443 mean100=-7.73 best=-5.86
+pong steps=2977792 episodes=445 mean100=-7.91 best=-5.86
+pong steps=2981888 episodes=445 mean100=-7.91 best=-5.86
+pong steps=2985984 episodes=446 mean100=-7.96 best=-5.86
+pong steps=2990080 episodes=446 mean100=-7.96 best=-5.86
+pong steps=2994176 episodes=446 mean100=-7.96 best=-5.86
+pong steps=2998272 episodes=447 mean100=-7.99 best=-5.86
+pong steps=3002368 episodes=448 mean100=-8.06 best=-5.86
+pong steps=3006464 episodes=448 mean100=-8.06 best=-5.86
+pong steps=3010560 episodes=448 mean100=-8.06 best=-5.86
+pong steps=3014656 episodes=450 mean100=-7.97 best=-5.86
+pong steps=3018752 episodes=450 mean100=-7.97 best=-5.86
+pong steps=3022848 episodes=450 mean100=-7.97 best=-5.86
+pong steps=3026944 episodes=451 mean100=-8.01 best=-5.86
+pong steps=3031040 episodes=451 mean100=-8.01 best=-5.86
+pong steps=3035136 episodes=452 mean100=-7.96 best=-5.86
+pong steps=3039232 episodes=454 mean100=-8.00 best=-5.86
+pong steps=3043328 episodes=454 mean100=-8.00 best=-5.86
+pong steps=3047424 episodes=456 mean100=-8.04 best=-5.86
+/nfs/home/zfl2845/iems_HW1/ppo_gpu_runtime/deps/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+evaluation pong 0/500
+evaluation pong 50/500
+evaluation pong 100/500
+evaluation pong 150/500
+evaluation pong 200/500
+evaluation pong 250/500
+evaluation pong 300/500
+evaluation pong 350/500
+evaluation pong 400/500
+evaluation pong 450/500
+evaluation pong 500/500
+{"complete": true, "episodes": 500, "requested_episodes": 500, "evaluation_seed_base": 1960000000, "policy": "frozen stochastic PPO policy", "seed_protocol": "fixed round-robin bank; wait for every requested seed; ignore extra games", "model_sha256": "994615f99087029c9c111470fd9e61ccef446227b71f74b4b9b1bfca0750ee48", "device": "cuda", "visible_gpu_count": 1, "gpu_name": "NVIDIA RTX PRO 5000 Blackwell", "cuda_visible_devices": "GPU-ec0c988c-3d23-d55e-7713-293719142e7d", "all_policy_parameters_on_cuda": true, "mean": -6.626, "sample_standard_deviation": 4.972683295597723, "min": -19.0, "max": 14.0, "mean_approx_95_ci": [-7.061874908877741, -6.19012509112226], "wins": 45, "reached_500": null, "terminated_episodes": 500, "truncated_episodes": 0}

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "single-GPU provenance and saved-artifact audit",
+  "same_physical_gpu_for_both_trials": true,
+  "runs": {
+    "cartpole": {
+      "games": 500,
+      "mean": 500.0,
+      "sample_sd": 0.0,
+      "model_sha256": "e0f64e980228b1c8cbe8c41757b1ad9eca67789803d4791333fce45098e90b53",
+      "training_device": "cuda",
+      "evaluation_device": "cuda",
+      "optimizer_state_devices": [
+        "cuda:0"
+      ],
+      "gpu_uuid": "GPU-ec0c988c-3d23-d55e-7713-293719142e7d",
+      "gpu_name": "NVIDIA RTX PRO 5000 Blackwell",
+      "selected_at_completed_training_episode": 936,
+      "selected_at_observed_environment_steps": 258128,
+      "training_only_selection_checked": true,
+      "exact_reserved_seed_bank_checked": true,
+      "reached_500": 500,
+      "cap_probability_exact_one_sided_95_lower_bound": 0.9940264484836504
+    },
+    "pong": {
+      "games": 500,
+      "mean": -6.626,
+      "sample_sd": 4.972683295597723,
+      "model_sha256": "994615f99087029c9c111470fd9e61ccef446227b71f74b4b9b1bfca0750ee48",
+      "training_device": "cuda",
+      "evaluation_device": "cuda",
+      "optimizer_state_devices": [
+        "cuda:0"
+      ],
+      "gpu_uuid": "GPU-ec0c988c-3d23-d55e-7713-293719142e7d",
+      "gpu_name": "NVIDIA RTX PRO 5000 Blackwell",
+      "selected_at_completed_training_episode": 356,
+      "selected_at_observed_environment_steps": 2317808,
+      "training_only_selection_checked": true,
+      "exact_reserved_seed_bank_checked": true,
+      "wins": 45,
+      "naturally_terminated_positive_scores": 45
+    }
+  }
+}

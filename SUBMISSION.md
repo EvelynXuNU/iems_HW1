@@ -1,8 +1,8 @@
 # Final submission
 
-**In preparation:** fresh single-GPU PPO trials are running. The final report
-will be rebuilt after those evaluations are complete. CPU-only PPO material
-was removed; original required experiments are preserved.
+The final report includes the required experiments and a separately labeled
+single-GPU PPO supplement. Training and evaluation have finished; the CPU-only
+PPO campaign was removed while required original work was preserved.
 
 Author: **Jianong Xu**. GitHub: **EvelynXuNU**.
 Repository: <https://github.com/EvelynXuNU/iems_HW1>.

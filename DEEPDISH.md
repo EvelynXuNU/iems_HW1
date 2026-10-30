@@ -181,6 +181,10 @@ retrieving completed results to rebuild the Part 1/Part 2 comparisons.
 
 ## Single-GPU PPO follow-up
 
-Fresh PPO trials use CUDA on the assigned RTX PRO 5000, with exactly one
-visible GPU. CPU-only PPO code/results were removed; required original
-experiments and the CPU environment workers feeding GPU training are preserved.
+Fresh PPO training and evaluation used CUDA on exactly one visible RTX PRO 5000.
+Both trials used GPU-ec0c988c-3d23-d55e-7713-293719142e7d. CartPole reached the
+500-step cap in 500/500 games. Pong averaged -6.626 (sample SD 4.9727), with
+45/500 natural wins and no truncations. CUDA policy parameters, optimizer moment
+tensors, and evaluation provenance are audited in results/ppo_gpu. No jobs remain.
+See PPO_GPU.md for reproduction. The CPU-only PPO campaign was removed; required
+original experiments and CPU environment workers for GPU training are preserved.

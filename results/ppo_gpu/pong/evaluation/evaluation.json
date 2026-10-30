@@ -1,0 +1,26 @@
+{
+  "complete": true,
+  "episodes": 500,
+  "requested_episodes": 500,
+  "evaluation_seed_base": 1960000000,
+  "policy": "frozen stochastic PPO policy",
+  "seed_protocol": "fixed round-robin bank; wait for every requested seed; ignore extra games",
+  "model_sha256": "994615f99087029c9c111470fd9e61ccef446227b71f74b4b9b1bfca0750ee48",
+  "device": "cuda",
+  "visible_gpu_count": 1,
+  "gpu_name": "NVIDIA RTX PRO 5000 Blackwell",
+  "cuda_visible_devices": "GPU-ec0c988c-3d23-d55e-7713-293719142e7d",
+  "all_policy_parameters_on_cuda": true,
+  "mean": -6.626,
+  "sample_standard_deviation": 4.972683295597723,
+  "min": -19.0,
+  "max": 14.0,
+  "mean_approx_95_ci": [
+    -7.061874908877741,
+    -6.19012509112226
+  ],
+  "wins": 45,
+  "reached_500": null,
+  "terminated_episodes": 500,
+  "truncated_episodes": 0
+}

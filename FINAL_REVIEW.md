@@ -1,102 +1,58 @@
-# Final assignment review
+# Final submission review
 
-> This review concerns the original required experiments and CNN follow-up.
-> A fresh single-GPU PPO study is being evaluated separately. The removed CPU-only
-> PPO campaign is not part of the current submission.
+The final report is output/pdf/assignment1_report.pdf: 33 pages, with the
+confirmed author Jianong Xu and GitHub identity EvelynXuNU/iems_HW1. Every page
+was rendered and inspected; a page-boundary check found zero out-of-page text.
+This is a submission audit, not a grade guarantee.
 
-Review date: October 29, 2026. A separate verifier independently read the full
-assignment and rubric, reviewed the reports and principal implementation, and
-recomputed results. The main reviewer also reran mathematical, behavioral,
-replay, and saved-artifact checks. No mathematical or statistical error was
-found in the required results. This is a review finding, not a grade guarantee.
+## Coverage and evidence
 
-## Rubric coverage
-
-| Rubric item | Required evidence verified |
+| Requirement | Included evidence |
 |---|---|
-| Shuttle: plots, 15 points | Time-zero finite-horizon value for T=500, infinite-horizon VI value, and PI policy across states 0 through 200. |
-| Shuttle: edge cases/tests, 15 points | Explicit MDP and overflow/terminal assumptions; independent tree and policy enumeration; closed forms, deterministic trace, cap/economic sensitivity, competing policies, and Monte Carlo evidence. |
-| Part 1: plots, 20 points | Both games have raw training scores with trailing 100-episode means, frozen 500-game histograms, means, and sample SDs. |
-| Part 1: edge cases/tests, 20 points | Correct discounted objective and Adam settings; official environments, Pong frames and actions 2/3; exact gradients, bandit learning, sparse/signed rewards, physics, termination, replay, pilots, and held-out controls. |
-| Part 2: plots, 10 points | Both repeated game experiments have training/moving-average curves and 500-game histograms/statistics; additional comparisons and CNN follow-up are labeled. |
-| Part 2: edge cases/tests, 10 points | Explicit lagged EMA baseline and update timing; exact baseline invariance, same-batch-bias counterexample, variance reduction and failure cases, learning, replay, and measured frozen-policy gradient variance. |
-| Formatting/readability, 10 points | GitHub identity/link, environment setup, direct run commands, labeled figures/captions, explanations, and three-month plans; final 29-page PDF rendered and visually checked. |
+| Shuttle: required plots | T=500 time-zero value, infinite-horizon VI value, PI policy across states 0-200 |
+| Shuttle: correctness/edge cases | Explicit timing/overflow assumptions, Bellman certificates, literal small-tree enumeration, closed forms, sensitivity, simulation, and independent policy enumeration |
+| Policy Gradient Part 1 | Hand-implemented PyTorch REINFORCE without baseline; both official games; raw scores plus exact 100-episode means; 500-game histograms, means and sample SDs |
+| Policy Gradient Part 2 | Lagged EMA equations and timing, repeated game experiments, required plots, exact unbiasedness/bias counterexamples, gradient-variance experiments, learning and replay |
+| Discussion and reproduction | Assumptions, quantitative predictions and measurements, run directions, three-month experiment plans for every required part |
+| Supplement | Fresh single-GPU PPO training and evaluation, clearly separated from the required algorithm |
+| Submission format | One combined PDF with GitHub identity/link, labeled figures, commands and discussion answers |
 
-## Independent checks and fresh verification
+The scientific validation in the reports is supported by retained quantitative
+results and independent scripts. The final saved-artifact checks additionally
+recomputed all 12 saved 500-game evaluation summaries from 6,000 scores and
+verified the evaluated checkpoint hashes. The Part 2 audit reconstructs all
+2,030 saved baseline updates and checks 80 traced decisions. Expensive training
+and the existing frozen-policy variance measurements were not repeated merely
+for packaging.
 
-The independent verifier recomputed all ten saved 500-episode evaluation
-summaries from CSVs. Every mean and sample SD matches. The principal/follow-up
-checkpoints match evaluation hashes and recorded training histories. An
-independently constructed shuttle MDP gives dispatch at states 13 through 200,
-J(0)=576.6701677662195, and a Bellman residual of about 9.09e-13.
+Fresh GPU provenance checks in audit_ppo_gpu.py verify one visible GPU, the same
+physical UUID for both trials, CUDA policy parameters, CUDA optimizer moment
+tensors, source/model hashes, training-only selection, and exact reserved seed
+banks. GPU CartPole reaches the cap in 500/500 games. GPU Pong averages -6.626
+(sample SD 4.9727), with 45/500 natural wins and zero truncations. Both jobs
+finished; the CPU-only PPO campaign and references were removed from the current
+repository. Original required work and necessary CPU environment workers remain.
 
-These commands were rerun successfully during this review:
+## Interpretation
 
-```bash
-python validate_q1.py --output-dir tmp/final_review/q1_validation
-python verify_q1_baseline.py
-python verify_q1_exhaustive.py
-python validate_q2.py --pong --output-dir tmp/final_review/q2_validation
-python verify_q2_independent.py
-python validate_q3.py --output-dir tmp/final_review/q3_validation
-python validate_fast_pg.py --output tmp/final_review/fast_runner_validation.json
-python verify_q3_completed.py
-python build_report.py
-```
+Required Pong REINFORCE configurations still have zero wins; the CNN follow-up
+also lost all games. The improved PPO study changes the algorithm and image
+representation and does not replace the prescribed comparison. Pong still loses
+91% of its GPU PPO test games. CartPole's observed zero SD on one frozen policy
+and seed bank is not population certainty. No perfect-score or grade guarantee
+is made.
 
-The first command passes all ten shuttle experiments. The independent shuttle
-checks reconstruct all finite-horizon entries and enumerate 1,920 stationary
-policies across 30 small models. Part 1's exact gradient agrees within 2.78e-17;
-the independent variable-length finite-difference check and production update
-comparison also pass. The saved CartPole policy reproduces its first ten
-evaluation episodes exactly. Part 2's exact baseline tests, controlled learning,
-and replay pass. The saved-artifact audit reconstructs all 2,030 baseline updates
-across the three CartPole runs, Pong reference, and selected CNN. Fast-runner
-replay has zero parameter error, including a changed CPU-worker count.
+## Publication and remaining user actions
 
-The existing expensive frozen-policy variance measurements and large training
-runs were reviewed rather than repeated. Their retained code and evidence are
-part of the repository. Fresh review logs are under tmp/final_review (ignored by
-Git); the original quantitative validation evidence remains under results/.
+The repository is private. Its main branch and complete file tree are checked
+against the published GitHub commit. The final PDF checksum and source/asset
+inventory are recorded in submission_manifest.json.
 
-## Corrections made
+At the access check only EvelynXuNU had repository access, with no pending
+invitations. The instructor/TA needs access through the course's specified
+GitHub account or method. No account was invited without that information.
 
-- Rebuilt the PDF with a deliberate cover/execution overview and separate
-  contents page, removing the orphan introduction-only page.
-- Added explicit fresh-directory Part 1 CartPole and Part 2 Pong training and
-  evaluation commands to the PDF sources, including single-GPU settings.
-- Formatted Part 2's baseline notation as mathematics and clarified that Part 2's
-  later rate screen does not establish a learning-rate fix for Part 1.
-- Marked earlier review notes as historical so obsolete missing-deliverable
-  statements are not mistaken for the current submission status.
-
-Both reviewers checked the revised PDF. All 29 pages were rendered; required
-plots, tables, captions, mathematics, and commands are present without clipping.
-Training code, checkpoint contents, and measured scores were not changed.
-
-## Remaining limitations
-
-Pong has zero wins in every reported evaluation: Part 1 mean -19.046, matched
-Part 2 mean -19.460, and the CNN follow-up mean -18.492. Part 1 CartPole's mean
-181.612 also does not reliably solve the game. These are substantive learning
-limitations, not missing plots or arithmetic errors. The report documents the
-failure, diagnostics, tuning evidence, and next experiments. The supplied rubric
-sets no minimum success score, but appropriate tuning/correctness still involves
-the instructor's judgment, so a deduction cannot be ruled out.
-
-## Canvas submission
-
-Upload **[output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf)**.
-The supplied assignment asks for one PDF on Canvas. Separate Markdown files,
-Python scripts, figures, checkpoints, or a ZIP are not specified Canvas uploads.
-
-Keep all assignment code in **https://github.com/EvelynXuNU/iems_HW1** and ensure
-the grader can access it. Review corrections are preserved alongside the subsequent published performance campaign
-or pushed; synchronize the revised report sources/build script and final PDF
-with GitHub before submission. Remote publication and grader access could not
-be verified because the repository lookup failed. Unrelated concurrent research
-files were not modified or included in this review's conclusions.
-
-The supplied assignment PDF prints **October 26, 2026, 11:59 p.m.** as its due
-date. Any Canvas extension, revised deadline, or late-submission rule was not
-verified during this local review.
+Upload the single PDF to Canvas and confirm its submission receipt. The supplied
+assignment prints October 26, 2026, 11:59 p.m. as the due date; any Canvas
+extension or late-submission acceptance must be confirmed there. Separate plots,
+Markdown, checkpoints, or a ZIP are not specified Canvas uploads. See SUBMISSION.md.
