@@ -1,0 +1,2 @@
+update,through_episode,batch_episodes,loss,gradient_norm,entropy
+1,16,16,-135.11173529638128,6.285611357178641,0.6931470828375804

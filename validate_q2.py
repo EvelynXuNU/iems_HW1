@@ -174,21 +174,22 @@ def gym_time_limit(config):
     return gym.make(config.env_id, max_episode_steps=1)
 
 
-def checkpoint_replay_experiment():
+def checkpoint_replay_experiment(device="cpu"):
     """An interrupted experiment must reproduce the uninterrupted trajectory."""
     Path("tmp").mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="q2_replay_", dir="tmp") as directory:
         root = Path(directory)
         config = Config(seed=17, hidden=8, batch_episodes=4)
-        full, full_history = train(config, 16, root / "full")
-        train(config, 8, root / "split")
-        resumed, resumed_history = train(config, 16, root / "split", resume=root / "split/checkpoint.pt")
+        full, full_history = train(config, 16, root / "full", device=device)
+        train(config, 8, root / "split", device=device)
+        resumed, resumed_history = train(config, 16, root / "split", device=device,
+                                         resume=root / "split/checkpoint.pt")
         error = max(float((full.state_dict()[k] - resumed.state_dict()[k]).abs().max())
                     for k in full.state_dict())
         assert error == 0 and full_history == resumed_history
         return {"episodes": 16, "interruption_after": 8, "max_parameter_difference": error,
                 "all_scores_actions_lengths_reproduced": True,
-                "limitation": "same-device CPU replay; CUDA replay must be checked on Deepdish"}
+                "device": device, "limitation": "same-device replay; cross-device identity is not assumed"}
 
 
 def pong_experiments(output):
@@ -240,7 +241,7 @@ def pong_experiments(output):
         env.close()
 
 
-def run(output, pong=False):
+def run(output, pong=False, device="cpu"):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     evidence = {"exact_multistep_gradient": exact_gradient_experiment(output),
@@ -248,7 +249,7 @@ def run(output, pong=False):
                 "discount_and_sparse_reward": return_experiments(),
                 "zero_and_negative_rewards": zero_and_negative_reward(),
                 "cartpole": cartpole_experiments(output),
-                "checkpoint_replay": checkpoint_replay_experiment()}
+                "checkpoint_replay": checkpoint_replay_experiment(device)}
     if pong:
         evidence["pong"] = pong_experiments(output)
     (output / "validation.json").write_text(json.dumps(evidence, indent=2) + "\n")
@@ -259,5 +260,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", default="results/q2/validation")
     parser.add_argument("--pong", action="store_true")
+    parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu",
+                        help="Device for the interrupted/uninterrupted training comparison")
     args = parser.parse_args()
-    run(args.output_dir, args.pong)
+    if args.device == "cuda" and (not torch.cuda.is_available() or torch.cuda.device_count() != 1):
+        raise RuntimeError("CUDA validation requires exactly one visible GPU")
+    run(args.output_dir, args.pong, args.device)

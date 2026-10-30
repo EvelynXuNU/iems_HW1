@@ -27,7 +27,9 @@ e.close()
 PY
 
 mkdir -p "$RUN_DIR"
-"$PYTHON_BIN" validate_q2.py --pong --output-dir "$RUN_DIR/validation"
+exec 9>"$RUN_DIR/.run.lock"
+flock -n 9 || { echo 'This run directory already has an active launcher.' >&2; exit 1; }
+"$PYTHON_BIN" validate_q2.py --pong --device cuda --output-dir "$RUN_DIR/validation"
 
 completed=0
 resume=()

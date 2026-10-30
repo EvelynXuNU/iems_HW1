@@ -6,7 +6,7 @@ Repository URL: https://github.com/EvelynXuNU/iems_HW1
 This project covers **Value and Policy Iteration** (Section 2) and
 **Policy Gradient Part 1** (Section 3). CartPole training and its 500-episode
 evaluation have run locally. Pong is implemented and validated; its full
-single-GPU run is prepared for Deepdish. Part 2 is not implemented yet.
+single-GPU run is in progress on Deepdish5. Part 2 is not implemented yet.
 
 ## Run
 
@@ -106,7 +106,7 @@ the report provides predictions, numerical evidence, and remaining limitations.
 Plots use undiscounted game scores; training optimizes the specified discounted
 episode objective. The final CartPole result is mean 181.612, sample SD 97.2304
 over 500 held-out games. This improves over random but does not reliably solve
-CartPole. Full Pong results are pending remote training.
+CartPole. Full Pong results are pending the running Deepdish experiment.
 
 The submission ultimately requires a PDF report with GitHub username, repository
 name, repository URL, execution directions, and answers for every question. These

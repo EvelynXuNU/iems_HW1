@@ -284,6 +284,9 @@ def train(config, episodes, output, device="cpu", resume=None):
     start_time = time.monotonic()
     metadata = {"config": asdict(config), "gamma": config.gamma, "env_id": config.env_id,
                 "device": device, "versions": versions(), "target_episodes": episodes,
+                "gpu_name": torch.cuda.get_device_name(0) if device == "cuda" else None,
+                "cuda_runtime": torch.version.cuda if device == "cuda" else None,
+                "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 "max_episode_steps": env.spec.max_episode_steps,
                 "pong_max_emulator_frames": 108000 if config.game == "pong" else None,
                 "objective": "E[sum_t gamma^t r_t]", "baseline": None,

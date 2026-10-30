@@ -124,12 +124,14 @@ sampling variation for this checkpoint, not training variation across seeds.
 
 ## Pong status and required outputs
 
-The implementation and a four-episode CPU training smoke run have executed.
-All four smoke-game scores were -21. That run verifies interaction, gradient
-computation, and checkpoint writing; it is **not** evidence of successful learning.
-The full single-GPU training and its 500-episode evaluation are prepared for
-Deepdish. Until that run finishes, no final Pong learning curve, reward histogram,
-or trained mean/SD is claimed here.
+The implementation, a four-episode CPU smoke run, and a 16-episode CUDA smoke run
+have executed. The CPU smoke-game scores were all -21; the CUDA smoke scores
+averaged -20.5625. These runs verify interaction, gradient computation, and
+checkpoint writing; they are **not** evidence of successful learning. Full
+10,000-episode training is now running on one RTX PRO 5000 Blackwell GPU on
+Deepdish5, followed automatically by the required 500-episode evaluation. Until
+that run finishes, no final Pong learning curve, reward histogram, or trained
+mean/SD is claimed here.
 
 The launcher produces training_rewards.png, evaluation_trained/reward_histogram.png,
 and evaluation_trained/evaluation.json containing the 500 scores' mean and SD.
@@ -207,6 +209,12 @@ predicted behavior, independently check the objective, and expose task limitatio
    parameter difference is exactly zero. Optimizer state, action RNG state,
    episode count, and explicit reset seeds preserve the experiment. This is
    same-device evidence; cross-device bitwise equivalence is not assumed.
+   The same interruption experiment also passed on Deepdish5's RTX PRO 5000 GPU,
+   with exactly zero parameter difference. Its independent validation evidence
+   is saved under results/q2/deepdish/validation.
+   CUDA's logical device 0 maps to nvidia-smi index 1 on this host; the selected
+   GPU name and one-device visibility were verified. The connection guide uses
+   UUID selection to avoid index ambiguity in future launches.
 
 9. **Learning stability and frozen evaluation.** The three learning-rate pilots
    expose late-training instability rather than hiding it behind a peak score.

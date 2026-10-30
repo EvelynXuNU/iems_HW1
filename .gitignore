@@ -10,3 +10,4 @@ tmp/
 *.key
 mlds-setup-report.json
 deepdish.local.env
+.run.lock

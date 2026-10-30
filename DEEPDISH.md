@@ -8,9 +8,58 @@ tool verified SSH access to Deepdish 1 through 5. Keep campus Wi-Fi or the
 Northwestern GlobalProtect VPN connected when accessing the servers. SSH uses
 your NetID and SSH key; no MLDS server password is needed for this workflow.
 
-The downloaded, checksum-verified course setup program and GitHub CLI are under
-the ignored tmp/ directory. Re-run the course setup if access later fails.
+The downloaded, checksum-verified course setup program is under the ignored
+tmp/ directory. GitHub CLI is installed with Homebrew and authenticated; Git uses
+its credential helper over HTTPS. Re-run the course setup if SSH access later fails.
 Authentication data, private keys, and setup reports are not part of this repo.
+
+The private assignment repository is https://github.com/EvelynXuNU/iems_HW1.
+The project copy on Deepdish is transferred over SSH with rsync; it does not
+require copying a GitHub token or private SSH key onto the server.
+
+## Connect from this laptop
+
+```bash
+ssh zfl2845@mlds-deepdish5.ads.northwestern.edu
+cd ~/iems_HW1
+source .venv/bin/activate
+```
+
+The server's project directory is isolated from other coursework. Do not copy the
+Mac .venv to Linux; the server has its own environment. The verified training GPU
+is an **NVIDIA RTX PRO 5000 Blackwell**, with about 48 GB VRAM. CUDA's logical
+index 0 on this server maps to nvidia-smi hardware index 1 under the default device
+ordering. Use a GPU UUID when selecting a card to avoid this index ambiguity.
+
+The isolated Linux environment installed PyTorch 2.15.0 with CUDA 13.2 and
+Gymnasium/ALE versions matching the local run. The exact-gradient, behavioral,
+and environment checks passed on the server. In particular, an interrupted and
+resumed CUDA training run exactly reproduced the uninterrupted run's parameters.
+Evidence is under results/q2/deepdish/validation; a full dependency snapshot is
+saved as requirements-linux-lock.txt in results/q2/deepdish.
+
+## Current run
+
+The full 10,000-episode Part 1 Pong run was started in the background on
+October 29, 2026. It continues independently of the laptop's SSH connection.
+Only the RTX PRO 5000 is used. Its UUID is
+`GPU-ec0c988c-3d23-d55e-7713-293719142e7d`.
+
+- Launcher PID: 1846426 (use the recorded launcher.pid if restarted).
+- Output directory: ~/iems_HW1/results/q2/pong/seed3817_lr001.
+- Console log: that directory's console.log.
+- Training and evaluation remain in progress until evaluation.json is written.
+
+Monitor from this laptop:
+
+```bash
+ssh zfl2845@mlds-deepdish5.ads.northwestern.edu \
+  'tail -n 20 ~/iems_HW1/results/q2/pong/seed3817_lr001/console.log'
+```
+
+The launcher runs the required 500-game frozen-policy evaluation and a 500-game
+random reference automatically after training. It checks for an active lock in
+the same run directory to prevent launching a duplicate.
 
 ## Run on one GPU
 
@@ -30,11 +79,11 @@ python -c 'import torch; print(torch.__version__, torch.version.cuda, torch.cuda
 If the final value is False, fix the CUDA environment before running training.
 Do not replace a working course GPU environment with a CPU-only torch build.
 
-From the project directory in a persistent session, set CUDA_VISIBLE_DEVICES to
-the one GPU assigned to you. For example, **only if GPU 0 is your assigned card**:
+For a future run, set CUDA_VISIBLE_DEVICES to the UUID of your one assigned GPU.
+For example, if the RTX PRO 5000 above is available and assigned to you:
 
 ```bash
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d
 export CUBLAS_WORKSPACE_CONFIG=:4096:8
 bash run_pong_deepdish.sh
 ```
@@ -49,7 +98,8 @@ are Part 1 without any baseline, return centering, or pointwise discount resets.
 For a small CUDA smoke experiment before the full run, use a separate directory:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 EPISODES=16 RUN_DIR=results/q2/pong/cuda_smoke \
+CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d \
+  EPISODES=16 RUN_DIR=results/q2/pong/cuda_smoke \
   bash run_pong_deepdish.sh
 ```
 
@@ -57,7 +107,8 @@ This launcher always performs the required 500-game evaluations after training;
 for a faster training-only GPU smoke check use:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 CUBLAS_WORKSPACE_CONFIG=:4096:8 \
+CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d \
+  CUBLAS_WORKSPACE_CONFIG=:4096:8 \
   python q2_policy_gradient.py train --game pong --episodes 16 \
     --reward-scale 1 --device cuda --output-dir results/q2/pong/cuda_training_smoke
 ```
