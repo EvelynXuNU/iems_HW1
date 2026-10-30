@@ -3,8 +3,8 @@
   "github_user": "EvelynXuNU",
   "repository": "https://github.com/EvelynXuNU/iems_HW1",
   "final_report": "output/pdf/assignment1_report.pdf",
-  "report_pages": 33,
-  "report_sha256": "2cd635bbdc4a8185d05ccdd6baf787fe5d8d1f84ac1193703b2a1212c29c72b5",
+  "report_pages": 10,
+  "report_sha256": "94cb46827a4581b4bfc9a9cd277b72ead1eed14e0507b0e5c01417f33b25f64a",
   "all_pages_visually_checked": true,
   "out_of_page_text_words": 0,
   "evaluations_checked": [
@@ -84,23 +84,23 @@
   "gpu_audit": "results/ppo_gpu/completed_audit.json",
   "cpu_only_ppo_campaign_removed": true,
   "required_original_work_preserved": true,
-  "file_count": 361,
+  "file_count": 368,
   "files": {
     ".gitignore": {
       "bytes": 187,
       "sha256": "5191d11578298e5d140ceefe9045ec114d5b3ab49f438fb4adf9cafe08371725"
     },
     "DEEPDISH.md": {
-      "bytes": 9680,
-      "sha256": "f9ea24f0eb0f978fce995b121bdab57d923554f1cd1f254ee62371d6fb4f380e"
+      "bytes": 9679,
+      "sha256": "2b894a12a740d91090869ae9a68abe9f8eba29508917a1be7dec694516b304df"
     },
     "FINAL_REVIEW.md": {
-      "bytes": 3728,
-      "sha256": "ea2df058cb6137d062fd6490655250618bcb5451770d82926de5cbcfe97a24cf"
+      "bytes": 4126,
+      "sha256": "010df80fe0c67abd55843602dca9e7edbbc455d8abba793f6dd0846720ee7930"
     },
     "PART2_COMPLETION.md": {
-      "bytes": 3199,
-      "sha256": "ed54b9244e9100171c45e33577d5d7732cc0de10704767194a259df29de47ab6"
+      "bytes": 3417,
+      "sha256": "c69a596ce27feabf0fdc9317939422bf22942caea6e660e22778dccc01a9bf85"
     },
     "PONG_TUNING.md": {
       "bytes": 6685,
@@ -111,12 +111,16 @@
       "sha256": "c145fad1b1919b59548c9ad2c0895bb0724ca7f89d82061cee3181d2b3bea105"
     },
     "README.md": {
-      "bytes": 10565,
-      "sha256": "3879a007f6a0cb1b72488eedaaa59d3a7195bcd31a21dd873a1488d3c9cf618a"
+      "bytes": 10774,
+      "sha256": "d220c6965a3db6e857939b993330579d6548d91f24789fe2ce9c1260a49aed24"
+    },
+    "REQUIREMENTS_AUDIT.md": {
+      "bytes": 5432,
+      "sha256": "b8a76b4e606b0fe6df9071b0c74e0c18aa53240c1dc90d31b7a73238c96589ba"
     },
     "SUBMISSION.md": {
-      "bytes": 2335,
-      "sha256": "e99e739289f9c83f20b4449487b508370ab5ad3f72444cfda44136ac7c8bd9c4"
+      "bytes": 2128,
+      "sha256": "b44cba2c199f165b5108eb90ec7fcdc7b72c37e8d61e22c8a7f592cee9ecfd12"
     },
     "audit_ppo_gpu.py": {
       "bytes": 11399,
@@ -131,8 +135,8 @@
       "sha256": "2c7e47567bf9314d725427492f291b1bcaebdcea277f98e62d63d6fb80b05025"
     },
     "build_report.py": {
-      "bytes": 3976,
-      "sha256": "cf5af68f2348d5a7f995df4cb7736ed04b82a7c29b66686e808713abee9b815f"
+      "bytes": 1412,
+      "sha256": "0c52742a5828ac52a6fda29eb28039dff5b613a54117067a45c9d44fb62bdbe7"
     },
     "compare_policy_gradients.py": {
       "bytes": 3872,
@@ -155,8 +159,8 @@
       "sha256": "ba970b9ea7864405d46dfa07b5353205e774210393253da8ca242d756e63e154"
     },
     "output/pdf/assignment1_report.pdf": {
-      "bytes": 1478207,
-      "sha256": "2cd635bbdc4a8185d05ccdd6baf787fe5d8d1f84ac1193703b2a1212c29c72b5"
+      "bytes": 629272,
+      "sha256": "94cb46827a4581b4bfc9a9cd277b72ead1eed14e0507b0e5c01417f33b25f64a"
     },
     "pong_lr_pilots.py": {
       "bytes": 4125,
@@ -206,13 +210,37 @@
       "bytes": 1879,
       "sha256": "20adfe65d08712ff8e70911ebbcffa68d1c36c6bb2ad80214b2fca121f3c0cd2"
     },
+    "report/figures/figure_audit.json": {
+      "bytes": 2123,
+      "sha256": "2f08a578af9c6706ecf7a2e5773b70e38bd30a90790f8129cc9c159d6c141229"
+    },
+    "report/figures/part1.png": {
+      "bytes": 202919,
+      "sha256": "7f4b0b3d2478e2e6419048e8972af754c17b7c48799ef5e5bf45f849da734421"
+    },
+    "report/figures/part2.png": {
+      "bytes": 208570,
+      "sha256": "ed9b1d11b29224ff848cac90def9352de6eb2127d8da8958dbb6426e2146db68"
+    },
+    "report/figures/shuttle.png": {
+      "bytes": 126051,
+      "sha256": "a715d43d6e91e6e6170abf23328b5e9f7d4b1c000131b73396f9ad7ff2a3451e"
+    },
     "report/header.tex": {
-      "bytes": 259,
-      "sha256": "0781090835b2e486f86a016449869059ec57e3a12b6d24b1f575984d2be85903"
+      "bytes": 343,
+      "sha256": "c664618484b20a9960151f33ecdd1e366d7797dd41870c8c6234b5bd10b7c71a"
     },
     "report/keep_figures.lua": {
       "bytes": 732,
       "sha256": "09c0ad37f902d913fa7ba6e60553a4b9eb64c64210256f412065e17dfd496d42"
+    },
+    "report/submission.md": {
+      "bytes": 26516,
+      "sha256": "b74905620bb8dbbd235f585eda4d12ec0c150da1a40a535047c9efe1ca4326e8"
+    },
+    "report_figures.py": {
+      "bytes": 4909,
+      "sha256": "de905f9c294f0fa15d3c9df9d2eb03d8439877d622c69479fabb1a3bc30fe48a"
     },
     "requirements-ppo.txt": {
       "bytes": 180,
@@ -1530,5 +1558,12 @@
       "bytes": 2070,
       "sha256": "205204f88725040032cabb3e8a0cce7c13e00c0e14d20a9ce0964b3c2f0007b1"
     }
-  }
+  },
+  "repository_visibility": "public",
+  "report_source": "report/submission.md",
+  "required_plot_count": 11,
+  "composite_figure_count": 3,
+  "ppo_in_canvas_report": false,
+  "requirements_audit": "REQUIREMENTS_AUDIT.md",
+  "figure_audit": "report/figures/figure_audit.json"
 }

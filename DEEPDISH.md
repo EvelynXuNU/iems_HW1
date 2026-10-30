@@ -13,7 +13,7 @@ tmp/ directory. GitHub CLI is installed with Homebrew and authenticated; Git use
 its credential helper over HTTPS. Re-run the course setup if SSH access later fails.
 Authentication data, private keys, and setup reports are not part of this repo.
 
-The private assignment repository is https://github.com/EvelynXuNU/iems_HW1.
+The public assignment repository is https://github.com/EvelynXuNU/iems_HW1.
 The project copy on Deepdish is transferred over SSH with rsync; it does not
 require copying a GitHub token or private SSH key onto the server.
 

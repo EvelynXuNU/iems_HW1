@@ -4,9 +4,10 @@ GitHub username: **EvelynXuNU**. Repository: **iems_HW1**.
 Repository URL: https://github.com/EvelynXuNU/iems_HW1
 
 **Submit:** [final report PDF](output/pdf/assignment1_report.pdf).
-[SUBMISSION.md](SUBMISSION.md) lists the remaining Canvas and grader-access steps.
-All code, raw evidence, figures, selected models, and report sources are in this
-repository. Supplemental PPO results are separated from the required experiments.
+[SUBMISSION.md](SUBMISSION.md) lists the remaining Canvas steps.
+The Canvas report is **10 pages**, covers only the required methods, and excludes
+PPO. [REQUIREMENTS_AUDIT.md](REQUIREMENTS_AUDIT.md) maps every assignment requirement
+to its report page and evidence. This repository is **public** for grader access.
 
 This project covers **Value and Policy Iteration** (Section 2) and
 **Policy Gradient Parts 1 and 2** (Section 3). Both CartPole methods have completed
@@ -176,16 +177,16 @@ evaluations and training budgets are preserved. See DEEPDISH.md for the current
 completed execution, checkpoint archives, RNG change, and reproduction commands.
 
 The final PDF contains the GitHub username, repository name and URL, execution
-directions, required figures, and discussion answers. The Markdown files are its
-editable source sections. Submit the PDF on Canvas and provide repository access
-to the grader according to the course's submission rules.
+directions, required figures, and discussion answers. report/submission.md is its editable source. Submit the PDF on Canvas; the public repository is accessible to the grader.
 
 ## Report PDF
 
-The final submission report is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
-Rebuild it with `python build_report.py` using Pandoc and XeLaTeX. It incorporates
-all three sections, the CNN and PPO follow-ups, and the limitations of every
-configuration. The original runtime source is preserved at commit
+The concise final submission is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
+Its editable source is report/submission.md. Run `python report_figures.py`, then
+`python build_report.py` with Pandoc and XeLaTeX to regenerate the 11 required plots
+and 10-page PDF. Expanded q1_report.md/q2_report.md/q3_report.md notes and extra
+experiments remain available here but are not appended to the Canvas report.
+The original runtime source is preserved at commit
 `5b1d407`; follow-up source snapshots accompany the tuning evidence.
 
 ## Final review and Canvas submission
@@ -199,7 +200,7 @@ one PDF there; keep all assignment code in the linked GitHub repository and
 ensure the grader has access. Separate Markdown files, plots, checkpoints, and
 a source ZIP are not required Canvas uploads by the supplied assignment PDF.
 
-## Single-GPU PPO follow-up
+## Optional: single-GPU PPO follow-up (not in Canvas report)
 
 Fresh training and evaluation used exactly one RTX PRO 5000 GPU on Deepdish.
 CartPole reached 500 in all 500 games (mean 500, sample SD 0). Pong averaged

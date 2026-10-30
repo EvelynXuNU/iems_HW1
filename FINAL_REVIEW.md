@@ -1,9 +1,9 @@
 # Final submission review
 
-The final report is output/pdf/assignment1_report.pdf: 33 pages, with the
+The final report is output/pdf/assignment1_report.pdf: 10 pages, with the
 confirmed author Jianong Xu and GitHub identity EvelynXuNU/iems_HW1. Every page
 was rendered and inspected; a page-boundary check found zero out-of-page text.
-This is a submission audit, not a grade guarantee.
+The condensed source is report/submission.md. This is a submission audit, not a grade guarantee.
 
 ## Coverage and evidence
 
@@ -14,7 +14,7 @@ This is a submission audit, not a grade guarantee.
 | Policy Gradient Part 1 | Hand-implemented PyTorch REINFORCE without baseline; both official games; raw scores plus exact 100-episode means; 500-game histograms, means and sample SDs |
 | Policy Gradient Part 2 | Lagged EMA equations and timing, repeated game experiments, required plots, exact unbiasedness/bias counterexamples, gradient-variance experiments, learning and replay |
 | Discussion and reproduction | Assumptions, quantitative predictions and measurements, run directions, three-month experiment plans for every required part |
-| Supplement | Fresh single-GPU PPO training and evaluation, clearly separated from the required algorithm |
+| Optional repository evidence | Extra GPU experiments remain on GitHub; PPO and CNN extras are excluded from the Canvas PDF |
 | Submission format | One combined PDF with GitHub identity/link, labeled figures, commands and discussion answers |
 
 The scientific validation in the reports is supported by retained quantitative
@@ -44,13 +44,17 @@ is made.
 
 ## Publication and remaining user actions
 
-The repository is private. Its main branch and complete file tree are checked
-against the published GitHub commit. The final PDF checksum and source/asset
-inventory are recorded in submission_manifest.json.
+The repository is now public, as explicitly requested. The main branch and
+complete file tree are checked against the published GitHub commit. The final
+PDF checksum and source/asset inventory are recorded in submission_manifest.json.
+No grader collaborator invitation is needed for public read access.
 
-At the access check only EvelynXuNU had repository access, with no pending
-invitations. The instructor/TA needs access through the course's specified
-GitHub account or method. No account was invited without that information.
+The concise PDF was checked against every requirement of all four assignment
+pages. REQUIREMENTS_AUDIT.md maps each item to its report page. All eleven
+required plots remain as labeled panels in three figures, whose raw-data counts,
+means and sample SDs are checked in report/figures/figure_audit.json. The first-ten
+baseline trace rows were checked against saved states, actions, probabilities,
+returns and weights. The report contains no PPO section or scores.
 
 Upload the single PDF to Canvas and confirm its submission receipt. The supplied
 assignment prints October 26, 2026, 11:59 p.m. as the due date; any Canvas

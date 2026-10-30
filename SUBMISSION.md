@@ -1,8 +1,8 @@
 # Final submission
 
-The final report includes the required experiments and a separately labeled
-single-GPU PPO supplement. Training and evaluation have finished; the CPU-only
-PPO campaign was removed while required original work was preserved.
+The final **10-page** report covers the required shuttle problem and Policy
+Gradient Parts 1 and 2. PPO and extra tuning figures are excluded. Their optional
+code/evidence remains on GitHub; the CPU-only PPO campaign was removed.
 
 Author: **Jianong Xu**. GitHub: **EvelynXuNU**.
 Repository: <https://github.com/EvelynXuNU/iems_HW1>.
@@ -11,20 +11,17 @@ Repository: <https://github.com/EvelynXuNU/iems_HW1>.
 
 Upload **[assignment1_report.pdf](output/pdf/assignment1_report.pdf)**. This is the
 single combined submission covering the shuttle problem, Policy Gradient Part 1,
-Policy Gradient Part 2, and the separately labeled performance follow-ups.
+Policy Gradient Part 2. All 11 required plots remain as labeled panels.
 
 The supplied assignment requests one PDF on Canvas and all code on GitHub.
 Separate plots, Markdown files, checkpoints, and a source ZIP are not specified
 Canvas uploads. After uploading, open the Canvas copy, complete the submission,
 and check the submission receipt/status.
 
-## Give the grader access
+## GitHub access
 
-The repository is **private**. At the final access check, only EvelynXuNU had
-access and there were no pending invitations. Add the instructor/TA's specified
-GitHub account through repository Settings > Collaborators and confirm they can
-access it. Follow the course's requested access method. Do not make the repository
-public unless the course explicitly requests that.
+The repository is now **public**, as requested. No collaborator invitation is
+needed for the grader to read the code, results or PDF.
 
 ## Confirm the submission window
 
@@ -39,9 +36,10 @@ to verify here. Confirm your applicable Canvas deadline and upload eligibility.
   provenance for the reported experiments.
 - Required and supplemental dependency files and execution directions.
 - Editable report sections, PDF build script, LaTeX/Lua support, and final PDF.
-- Clearly separated CNN and PPO follow-ups, including scientific limitations.
+- Optional GPU follow-ups, clearly labeled and excluded from the Canvas PDF.
 
-The final audit is documented in FINAL_REVIEW.md. The source/asset inventory and
+The line-by-line requirement audit is in REQUIREMENTS_AUDIT.md; final packaging
+checks are in FINAL_REVIEW.md. The source/asset inventory and
 final report checksum are in submission_manifest.json. No further training is
 needed for the submission package. The required Pong configurations remain weak;
-the supplemental PPO result must be assessed separately from the required method.
+no optional result is substituted for the required method.

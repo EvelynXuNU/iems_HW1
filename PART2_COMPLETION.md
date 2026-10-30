@@ -41,11 +41,14 @@ python validate_q3.py --variance --pong --output-dir results/q3/reproduced_valid
 
 Existing evidence is under results/q3/validation, results/q3/verifier,
 results/q3/comparison, and results/pong_tuning. Final checkpoints, episode CSVs,
-and figures remain available beside each experiment. The repository is private;
-Canvas submission and grader access must be handled through the course workflow.
+and figures remain available beside each experiment. The repository is public; Canvas submission must be completed through the course workflow.
 
 
 The separately labeled single-GPU PPO supplement reached CartPole mean 500
 (500/500 at the cap) and Pong mean -6.626 (45/500 wins). See PPO_GPU.md and
 results/ppo_gpu/completed_audit.json. PPO changes the algorithm and inputs,
 so it does not replace the required REINFORCE comparison.
+
+The condensed Canvas PDF is now 10 pages. Its required Part 2 method and evidence
+are on pages 7–9; reproduction is on page 10. Optional PPO/CNN figures are not
+part of this PDF. The public repository retains the expanded evidence.

@@ -1,0 +1,67 @@
+{
+  "required_plot_count": 11,
+  "figures": {
+    "shuttle.png": {
+      "panels": 3,
+      "state_count": 201,
+      "full_state_range": [
+        0,
+        200
+      ]
+    },
+    "part1.png": {
+      "panels": 4,
+      "cases": [
+        {
+          "game": "cartpole",
+          "training_episodes": 6000,
+          "moving_average_window": 100,
+          "first_moving_average_episode": 100,
+          "evaluation_episodes": 500,
+          "mean": 181.612,
+          "sample_sd": 97.23037049138394,
+          "training_csv": "results/q2/cartpole/final_seed3817/training.csv",
+          "evaluation_csv": "results/q2/cartpole/final_seed3817/evaluation_trained/episodes.csv"
+        },
+        {
+          "game": "pong",
+          "training_episodes": 10000,
+          "moving_average_window": 100,
+          "first_moving_average_episode": 100,
+          "evaluation_episodes": 500,
+          "mean": -19.046,
+          "sample_sd": 2.5987286856390237,
+          "training_csv": "results/q2/pong/seed3817_lr001/training.csv",
+          "evaluation_csv": "results/q2/pong/seed3817_lr001/evaluation_trained/episodes.csv"
+        }
+      ]
+    },
+    "part2.png": {
+      "panels": 4,
+      "cases": [
+        {
+          "game": "cartpole",
+          "training_episodes": 6000,
+          "moving_average_window": 100,
+          "first_moving_average_episode": 100,
+          "evaluation_episodes": 500,
+          "mean": 438.342,
+          "sample_sd": 95.76786519500169,
+          "training_csv": "results/q3/cartpole/final_seed3817/training.csv",
+          "evaluation_csv": "results/q3/cartpole/final_seed3817/evaluation_trained/episodes.csv"
+        },
+        {
+          "game": "pong",
+          "training_episodes": 10000,
+          "moving_average_window": 100,
+          "first_moving_average_episode": 100,
+          "evaluation_episodes": 500,
+          "mean": -19.46,
+          "sample_sd": 0.995178758577094,
+          "training_csv": "results/q3/pong/seed3817_lr001/training.csv",
+          "evaluation_csv": "results/q3/pong/seed3817_lr001/evaluation_trained/episodes.csv"
+        }
+      ]
+    }
+  }
+}
