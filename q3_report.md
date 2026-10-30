@@ -325,7 +325,8 @@ use `--seed 3818` and `--seed 3819` in separate output directories.
 
 The Part 2 checkpoint includes the policy, Adam state, baseline numerator/mass,
 action RNG, and completed history. Resume requires matching parameters. The
-Deepdish command, dependency queue, and monitoring paths are in DEEPDISH.md.
+single-GPU execution and reproduction commands are in README.md; the queue
+wrapper remains available as part of the recorded execution code.
 Both reference experiments now have their required Pong figures and statistics.
 They remain reproducible evidence of limited learning, alongside the much
 stronger CartPole results. Any improved experiment must be labeled separately.

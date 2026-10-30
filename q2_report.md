@@ -263,8 +263,8 @@ predicted behavior, independently check the objective, and expose task limitatio
    The same interruption experiment also passed on Deepdish5's RTX PRO 5000 GPU,
    with exactly zero parameter difference. Its independent validation evidence
    is saved under results/q2/deepdish/validation.
-   The GPU identity and one-device visibility were verified; server-specific
-   selection details are in DEEPDISH.md.
+   The GPU identity and one-device visibility were verified; select one assigned
+   card using the execution commands in README.md.
 
 9. **Learning stability and frozen evaluation.** The three learning-rate pilots
    expose late-training instability rather than hiding it behind a peak score.
@@ -304,7 +304,7 @@ Use Python 3.11+ with requirements-q2.txt. The tested local environment used Pyt
 3.13.13, PyTorch 2.15.0, Gymnasium 1.4.0, ALE 0.12.1, NumPy 2.5.4, and Matplotlib
 3.11.2. Every run saves its actual versions and configuration. Deepdish should use
 a compatible CUDA-enabled PyTorch installation and expose exactly one GPU.
-See README.md and DEEPDISH.md for complete commands and output locations.
+See README.md for complete commands and output locations.
 
 Reproduce the primary CartPole training and its required evaluation in a fresh
 directory (CPU is the default):
@@ -362,7 +362,7 @@ matched in worker-count validation. The new action RNG protocol and source hashe
 are recorded. The continuation is statistically on-policy, but is not a claim of
 bitwise replay of the legacy serial action stream. Training completed at
 10,000 episodes and frozen evaluation at 500; the optional random reference was
-omitted. Checkpoints now save every 64 episodes and at completion. See DEEPDISH.md
+omitted. Checkpoints now save every 64 episodes and at completion. See README.md
 and results/q3/collector_benchmark_deepdish.json for timing and validation evidence.
 
 ## With three additional months

@@ -1,210 +1,146 @@
 # Assignment 1: reinforcement learning
 
-GitHub username: **EvelynXuNU**. Repository: **iems_HW1**.
-Repository URL: https://github.com/EvelynXuNU/iems_HW1
+**Jianong Xu** · GitHub **EvelynXuNU** · **iems_HW1**
 
-**Submit:** [final report PDF](output/pdf/assignment1_report.pdf).
-[SUBMISSION.md](SUBMISSION.md) lists the remaining Canvas steps.
-The Canvas report is **10 pages**, covers only the required methods, and excludes
-PPO. [REQUIREMENTS_AUDIT.md](REQUIREMENTS_AUDIT.md) maps every assignment requirement
-to its report page and evidence. This repository is **public** for grader access.
+Public repository: <https://github.com/EvelynXuNU/iems_HW1>
 
-This project covers **Value and Policy Iteration** (Section 2) and
-**Policy Gradient Parts 1 and 2** (Section 3). Both CartPole methods have completed
-6,000-episode training and 500-game evaluation for three training seeds.
-Pong Part 1 is complete: 10,000 training episodes and 500 evaluation games.
-Part 2 Pong also completed: mean -19.460, sample SD 0.9952, and 0/500 wins.
-Both are reference experiments with insufficient learning, not successful models.
+**Canvas submission:** [assignment1_report.pdf](output/pdf/assignment1_report.pdf),
+10 pages. It contains the required shuttle problem and Policy Gradient Parts 1
+and 2, with all 11 required plot panels, mathematical explanations, quantitative
+correctness experiments, edge cases, execution directions and three-month plans.
+Upload this one PDF to Canvas and confirm the submission receipt. Public GitHub
+access requires no grader invitation. The supplied assignment lists October 26,
+2026 at 11:59 p.m.; confirm any applicable Canvas extension or revised deadline.
 
-A focused follow-up CNN improved Part 2's mean score to -18.492 in 500 fresh
-games, but still won 0/500. See [PONG_TUNING.md](PONG_TUNING.md) for the full
-29.8-minute pilot campaign, selected checkpoint, and limitations. GPU work has
-finished; no additional runs are queued.
+## Assignment code and evidence
 
-## Run
+| Part | Implementation | Scientific validation | Saved results / expanded notes |
+|---|---|---|---|
+| Shuttle | q1_shuttle.py | validate_q1.py; verify_q1_baseline.py; verify_q1_exhaustive.py | results/q1; q1_report.md |
+| Policy Gradient Part 1 | q2_policy_gradient.py; fast_pg.py; batched_rollout.py | validate_q2.py; verify_q2_independent.py; verify_q2_completed_collector.py; verify_q2_pong_controls.py | results/q2; q2_report.md |
+| Policy Gradient Part 2 | q3_policy_gradient.py; fast_pg.py | validate_q3.py; verify_q3_completed.py; validate_fast_pg.py | results/q3; q3_report.md |
 
-Use Python 3.10 or newer. From this directory:
+The verification scripts are assignment evidence, not administrative reviews:
+they check exact gradients, analytical predictions, independent policies,
+baseline update timing, controlled learning, trajectory equivalence and replay.
+The report explains the purpose and quantitative result of each experiment.
+Training/evaluation CSVs, histograms, first-ten-step traces, configurations,
+checkpoints and source provenance remain beside the recorded experiments.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r requirements.txt
-python3 q1_shuttle.py
-python3 validate_q1.py
-python3 verify_q1_baseline.py
-python3 verify_q1_exhaustive.py
-```
+The main CartPole policies train for 6,000 episodes for three initialization/action
+seeds, each tested in 500 frozen stochastic games. Main Pong policies train for
+10,000 episodes and are tested in 500 games. Part 1 means are 181.612 (CartPole)
+and -19.046 (Pong); Part 2 means are 438.342 and -19.460. Both required Pong
+policies have zero test wins. Completing the experiment does not mean Pong was solved.
 
-If NumPy and Matplotlib are already installed, just run the last four commands.
-The algorithms and validation use CPU only. Monte Carlo experiments use seed
-3817, and the exhaustive verifier's random models use seed 82431. Small
-differences in the last digits can occur across NumPy/linear algebra implementations.
+## Install and run locally
 
-## Files
-
-- `q1_report.md`: final report section, model assumptions, equations, results, edge cases,
-  validation evidence, and proposed experiments with three more months.
-- `q1_shuttle.py`: finite-horizon enumeration/backward induction, infinite-horizon
-  value iteration, exact policy evaluation, and policy iteration.
-- `validate_q1.py`: ten mathematical and behavioral validation experiments.
-- `verify_q1_baseline.py`: independent reconstruction of every saved finite-horizon
-  value and action, an independent Bellman certificate, and all 202 threshold
-  policies. Run `q1_shuttle.py` first to generate the saved results it audits.
-- `verify_q1_exhaustive.py`: independent enumeration of all 1,920 stationary
-  deterministic policies across 30 six-state models, compared with VI and PI.
-- `results/q1/`: the three required figures, convergence figure, all-state values
-  and policies, full finite-horizon arrays, and solver diagnostics.
-- `results/q1/validation/`: experiment evidence in JSON and CSV, including
-  simulation comparisons, sensitivity, and the deterministic first-ten-step trace.
-- `results/q1/verifier/`: the independent verifiers' JSON evidence.
-- `q2_policy_gradient.py`: PyTorch REINFORCE without a baseline, checkpoint
-  resume, frozen stochastic evaluation, and required plots.
-- `validate_q2.py`: exact multistep gradient, known-optimum learning, signed/sparse
-  rewards, CartPole physics and time limits, checkpoint replay, and real Pong.
-- `q2_report.md`: completed Part 1 equations, all four required figures,
-  multi-seed results, diagnostic controls, edge cases, and limitations.
-- `verify_q2_independent.py`, `verify_q2_completed_collector.py`,
-  `verify_q2_pong_controls.py`: reproducible independent checks and controls.
-- `DEEPDISH.md`, `run_pong_deepdish.sh`: remote single-GPU execution and resume.
-- `results/q2/`: CartPole pilots and three final 6,000-episode runs, the completed
-  10,000-episode Pong run, 500-game evaluations, controls, and validation evidence.
-- `q3_policy_gradient.py`, `validate_q3.py`, `q3_report.md`: Part 2's lagged EMA
-  baseline, exact-gradient and variance experiments, results, and discussion.
-- `verify_q3_completed.py`: independent reconstruction of all 2,030 saved Part 2
-  baseline updates, trace credit assignment, checkpoint identities, and statistics.
-- `PART2_COMPLETION.md`: final Part 2 deliverable and evidence checklist.
-- `batched_rollout.py`, `fast_pg.py`: complete batched episodes, one GPU,
-  checkpoint continuation, and score-only parallel evaluation.
-- `benchmark_rollouts.py`, `validate_fast_pg.py`: measured throughput,
-  trajectory/update equivalence, reset handling, partial batches, and replay.
-- `run_fast_pong.sh`, `queue_part2_pong.sh`: current remote launcher and sequential
-  GPU dependency queue; no optional random evaluation in this launcher.
-- `compare_policy_gradients.py`: rebuild comparison plots and tables from CSVs.
-- `results/q3/`: baseline results, paired-seed comparisons, and runtime evidence.
-
-To change the output location:
-
-```bash
-python3 q1_shuttle.py --output-dir results/q1
-python3 validate_q1.py --output-dir results/q1/validation
-```
-
-To run a parameter variant interactively:
-
-```python
-from dataclasses import replace
-from q1_shuttle import Model, policy_iteration
-
-model = replace(Model(), capacity=5)
-cost, policy, changes = policy_iteration(model)
-```
-
-## Policy Gradient Part 1
-
-Use Python 3.11+ in a virtual environment:
+Use Python 3.11 or newer. The recorded software versions are stored in run.json
+beside each experiment.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-q2.txt
-python validate_q2.py --pong
+python q1_shuttle.py
+python validate_q1.py
+python verify_q1_baseline.py
+python verify_q1_exhaustive.py
 ```
 
-Reproduce the final CartPole configuration in a fresh output directory:
+The shuttle alone needs only requirements.txt. To reproduce the primary local
+CartPole experiment, use N=2 for Part 1 or N=3 for Part 2 and a fresh directory:
 
 ```bash
-python q2_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
-  --output-dir results/q2/cartpole/reproduction
-python q2_policy_gradient.py evaluate \
-  --checkpoint results/q2/cartpole/reproduction/checkpoint.pt \
-  --episodes 500 --output-dir results/q2/cartpole/reproduction/evaluation_trained
-python q2_policy_gradient.py evaluate \
-  --checkpoint results/q2/cartpole/reproduction/checkpoint.pt \
-  --episodes 500 --random-policy \
-  --output-dir results/q2/cartpole/reproduction/evaluation_random
+N=2
+python q${N}_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
+  --output-dir results/q${N}/cartpole/reproduction
+python q${N}_policy_gradient.py evaluate --episodes 500 \
+  --checkpoint results/q${N}/cartpole/reproduction/checkpoint.pt \
+  --output-dir results/q${N}/cartpole/reproduction/evaluation_trained
 ```
 
-The reported Pong experiment used serial collection through episode 5,376, then
-`fast_pg.py` continuation through episode 10,000. Exact two-stage commands and
-the archived checkpoint path are in q2_report.md. A fully serial rerun uses a
-different action stream after that switch.
+For the other initialization/action seeds, add --seed 3818 or --seed 3819 to train
+and choose a fresh directory. The report distinguishes these descriptive
+replications from independent-seed confidence claims.
 
-For resume, use the same training arguments and add
-`--resume <run-directory>/checkpoint.pt`; --episodes is the target total, not
-the number of additional episodes. Existing runs are protected from accidental
-replacement. CPU and CUDA are supported; CUDA runs require exactly one visible
-GPU. See [DEEPDISH.md](DEEPDISH.md) for Pong setup and launching.
-
-The validation script explains the purpose of each experiment in its docstrings;
-the report provides predictions, numerical evidence, and remaining limitations.
-Plots use undiscounted game scores; training optimizes the specified discounted
-episode objective. The final CartPole result is mean 181.612, sample SD 97.2304
-over 500 held-out games. This improves over random but does not reliably solve
-CartPole. Pong averaged -19.046 (sample SD 2.5987) in 500 held-out games,
-with zero wins. The completed report includes its figures and the existing
-64-game trained/random/constant-action diagnostic controls.
-
-## Policy Gradient Part 2
-
-Part 2 is finalized. [PART2_COMPLETION.md](PART2_COMPLETION.md) maps the assignment
-requirements to the final report, plots, code, and quantitative evidence. Pong's
-poor playing performance is documented; completing the submission does not mean
-that a winning Pong agent was obtained.
-
-Use the same Python environment as Part 1. The baseline is a scalar EMA learned
-from previous batches and held fixed during the current actor update.
+Run the scientific tests locally:
 
 ```bash
-python validate_q3.py --variance --pong
-python validate_fast_pg.py
-python compare_policy_gradients.py
+python validate_q2.py --pong --output-dir tmp/validation_part1
+python validate_q3.py --variance --pong --output-dir tmp/validation_part2
+python verify_q2_independent.py
+python verify_q2_completed_collector.py
 python verify_q3_completed.py
-python q3_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
-  --output-dir results/q3/cartpole/reproduction
-python q3_policy_gradient.py evaluate \
-  --checkpoint results/q3/cartpole/reproduction/checkpoint.pt \
-  --episodes 500 --output-dir results/q3/cartpole/reproduction/evaluation_trained
+python validate_fast_pg.py
 ```
 
-The primary Part 2 CartPole result is mean **438.342**, sample SD **95.7679**.
-Across three matched initialization/action seeds, the mean of checkpoint means
-is 420.348 for Part 2 and 162.547 for Part 1. These are descriptive comparisons;
-baseline gradient-variance reduction does not guarantee smaller episode-score SD.
+The first two commands test objective gradients, known-optimum learning,
+signed/sparse returns, game physics and stopping, baseline invariance and bias,
+variance reductions and failures, and replay. The variance flag measures both
+gradients on matched frozen-policy trajectories with independent baseline fitting.
+Separate verifiers reconstruct saved mathematical/behavioral evidence. None of
+these commands launches a long training experiment.
 
-Deepdish's measured collector throughput increased from 3,007 to 13,305 decisions
-per second with eight CPU workers feeding one GPU. The required 500 trained-policy
-evaluations and training budgets are preserved. See DEEPDISH.md for the current
-completed execution, checkpoint archives, RNG change, and reproduction commands.
+## Pong on exactly one GPU
 
-The final PDF contains the GitHub username, repository name and URL, execution
-directions, required figures, and discussion answers. report/submission.md is its editable source. Submit the PDF on Canvas; the public repository is accessible to the grader.
+On Deepdish, use a compatible CUDA-enabled PyTorch build and expose **one**
+assigned GPU. CPU environment workers feed neural inference and updates on CUDA.
+The runner refuses zero or multiple visible GPUs. No multi-GPU training is used.
 
-## Report PDF
+```bash
+export CUDA_VISIBLE_DEVICES="your-assigned-GPU-UUID"
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
+python q2_policy_gradient.py train --game pong --episodes 5376 --lr 0.01 \
+  --reward-scale 1 --device cuda --output-dir results/q2/pong/reproduction
+python fast_pg.py train --part 1 --game pong --episodes 10000 --lr 0.01 \
+  --reward-scale 1 --device cuda --workers 8 \
+  --resume results/q2/pong/reproduction/checkpoint.pt \
+  --output-dir results/q2/pong/reproduction
+python fast_pg.py train --part 2 --game pong --episodes 10000 --lr 0.01 \
+  --reward-scale 1 --device cuda --workers 8 \
+  --output-dir results/q3/pong/reproduction
+```
 
-The concise final submission is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
-Its editable source is report/submission.md. Run `python report_figures.py`, then
-`python build_report.py` with Pandoc and XeLaTeX to regenerate the 11 required plots
-and 10-page PDF. Expanded q1_report.md/q2_report.md/q3_report.md notes and extra
-experiments remain available here but are not appended to the Canvas report.
-The original runtime source is preserved at commit
-`5b1d407`; follow-up source snapshots accompany the tuning evidence.
+This preserves Part 1's reported serial-to-batched switch after episode 5,376.
+The archived checkpoint and source are under
+results/q2/pong/seed3817_lr001/legacy_snapshots/through_episode_5376. A fully serial
+rerun has a different action stream after the switch. Part 2 starts a fresh policy.
 
-## Final review and Canvas submission
+Evaluate each Pong directory with:
 
-See [FINAL_REVIEW.md](FINAL_REVIEW.md) for the independent rubric audit,
-verification results, remaining performance limitations, and final packaging
-checks. The earlier verification-review files are historical notes.
+```bash
+PONG_RUN=results/q2/pong/reproduction
+python fast_pg.py evaluate --device cuda --workers 8 --episodes 500 \
+  --checkpoint "$PONG_RUN/checkpoint.pt" \
+  --output-dir "$PONG_RUN/evaluation_trained"
+```
 
-Upload **output/pdf/assignment1_report.pdf** on Canvas. The assignment requests
-one PDF there; keep all assignment code in the linked GitHub repository and
-ensure the grader has access. Separate Markdown files, plots, checkpoints, and
-a source ZIP are not required Canvas uploads by the supplied assignment PDF.
+Set PONG_RUN to results/q3/pong/reproduction for Part 2. --episodes is a target total, not the
+number of additional episodes. Resume requires matching actor settings. Existing
+runs/evaluations are protected from accidental replacement; use fresh directories.
+The streamlined launcher run_fast_pong.sh and its queue wrapper remain available
+as the execution code used for the recorded experiments.
 
-## Optional: single-GPU PPO follow-up (not in Canvas report)
+## Rebuild the Canvas PDF
 
-Fresh training and evaluation used exactly one RTX PRO 5000 GPU on Deepdish.
-CartPole reached 500 in all 500 games (mean 500, sample SD 0). Pong averaged
--6.626 (sample SD 4.9727), with 45/500 wins and no truncated games. See
-[PPO_GPU.md](PPO_GPU.md) and results/ppo_gpu/completed_audit.json for the
-methods, source/model checks, CUDA optimizer provenance, and limitations.
-The CPU-only PPO campaign is removed. The required original experiments remain.
+The concise source is [report/submission.md](report/submission.md). With Pandoc
+and XeLaTeX installed:
+
+```bash
+python report_figures.py
+python build_report.py
+```
+
+This regenerates the 11 required plots from raw data as three labeled composite
+figures and builds output/pdf/assignment1_report.pdf. Scientific results and
+model weights are not changed. Expanded q1_report.md, q2_report.md and q3_report.md
+notes provide additional detail but are not appended to the Canvas PDF.
+
+## Optional experiments, excluded from the Canvas report
+
+[PONG_TUNING.md](PONG_TUNING.md) describes the separate CNN/EMA follow-up;
+[PPO_GPU.md](PPO_GPU.md) describes the GPU PPO study. Their code and evidence
+remain under results/pong_tuning and results/ppo_gpu. PPO changes the requested
+basic estimator and is not substituted for the required comparison. The
+CPU-only PPO campaign was removed. All experiment jobs have finished.

@@ -74,7 +74,6 @@ def main():
         audit['figures'][f'part{part}.png']={'panels':len(fig.axes),'cases':cases}
         fig.savefig(output/f'part{part}.png');plt.close(fig)
     assert sum(v['panels'] for v in audit['figures'].values())==11
-    (output/'figure_audit.json').write_text(json.dumps(audit,indent=2)+'\n')
     print('Regenerated the 11 required plots in three readable composite figures.')
 
 

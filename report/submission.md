@@ -448,4 +448,4 @@ exploratory studies do not replace the required Part 1/Part 2 comparison.
 `python report_figures.py` regenerates the
 11 required plots as three composite figures; `python build_report.py` builds
 this PDF from report/submission.md. No new long training is needed to inspect
-the supplied results. The final manifest records artifact checksums.
+the supplied results. Raw episode CSVs and model hashes remain available beside each recorded run.
