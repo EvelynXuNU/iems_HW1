@@ -1,0 +1,252 @@
+[
+  {
+    "step": 0,
+    "observation": [
+      0.015274385921657085,
+      0.025208501145243645,
+      0.024138571694493294,
+      0.03837357461452484
+    ],
+    "p_action_0": 0.49998241662979126,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.0157785564661026,
+      0.21997614204883575,
+      0.024906042963266373,
+      -0.24659672379493713
+    ],
+    "reward_to_go": 10.2465004176894,
+    "gradient_weight": 0.5123250208844701,
+    "baseline_used": 0.0,
+    "advantage": 10.2465004176894
+  },
+  {
+    "step": 1,
+    "observation": [
+      0.0157785564661026,
+      0.21997614204883575,
+      0.024906042963266373,
+      -0.24659672379493713
+    ],
+    "p_action_0": 0.49998244643211365,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.02017807960510254,
+      0.4147336781024933,
+      0.019974108785390854,
+      -0.5313208103179932
+    ],
+    "reward_to_go": 9.733158334409895,
+    "gradient_weight": 0.46232502088447003,
+    "baseline_used": 0.0,
+    "advantage": 9.733158334409895
+  },
+  {
+    "step": 2,
+    "observation": [
+      0.02017807960510254,
+      0.4147336781024933,
+      0.019974108785390854,
+      -0.5313208103179932
+    ],
+    "p_action_0": 0.4999805688858032,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.02847275324165821,
+      0.6095690727233887,
+      0.009347692131996155,
+      -0.8176435828208923
+    ],
+    "reward_to_go": 9.192798246747259,
+    "gradient_weight": 0.41482502088447004,
+    "baseline_used": 0.0,
+    "advantage": 9.192798246747259
+  },
+  {
+    "step": 3,
+    "observation": [
+      0.02847275324165821,
+      0.6095690727233887,
+      0.009347692131996155,
+      -0.8176435828208923
+    ],
+    "p_action_0": 0.49997541308403015,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.04066413268446922,
+      0.8045617938041687,
+      -0.007005180232226849,
+      -1.1073718070983887
+    ],
+    "reward_to_go": 8.623998154470799,
+    "gradient_weight": 0.36970002088447,
+    "baseline_used": 0.0,
+    "advantage": 8.623998154470799
+  },
+  {
+    "step": 4,
+    "observation": [
+      0.04066413268446922,
+      0.8045617938041687,
+      -0.007005180232226849,
+      -1.1073718070983887
+    ],
+    "p_action_0": 0.499966025352478,
+    "policy_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.056755371391773224,
+      0.6095326542854309,
+      -0.02915261499583721,
+      -0.8168947100639343
+    ],
+    "reward_to_go": 8.02526121523242,
+    "gradient_weight": 0.32683127088447006,
+    "baseline_used": 0.0,
+    "advantage": 8.02526121523242
+  },
+  {
+    "step": 5,
+    "observation": [
+      0.056755371391773224,
+      0.6095326542854309,
+      -0.02915261499583721,
+      -0.8168947100639343
+    ],
+    "p_action_0": 0.49997478723526,
+    "policy_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.06894602626562119,
+      0.41482168436050415,
+      -0.045490510761737823,
+      -0.5335220098495483
+    ],
+    "reward_to_go": 7.395011805507812,
+    "gradient_weight": 0.28610595838447,
+    "baseline_used": 0.0,
+    "advantage": 7.395011805507812
+  },
+  {
+    "step": 6,
+    "observation": [
+      0.06894602626562119,
+      0.41482168436050415,
+      -0.045490510761737823,
+      -0.5335220098495483
+    ],
+    "p_action_0": 0.4999796450138092,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.07724245637655258,
+      0.6105529069900513,
+      -0.05616094917058945,
+      -0.8401846885681152
+    ],
+    "reward_to_go": 6.731591374218749,
+    "gradient_weight": 0.24741691150947004,
+    "baseline_used": 0.0,
+    "advantage": 6.731591374218749
+  },
+  {
+    "step": 7,
+    "observation": [
+      0.07724245637655258,
+      0.6105529069900513,
+      -0.05616094917058945,
+      -0.8401846885681152
+    ],
+    "p_action_0": 0.49997878074645996,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.08945351094007492,
+      0.8063947558403015,
+      -0.07296464592218399,
+      -1.149986982345581
+    ],
+    "reward_to_go": 6.033254078124999,
+    "gradient_weight": 0.21066231697822002,
+    "baseline_used": 0.0,
+    "advantage": 6.033254078124999
+  },
+  {
+    "step": 8,
+    "observation": [
+      0.08945351094007492,
+      0.8063947558403015,
+      -0.07296464592218399,
+      -1.149986982345581
+    ],
+    "p_action_0": 0.49997302889823914,
+    "policy_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.10558141022920609,
+      0.6122969388961792,
+      -0.09596437960863113,
+      -0.8810474872589111
+    ],
+    "reward_to_go": 5.298162187499999,
+    "gradient_weight": 0.17574545217353255,
+    "baseline_used": 0.0,
+    "advantage": 5.298162187499999
+  },
+  {
+    "step": 9,
+    "observation": [
+      0.10558141022920609,
+      0.6122969388961792,
+      -0.09596437960863113,
+      -0.8810474872589111
+    ],
+    "p_action_0": 0.4999859035015106,
+    "policy_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": [
+      0.11782734841108322,
+      0.8085823059082031,
+      -0.11358533054590225,
+      -1.2022911310195923
+    ],
+    "reward_to_go": 4.524381249999999,
+    "gradient_weight": 0.14257443060907943,
+    "baseline_used": 0.0,
+    "advantage": 4.524381249999999
+  }
+]

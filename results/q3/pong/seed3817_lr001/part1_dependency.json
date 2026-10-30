@@ -1,0 +1,7 @@
+{
+  "part1_checkpoint_sha256": "23f38c970d828de7087603b51435248a3093d41212c992827f864bdb3f61a0da",
+  "completed_evaluations": [
+    "results/q2/pong/seed3817_lr001/evaluation_trained/evaluation.json"
+  ],
+  "required_training_episodes": 10000
+}

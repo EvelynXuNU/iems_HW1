@@ -1,0 +1,179 @@
+{
+  "exact_gradient": {
+    "trajectories": 8,
+    "variable_length": false,
+    "constant_baselines": [
+      {
+        "baseline": -10.0,
+        "max_gradient_error": 5.551115123125783e-16
+      },
+      {
+        "baseline": 0.0,
+        "max_gradient_error": 1.1102230246251565e-16
+      },
+      {
+        "baseline": 5.0,
+        "max_gradient_error": 2.220446049250313e-16
+      }
+    ],
+    "action_dependent_baseline_error": 0.24026074574152922
+  },
+  "exact_variable_length_gradient": {
+    "trajectories": 5,
+    "variable_length": true,
+    "constant_baselines": [
+      {
+        "baseline": -10.0,
+        "max_gradient_error": 1.1102230246251565e-16
+      },
+      {
+        "baseline": 0.0,
+        "max_gradient_error": 2.7755575615628914e-17
+      },
+      {
+        "baseline": 5.0,
+        "max_gradient_error": 1.6653345369377348e-16
+      }
+    ],
+    "action_dependent_baseline_error": 0.2402607457415291
+  },
+  "exact_variance": [
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.0,
+      "reward_p_action1": 1.0,
+      "baseline_kind": "none",
+      "baseline": 0.0,
+      "expected_gradient": 0.21,
+      "gradient_variance": 0.10289999999999996
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.0,
+      "reward_p_action1": 1.0,
+      "baseline_kind": "return_mean",
+      "baseline": 0.3,
+      "expected_gradient": 0.20999999999999996,
+      "gradient_variance": 0.03359999999999998
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.0,
+      "reward_p_action1": 1.0,
+      "baseline_kind": "variance_optimal",
+      "baseline": 0.7,
+      "expected_gradient": 0.21,
+      "gradient_variance": 6.938893903907228e-18
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "none",
+      "baseline": 0.0,
+      "expected_gradient": 0.126,
+      "gradient_variance": 0.11432399999999998
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "return_mean",
+      "baseline": 0.38,
+      "expected_gradient": 0.12599999999999997,
+      "gradient_variance": 0.045696
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "variance_optimal",
+      "baseline": 0.6199999999999999,
+      "expected_gradient": 0.126,
+      "gradient_variance": 0.03359999999999999
+    },
+    {
+      "p_action1": 0.98,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "none",
+      "baseline": 0.0,
+      "expected_gradient": 0.01176000000000001,
+      "gradient_variance": 0.004016902400000004
+    },
+    {
+      "p_action1": 0.98,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "return_mean",
+      "baseline": 0.788,
+      "expected_gradient": 0.011760000000000013,
+      "gradient_variance": 0.009638809600000011
+    },
+    {
+      "p_action1": 0.98,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "variance_optimal",
+      "baseline": 0.21200000000000002,
+      "expected_gradient": 0.011760000000000012,
+      "gradient_variance": 0.0031360000000000034
+    }
+  ],
+  "current_batch_mean_bias": [
+    {
+      "batch_episodes": 1,
+      "true_gradient": 0.21,
+      "same_batch_mean_baseline_expected_gradient": 0.0,
+      "multiplicative_bias_factor": 0.0
+    },
+    {
+      "batch_episodes": 4,
+      "true_gradient": 0.21,
+      "same_batch_mean_baseline_expected_gradient": 0.15749999999999997,
+      "multiplicative_bias_factor": 0.75
+    }
+  ],
+  "limits": {
+    "ema_after_first_batch_20": 20.0,
+    "ema_after_second_batch_10": 14.73684210526316,
+    "all_zero_baseline": 0.0,
+    "negative_return_baseline": -2.0,
+    "below_baseline_action_probability_after": 0.4950002133846283,
+    "zero_reward_stale_baseline_expected_gradient": 2.6645352591003756e-17,
+    "zero_reward_stale_baseline_gradient_variance": 0.8399999999999999,
+    "gamma0_weights": [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bandit_learning": [
+    {
+      "seed": 7,
+      "p_best_action": 0.9800701507904409,
+      "expected_reward": 0.7880420904742644,
+      "final_baseline": 0.799039773552743
+    },
+    {
+      "seed": 19,
+      "p_best_action": 0.9778418088509669,
+      "expected_reward": 0.7867050853105801,
+      "final_baseline": 0.771429270682592
+    },
+    {
+      "seed": 41,
+      "p_best_action": 0.979481306640717,
+      "expected_reward": 0.7876887839844302,
+      "final_baseline": 0.794743789612905
+    }
+  ],
+  "checkpoint_and_first_batch": {
+    "device": "cuda",
+    "replay_episodes": 16,
+    "interruption_after": 8,
+    "max_parameter_difference": 0.0,
+    "baseline_and_optimizer_diagnostics_identical": true,
+    "part1_part2_first_batch_parameter_difference": 0.0
+  }
+}

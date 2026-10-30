@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-10-29T22:19:07.576140-05:00",
+  "completed_training_episodes": 9152,
+  "target_episodes": 10000,
+  "last100_mean": -19.57,
+  "evaluation_complete": false,
+  "new_runs_started_for_report_fix": false
+}

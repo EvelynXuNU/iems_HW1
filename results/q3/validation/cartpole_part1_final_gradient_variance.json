@@ -1,0 +1,20 @@
+{
+  "policy": "cartpole_part1_final",
+  "env_id": "CartPole-v1",
+  "calibration_episodes": 64,
+  "probe_episodes": 128,
+  "baseline": 19.972530949787057,
+  "baseline_decay": 0.9,
+  "gradient_dimension": 450,
+  "variance_measure": "trace of sample gradient covariance (ddof=1)",
+  "raw_gradient_variance": 18.087169241624725,
+  "baseline_gradient_variance": 0.3076742431457923,
+  "variance_ratio": 0.01701063549721917,
+  "paired_bootstrap_ratio_95_interval": [
+    6.1490808239098e-05,
+    0.05208232910980378
+  ],
+  "gradient_mean_difference_norm": 0.10454245605416314,
+  "checkpoint": "results/q2/cartpole/final_seed3817/checkpoint.pt",
+  "note": "conditional on a fixed policy and independently fitted baseline; not training-seed uncertainty"
+}

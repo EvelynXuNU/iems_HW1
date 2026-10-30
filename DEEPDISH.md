@@ -38,28 +38,59 @@ resumed CUDA training run exactly reproduced the uninterrupted run's parameters.
 Evidence is under results/q2/deepdish/validation; a full dependency snapshot is
 saved as requirements-linux-lock.txt in results/q2/deepdish.
 
-## Current run
+## Completed reference runs and measured runtime change
 
-The full 10,000-episode Part 1 Pong run was started in the background on
-October 29, 2026. It continues independently of the laptop's SSH connection.
+The 10,000-episode Part 1 Pong reference run was started on
+October 29, 2026. It and its 500-game evaluation have completed.
 Only the RTX PRO 5000 is used. Its UUID is
 `GPU-ec0c988c-3d23-d55e-7713-293719142e7d`.
 
-- Launcher PID: 1846426 (use the recorded launcher.pid if restarted).
+- Current fast Part 1 launcher PID: 1847958 (read launcher.pid after a restart).
 - Output directory: ~/iems_HW1/results/q2/pong/seed3817_lr001.
-- Console log: that directory's console.log.
-- Training and evaluation remain in progress until evaluation.json is written.
+- Current console log: that directory's fast_console.log.
+- Part 1 training and its required 500-game evaluation are complete.
+- Part 1 mean score: -19.046; sample SD: 2.5987; wins: 0/500.
+
+The legacy checkpoint through **episode 5,376**, its CSVs, log, and original source
+were archived under that run's legacy_snapshots/through_episode_5376/. The fast
+runner resumes the same policy and Adam state. It records the new collector and
+per-episode action RNG protocol; bitwise replay of the legacy serial RNG is not
+claimed. The completed episode history is retained.
+
+Part 2 completed under results/q3/pong/seed3817_lr001 (former queue PID 1848070).
+Its mean score is -19.460, sample SD 0.9952, with 0/500 wins.
+queue_part2_pong.sh waits on Part 1's run lock, verifies its final checkpoint and
+required 500-game evaluation, then starts a fresh Part 2 policy on the same GPU.
+Waiting uses no GPU. Its log is queue_console.log; queue.pid records the waiter.
+The optional 500-game random evaluation was removed from this streamlined run.
+
+An isolated 32-game benchmark on this server, using identical frozen weights,
+episode seeds, and per-episode action streams, measured:
+
+| Collector | Decisions/second | Measured seconds |
+|---|---:|---:|
+| Serial CPU inference | 3,592 | 9.246 |
+| Serial CUDA inference | 3,007 | 11.046 |
+| Four CPU workers, batched GPU | 11,321 | 2.934 |
+| Eight CPU workers, batched GPU | 13,305 | 2.496 |
+
+All four modes produced identical episode scores and lengths over 33,215
+decisions. Startup/warmup times are reported separately in the benchmark JSON.
+Eight workers give 4.4x the former rollout throughput, not a guaranteed 4.4x
+end-to-end speedup. Environment workers never import torch or access CUDA.
+Exactly 16 full trajectories are collected under frozen parameters before each
+actor update, including slow games. Completed games are not replaced mid-batch.
 
 Monitor from this laptop:
 
 ```bash
 ssh zfl2845@mlds-deepdish5.ads.northwestern.edu \
-  'tail -n 20 ~/iems_HW1/results/q2/pong/seed3817_lr001/console.log'
+  'tail -n 20 ~/iems_HW1/results/q2/pong/seed3817_lr001/fast_console.log'
 ```
 
-The launcher runs the required 500-game frozen-policy evaluation and a 500-game
-random reference automatically after training. It checks for an active lock in
-the same run directory to prevent launching a duplicate.
+For Part 2, substitute results/q3/pong/seed3817_lr001/queue_console.log. The fast
+launcher runs the required 500-game frozen-policy evaluation after training and
+checks the run lock to prevent duplicate launchers.
 
 ## Run on one GPU
 
@@ -85,39 +116,41 @@ For example, if the RTX PRO 5000 above is available and assigned to you:
 ```bash
 export CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d
 export CUBLAS_WORKSPACE_CONFIG=:4096:8
-bash run_pong_deepdish.sh
+PART=2 WORKERS=8 bash run_fast_pong.sh
 ```
 
-The launcher checks that PyTorch sees exactly one CUDA GPU, validates both
-environments, trains Pong for 10,000 full episodes with gamma=0.99 and Adam=0.01,
-and evaluates the final frozen policy for 500 games. It also runs a 500-game
-uniform reference. Both evaluations use stochastic action sampling. Required
-training plots and reward histograms are generated automatically. The defaults
-are Part 1 without any baseline, return centering, or pointwise discount resets.
+PART=1 runs the baseline-free algorithm; PART=2 uses the lagged EMA scalar
+baseline. Both use gamma=0.99, Adam=0.01, a 10,000-episode total target, and 500
+stochastic evaluation episodes. The single-GPU assertion remains enforced.
+Evaluation records scores without keeping training observation/action arrays.
+Successful validation is cached only for matching source, versions, and GPU.
 
-For a small CUDA smoke experiment before the full run, use a separate directory:
-
-```bash
-CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d \
-  EPISODES=16 RUN_DIR=results/q2/pong/cuda_smoke \
-  bash run_pong_deepdish.sh
-```
-
-This launcher always performs the required 500-game evaluations after training;
-for a faster training-only GPU smoke check use:
+For a small training-only smoke experiment before a future full run, use a
+separate output directory:
 
 ```bash
 CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d \
   CUBLAS_WORKSPACE_CONFIG=:4096:8 \
-  python q2_policy_gradient.py train --game pong --episodes 16 \
-    --reward-scale 1 --device cuda --output-dir results/q2/pong/cuda_training_smoke
+  python fast_pg.py train --part 2 --game pong --episodes 16 --workers 8 \
+    --reward-scale 1 --device cuda --output-dir results/q3/pong/future_smoke
+```
+
+To reproduce the collector benchmark while no other job uses the assigned GPU:
+
+```bash
+CUDA_VISIBLE_DEVICES=GPU-ec0c988c-3d23-d55e-7713-293719142e7d \
+  CUBLAS_WORKSPACE_CONFIG=:4096:8 \
+  python benchmark_rollouts.py --game pong --episodes 32 --device cuda \
+    --checkpoint results/q2/pong/cuda_training_smoke/checkpoint.pt \
+    --output results/q3/new_collector_benchmark.json
 ```
 
 The script automatically resumes a checkpoint on restart. Checkpoints are written
-atomically after each completed optimizer update. If interrupted mid-batch, only
-that unfinished batch is recollected. The fixed episode reset seeds and saved
-action RNG/Adam state preserve continuity. Python/PyTorch/hardware changes may
-alter exact numerical replay and should be recorded as a different experiment.
+atomically every four actor batches (64 episodes), plus at completion. CSV rewrites
+follow the same interval. This reduces I/O while accepting at most 64 episodes of
+recomputation after interruption. Saved action RNG, baseline state, and Adam state
+preserve same-backend replay; worker-count changes reproduce exactly in CPU tests.
+Python/PyTorch/hardware changes may alter numerical replay and are recorded.
 
 ## Monitor and retrieve evidence
 
@@ -127,7 +160,7 @@ alter exact numerical replay and should be recorded as a different experiment.
 - run.json: parameters, environment limits, versions, and device.
 - training_rewards.png: raw scores and trailing 100-episode mean.
 - evaluation_trained/: 500 episode scores, histogram, mean, and sample SD.
-- evaluation_random/: uniform reference using the same reset-seed range.
+- evaluation_random/: optional legacy reference, omitted for the current Pong runs.
 - validation/: exact gradient, known-optimum learning, physics, and Pong evidence.
 
 Do not use the final 500-game test set to tune the learning rate. If 0.01 is
@@ -138,4 +171,5 @@ the evidence and discuss it rather than replacing the algorithm or environment.
 Copy results back over SSH/rsync and update q2_report.md with the measured Pong
 numbers and figures. Training completion alone does not establish that Pong was
 solved. In particular, inspect win fraction, score distribution, truncations,
-and the random reference.
+and the recorded environment limits. Re-run compare_policy_gradients.py after
+retrieving completed results to rebuild the Part 1/Part 2 comparisons.

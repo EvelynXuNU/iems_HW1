@@ -1,0 +1,172 @@
+[
+  {
+    "step": 0,
+    "observation": {
+      "nonzero_motion_pixels": 0
+    },
+    "p_action_0": 0.3971049189567566,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3537687619228537,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.3537687619228537
+  },
+  {
+    "step": 1,
+    "observation": {
+      "nonzero_motion_pixels": 22
+    },
+    "p_action_0": 0.0019402657635509968,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3573421837604583,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.3573421837604583
+  },
+  {
+    "step": 2,
+    "observation": {
+      "nonzero_motion_pixels": 20
+    },
+    "p_action_0": 0.0030358140356838703,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3609517007681397,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.3609517007681397
+  },
+  {
+    "step": 3,
+    "observation": {
+      "nonzero_motion_pixels": 32
+    },
+    "p_action_0": 6.935423471077229e-07,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.36459767754357547,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.36459767754357547
+  },
+  {
+    "step": 4,
+    "observation": {
+      "nonzero_motion_pixels": 32
+    },
+    "p_action_0": 2.400477399078227e-07,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.368280482367248,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.368280482367248
+  },
+  {
+    "step": 5,
+    "observation": {
+      "nonzero_motion_pixels": 32
+    },
+    "p_action_0": 3.039035968948993e-14,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3720004872396444,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.3720004872396444
+  },
+  {
+    "step": 6,
+    "observation": {
+      "nonzero_motion_pixels": 32
+    },
+    "p_action_0": 0.9764544367790222,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.37575806791883276,
+    "gradient_weight": -0.3537687619228538,
+    "baseline_used": 0.0,
+    "advantage": -0.37575806791883276
+  },
+  {
+    "step": 7,
+    "observation": {
+      "nonzero_motion_pixels": 8
+    },
+    "p_action_0": 0.08220000565052032,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3795536039584169,
+    "gradient_weight": -0.3537687619228537,
+    "baseline_used": 0.0,
+    "advantage": -0.3795536039584169
+  },
+  {
+    "step": 8,
+    "observation": {
+      "nonzero_motion_pixels": 4
+    },
+    "p_action_0": 0.4529538154602051,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3833874787458757,
+    "gradient_weight": -0.3537687619228538,
+    "baseline_used": 0.0,
+    "advantage": -0.3833874787458757
+  },
+  {
+    "step": 9,
+    "observation": {
+      "nonzero_motion_pixels": 4
+    },
+    "p_action_0": 0.062383897602558136,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.3872600795412886,
+    "gradient_weight": -0.3537687619228538,
+    "baseline_used": 0.0,
+    "advantage": -0.3872600795412886
+  }
+]

@@ -1,19 +1,10 @@
 {
-  "observed_at": "2026-10-29T21:25:12.227291-05:00",
-  "state": "running_at_observation",
-  "host": "mlds-deepdish5.ads.northwestern.edu",
-  "launcher_pid": 1846426,
-  "trainer_pid": 1846452,
-  "gpu_name": "NVIDIA RTX PRO 5000 Blackwell",
-  "gpu_uuid": "GPU-ec0c988c-3d23-d55e-7713-293719142e7d",
-  "gpu_count": 1,
-  "training_target_episodes": 10000,
-  "completed_training_episodes": 448,
-  "recent_training_mean": -20.6,
-  "trained_evaluation_target_episodes": 500,
-  "random_evaluation_target_episodes": 500,
-  "run_directory": "results/q2/pong/seed3817_lr001",
-  "console_log": "results/q2/pong/seed3817_lr001/console.log",
-  "final_evaluation_complete": false,
-  "source_sha256": "6cb49720dfa6969e75b12da2609652978edddef33f4a2fa4a119b39638c0593e"
+  "state": "complete",
+  "completed_training_episodes": 10000,
+  "final_evaluation_complete": true,
+  "evaluation_episodes": 500,
+  "mean_score": -19.046,
+  "sample_standard_deviation": 2.5987286856390237,
+  "checkpoint_sha256": "23f38c970d828de7087603b51435248a3093d41212c992827f864bdb3f61a0da",
+  "result": "0 wins; model improvement required"
 }

@@ -11,3 +11,5 @@ tmp/
 mlds-setup-report.json
 deepdish.local.env
 .run.lock
+
+.queue.lock

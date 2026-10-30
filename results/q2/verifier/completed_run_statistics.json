@@ -1,0 +1,179 @@
+{
+  "pong/seed3817_lr001": {
+    "training_episodes": 10000,
+    "evaluation_episodes": 500,
+    "evaluation_mean": -19.046,
+    "evaluation_sample_sd": 2.5987286856390237,
+    "evaluation_score_frequencies": {
+      "-21.0": 208,
+      "-20.0": 63,
+      "-19.0": 88,
+      "-18.0": 38,
+      "-17.0": 41,
+      "-16.0": 18,
+      "-15.0": 15,
+      "-14.0": 5,
+      "-13.0": 7,
+      "-12.0": 3,
+      "-11.0": 6,
+      "-10.0": 3,
+      "-9.0": 2,
+      "-8.0": 1,
+      "-7.0": 1,
+      "-3.0": 1
+    },
+    "last100_mean": -18.46,
+    "last500_mean": -19.142,
+    "best100_mean": -18.24,
+    "best100_end_episode": 9935,
+    "first500_mean": -20.742,
+    "last_updates": [
+      {
+        "update": "623",
+        "through_episode": "9968",
+        "batch_episodes": "16",
+        "loss": "-7.700354069384281",
+        "gradient_norm": "4.686577204929849",
+        "entropy": "0.10670861409922265"
+      },
+      {
+        "update": "624",
+        "through_episode": "9984",
+        "batch_episodes": "16",
+        "loss": "-5.93472273448419",
+        "gradient_norm": "3.6170914851903953",
+        "entropy": "0.10649022798123683"
+      },
+      {
+        "update": "625",
+        "through_episode": "10000",
+        "batch_episodes": "16",
+        "loss": "-3.017804798417961",
+        "gradient_norm": "2.6001637334951204",
+        "entropy": "0.1065105185913092"
+      }
+    ],
+    "eval_hash_matches": true,
+    "evaluation_total_decisions": 645163
+  },
+  "cartpole/final_seed3817": {
+    "training_episodes": 6000,
+    "evaluation_episodes": 500,
+    "evaluation_mean": 181.612,
+    "evaluation_sample_sd": 97.23037049138394,
+    "evaluation_score_frequencies": null,
+    "last100_mean": 166.72,
+    "last500_mean": 159.698,
+    "best100_mean": 290.36,
+    "best100_end_episode": 3097,
+    "first500_mean": 34.66,
+    "last_updates": [
+      {
+        "update": "373",
+        "through_episode": "5968",
+        "batch_episodes": "16",
+        "loss": "10.521573889297628",
+        "gradient_norm": "0.45687056677246163",
+        "entropy": "0.5276980248226482"
+      },
+      {
+        "update": "374",
+        "through_episode": "5984",
+        "batch_episodes": "16",
+        "loss": "10.123437359268129",
+        "gradient_norm": "0.55325030939464",
+        "entropy": "0.533908111608211"
+      },
+      {
+        "update": "375",
+        "through_episode": "6000",
+        "batch_episodes": "16",
+        "loss": "10.06280239528861",
+        "gradient_norm": "0.9363740689051478",
+        "entropy": "0.5271753648459958"
+      }
+    ],
+    "eval_hash_matches": true,
+    "evaluation_total_decisions": 90806
+  },
+  "cartpole/seed3818": {
+    "training_episodes": 6000,
+    "evaluation_episodes": 500,
+    "evaluation_mean": 131.218,
+    "evaluation_sample_sd": 23.396094342024735,
+    "evaluation_score_frequencies": null,
+    "last100_mean": 125.96,
+    "last500_mean": 115.114,
+    "best100_mean": 180.71999999999997,
+    "best100_end_episode": 5099,
+    "first500_mean": 35.064,
+    "last_updates": [
+      {
+        "update": "373",
+        "through_episode": "5968",
+        "batch_episodes": "16",
+        "loss": "9.989147999938503",
+        "gradient_norm": "1.9357655989510698",
+        "entropy": "0.47028521762805037"
+      },
+      {
+        "update": "374",
+        "through_episode": "5984",
+        "batch_episodes": "16",
+        "loss": "9.217625399828046",
+        "gradient_norm": "1.6856419933794977",
+        "entropy": "0.4745085263821859"
+      },
+      {
+        "update": "375",
+        "through_episode": "6000",
+        "batch_episodes": "16",
+        "loss": "9.472828558470315",
+        "gradient_norm": "2.0192774372183386",
+        "entropy": "0.46594673852327073"
+      }
+    ],
+    "eval_hash_matches": true,
+    "evaluation_total_decisions": 65609
+  },
+  "cartpole/seed3819": {
+    "training_episodes": 6000,
+    "evaluation_episodes": 500,
+    "evaluation_mean": 174.812,
+    "evaluation_sample_sd": 59.80509974836446,
+    "evaluation_score_frequencies": null,
+    "last100_mean": 166.92,
+    "last500_mean": 171.124,
+    "best100_mean": 235.44,
+    "best100_end_episode": 4680,
+    "first500_mean": 37.598,
+    "last_updates": [
+      {
+        "update": "373",
+        "through_episode": "5968",
+        "batch_episodes": "16",
+        "loss": "11.431652756528035",
+        "gradient_norm": "1.4468696410987747",
+        "entropy": "0.5521079580045319"
+      },
+      {
+        "update": "374",
+        "through_episode": "5984",
+        "batch_episodes": "16",
+        "loss": "11.16142619398102",
+        "gradient_norm": "0.6130321606669942",
+        "entropy": "0.55569677428394"
+      },
+      {
+        "update": "375",
+        "through_episode": "6000",
+        "batch_episodes": "16",
+        "loss": "11.387264575439737",
+        "gradient_norm": "0.43971584831541294",
+        "entropy": "0.5630266151098422"
+      }
+    ],
+    "eval_hash_matches": true,
+    "evaluation_total_decisions": 87406
+  }
+}

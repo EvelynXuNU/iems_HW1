@@ -1,0 +1,16 @@
+{
+  "games": 2,
+  "partial_batch_slots": 4,
+  "workers": 2,
+  "serial_batched_states_actions_rewards_weights_identical": true,
+  "score_only_after_reset_identical": true,
+  "saved_gpu_evaluation_scores_lengths_flags_reproduced_on_cpu": true,
+  "scores": [
+    -17.0,
+    -20.0
+  ],
+  "lengths": [
+    2257,
+    920
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "policy": "pong_initial",
+  "env_id": "ALE/Pong-v5",
+  "calibration_episodes": 32,
+  "probe_episodes": 32,
+  "baseline": -1.4434045010162937,
+  "baseline_decay": 0.9,
+  "gradient_dimension": 409794,
+  "variance_measure": "trace of sample gradient covariance (ddof=1)",
+  "raw_gradient_variance": 124.50565548712153,
+  "baseline_gradient_variance": 15.407171180525028,
+  "variance_ratio": 0.12374675768940228,
+  "paired_bootstrap_ratio_95_interval": [
+    0.09413967913777946,
+    0.16510885696825714
+  ],
+  "gradient_mean_difference_norm": 1.2761910570038424,
+  "checkpoint": null,
+  "note": "conditional on a fixed policy and independently fitted baseline; not training-seed uncertainty"
+}

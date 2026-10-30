@@ -4,9 +4,11 @@ GitHub username: **EvelynXuNU**. Repository: **iems_HW1**.
 Repository URL: https://github.com/EvelynXuNU/iems_HW1
 
 This project covers **Value and Policy Iteration** (Section 2) and
-**Policy Gradient Part 1** (Section 3). CartPole training and its 500-episode
-evaluation have run locally. Pong is implemented and validated; its full
-single-GPU run is in progress on Deepdish5. Part 2 is not implemented yet.
+**Policy Gradient Parts 1 and 2** (Section 3). Both CartPole methods have completed
+6,000-episode training and 500-game evaluation for three training seeds. Part 1
+Pong Part 1 is complete: 10,000 training episodes and 500 evaluation games.
+Part 2 Pong also completed: mean -19.460, sample SD 0.9952, and 0/500 wins.
+Both are reference experiments with insufficient learning, not successful models.
 
 ## Run
 
@@ -48,10 +50,23 @@ differences in the last digits can occur across NumPy/linear algebra implementat
   resume, frozen stochastic evaluation, and required plots.
 - `validate_q2.py`: exact multistep gradient, known-optimum learning, signed/sparse
   rewards, CartPole physics and time limits, checkpoint replay, and real Pong.
-- `q2_report.md`: Part 1 equations, edge cases, measured results, and limitations.
+- `q2_report.md`: completed Part 1 equations, all four required figures,
+  multi-seed results, diagnostic controls, edge cases, and limitations.
+- `verify_q2_independent.py`, `verify_q2_completed_collector.py`,
+  `verify_q2_pong_controls.py`: reproducible independent checks and controls.
 - `DEEPDISH.md`, `run_pong_deepdish.sh`: remote single-GPU execution and resume.
 - `results/q2/`: CartPole pilots, final 6,000-episode run, 500-game evaluation
   and random reference, validation evidence, and the small Pong smoke run.
+- `q3_policy_gradient.py`, `validate_q3.py`, `q3_report.md`: Part 2's lagged EMA
+  baseline, exact-gradient and variance experiments, results, and discussion.
+- `batched_rollout.py`, `fast_pg.py`: complete batched episodes, one GPU,
+  checkpoint continuation, and score-only parallel evaluation.
+- `benchmark_rollouts.py`, `validate_fast_pg.py`: measured throughput,
+  trajectory/update equivalence, reset handling, partial batches, and replay.
+- `run_fast_pong.sh`, `queue_part2_pong.sh`: current remote launcher and sequential
+  GPU dependency queue; no optional random evaluation in this launcher.
+- `compare_policy_gradients.py`: rebuild comparison plots and tables from CSVs.
+- `results/q3/`: baseline results, paired-seed comparisons, and runtime evidence.
 
 To change the output location:
 
@@ -95,6 +110,11 @@ python q2_policy_gradient.py evaluate \
   --output-dir results/q2/cartpole/reproduction/evaluation_random
 ```
 
+The reported Pong experiment used serial collection through episode 5,376, then
+`fast_pg.py` continuation through episode 10,000. Exact two-stage commands and
+the archived checkpoint path are in q2_report.md. A fully serial rerun uses a
+different action stream after that switch.
+
 For resume, use the same training arguments and add
 `--resume <run-directory>/checkpoint.pt`; --episodes is the target total, not
 the number of additional episodes. Existing runs are protected from accidental
@@ -106,9 +126,43 @@ the report provides predictions, numerical evidence, and remaining limitations.
 Plots use undiscounted game scores; training optimizes the specified discounted
 episode objective. The final CartPole result is mean 181.612, sample SD 97.2304
 over 500 held-out games. This improves over random but does not reliably solve
-CartPole. Full Pong results are pending the running Deepdish experiment.
+CartPole. Pong averaged -19.046 (sample SD 2.5987) in 500 held-out games,
+with zero wins. The completed report includes its figures and the existing
+64-game trained/random/constant-action diagnostic controls.
+
+## Policy Gradient Part 2
+
+Use the same Python environment as Part 1. The baseline is a scalar EMA learned
+from previous batches and held fixed during the current actor update.
+
+```bash
+python validate_q3.py --variance --pong
+python validate_fast_pg.py
+python compare_policy_gradients.py
+python q3_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
+  --output-dir results/q3/cartpole/reproduction
+python q3_policy_gradient.py evaluate \
+  --checkpoint results/q3/cartpole/reproduction/checkpoint.pt \
+  --episodes 500 --output-dir results/q3/cartpole/reproduction/evaluation_trained
+```
+
+The primary Part 2 CartPole result is mean **438.342**, sample SD **95.7679**.
+Across three matched initialization/action seeds, the mean of checkpoint means
+is 420.348 for Part 2 and 162.547 for Part 1. These are descriptive comparisons;
+baseline gradient-variance reduction does not guarantee smaller episode-score SD.
+
+Deepdish's measured collector throughput increased from 3,007 to 13,305 decisions
+per second with eight CPU workers feeding one GPU. The required 500 trained-policy
+evaluations and training budgets are preserved. See DEEPDISH.md for the current
+queue, checkpoint archives, RNG change, and monitoring commands.
 
 The submission ultimately requires a PDF report with GitHub username, repository
 name, repository URL, execution directions, and answers for every question. These
 Markdown files are section drafts for that report. Keep the repository accessible
 to the grader according to the course's submission rules.
+
+## Report PDF
+
+The complete reference-results report is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
+Rebuild it with `python build_report.py` using Pandoc and XeLaTeX. It incorporates
+all three sections and labels the failed Pong configurations honestly.

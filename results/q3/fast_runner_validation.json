@@ -1,0 +1,11 @@
+{
+  "resumed_parameter_error": 0.0,
+  "resumed_baseline_state_identical": true,
+  "resumed_trajectory_history_identical": true,
+  "worker_count_changed_from": 1,
+  "worker_count_changed_to": 2,
+  "part1_part2_first_batch_parameter_error": 0.0,
+  "partial_evaluation_exact_episode_count": 17,
+  "legacy_history_preserved_episodes": 8,
+  "legacy_continued_total_episodes": 16
+}

@@ -1,0 +1,58 @@
+{
+  "purpose": "Fresh diagnostic seeds; no training or checkpoint selection; not the required 500-game evaluation",
+  "reset_seed_start": 1600000000,
+  "summary": {
+    "trained": {
+      "episodes": 64,
+      "mean": -18.65625,
+      "sample_sd": 2.9343004358141394,
+      "mean_approx95_ci": [
+        -19.375153606774465,
+        -17.937346393225535
+      ],
+      "wins": 0,
+      "truncated": 0
+    },
+    "uniform_random": {
+      "episodes": 64,
+      "mean": -20.578125,
+      "sample_sd": 0.7303986191506272,
+      "mean_approx95_ci": [
+        -20.757072661691904,
+        -20.399177338308096
+      ],
+      "wins": 0,
+      "truncated": 0
+    },
+    "always_RIGHT": {
+      "episodes": 64,
+      "mean": -21.0,
+      "sample_sd": 0.0,
+      "mean_approx95_ci": [
+        -21.0,
+        -21.0
+      ],
+      "wins": 0,
+      "truncated": 0
+    },
+    "always_LEFT": {
+      "episodes": 64,
+      "mean": -21.0,
+      "sample_sd": 0.0,
+      "mean_approx95_ci": [
+        -21.0,
+        -21.0
+      ],
+      "wins": 0,
+      "truncated": 0
+    }
+  },
+  "paired_trained_minus_random": {
+    "mean": 1.921875,
+    "sample_sd": 2.7039341561204706,
+    "approx95_ci": [
+      1.2594111317504848,
+      2.584338868249515
+    ]
+  }
+}

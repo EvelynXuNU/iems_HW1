@@ -1,0 +1,350 @@
+Waiting for Part 1 to release its run lock: results/q2/pong/seed3817_lr001
+Part 1 training and required 500-game evaluation verified; starting Part 2.
+part2 cartpole episode=16 mean_last_100=21.56 baseline=12.1025 grad=0.3119 entropy=0.692
+part2 cartpole episode=8 mean_last_100=19.12 baseline=12.4487 grad=0.09625 entropy=0.693
+part2 cartpole episode=16 mean_last_100=21.56 baseline=12.1025 grad=0.3119 entropy=0.692
+cartpole episode=4 mean_last_100=19.25 grad=0.2847 entropy=0.693
+part2 cartpole episode=4 mean_last_100=19.25 baseline=0.0000 grad=0.2847 entropy=0.693
+{
+  "exact_gradient": {
+    "trajectories": 8,
+    "variable_length": false,
+    "constant_baselines": [
+      {
+        "baseline": -10.0,
+        "max_gradient_error": 5.551115123125783e-16
+      },
+      {
+        "baseline": 0.0,
+        "max_gradient_error": 1.1102230246251565e-16
+      },
+      {
+        "baseline": 5.0,
+        "max_gradient_error": 2.220446049250313e-16
+      }
+    ],
+    "action_dependent_baseline_error": 0.24026074574152922
+  },
+  "exact_variable_length_gradient": {
+    "trajectories": 5,
+    "variable_length": true,
+    "constant_baselines": [
+      {
+        "baseline": -10.0,
+        "max_gradient_error": 1.1102230246251565e-16
+      },
+      {
+        "baseline": 0.0,
+        "max_gradient_error": 2.7755575615628914e-17
+      },
+      {
+        "baseline": 5.0,
+        "max_gradient_error": 1.6653345369377348e-16
+      }
+    ],
+    "action_dependent_baseline_error": 0.2402607457415291
+  },
+  "exact_variance": [
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.0,
+      "reward_p_action1": 1.0,
+      "baseline_kind": "none",
+      "baseline": 0.0,
+      "expected_gradient": 0.21,
+      "gradient_variance": 0.10289999999999996
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.0,
+      "reward_p_action1": 1.0,
+      "baseline_kind": "return_mean",
+      "baseline": 0.3,
+      "expected_gradient": 0.20999999999999996,
+      "gradient_variance": 0.03359999999999998
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.0,
+      "reward_p_action1": 1.0,
+      "baseline_kind": "variance_optimal",
+      "baseline": 0.7,
+      "expected_gradient": 0.21,
+      "gradient_variance": 6.938893903907228e-18
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "none",
+      "baseline": 0.0,
+      "expected_gradient": 0.126,
+      "gradient_variance": 0.11432399999999998
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "return_mean",
+      "baseline": 0.38,
+      "expected_gradient": 0.12599999999999997,
+      "gradient_variance": 0.045696
+    },
+    {
+      "p_action1": 0.3,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "variance_optimal",
+      "baseline": 0.6199999999999999,
+      "expected_gradient": 0.126,
+      "gradient_variance": 0.03359999999999999
+    },
+    {
+      "p_action1": 0.98,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "none",
+      "baseline": 0.0,
+      "expected_gradient": 0.01176000000000001,
+      "gradient_variance": 0.004016902400000004
+    },
+    {
+      "p_action1": 0.98,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "return_mean",
+      "baseline": 0.788,
+      "expected_gradient": 0.011760000000000013,
+      "gradient_variance": 0.009638809600000011
+    },
+    {
+      "p_action1": 0.98,
+      "reward_p_action0": 0.2,
+      "reward_p_action1": 0.8,
+      "baseline_kind": "variance_optimal",
+      "baseline": 0.21200000000000002,
+      "expected_gradient": 0.011760000000000012,
+      "gradient_variance": 0.0031360000000000034
+    }
+  ],
+  "current_batch_mean_bias": [
+    {
+      "batch_episodes": 1,
+      "true_gradient": 0.21,
+      "same_batch_mean_baseline_expected_gradient": 0.0,
+      "multiplicative_bias_factor": 0.0
+    },
+    {
+      "batch_episodes": 4,
+      "true_gradient": 0.21,
+      "same_batch_mean_baseline_expected_gradient": 0.15749999999999997,
+      "multiplicative_bias_factor": 0.75
+    }
+  ],
+  "limits": {
+    "ema_after_first_batch_20": 20.0,
+    "ema_after_second_batch_10": 14.73684210526316,
+    "all_zero_baseline": 0.0,
+    "negative_return_baseline": -2.0,
+    "below_baseline_action_probability_after": 0.4950002133846283,
+    "zero_reward_stale_baseline_expected_gradient": 2.6645352591003756e-17,
+    "zero_reward_stale_baseline_gradient_variance": 0.8399999999999999,
+    "gamma0_weights": [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bandit_learning": [
+    {
+      "seed": 7,
+      "p_best_action": 0.9800701507904409,
+      "expected_reward": 0.7880420904742644,
+      "final_baseline": 0.799039773552743
+    },
+    {
+      "seed": 19,
+      "p_best_action": 0.9778418088509669,
+      "expected_reward": 0.7867050853105801,
+      "final_baseline": 0.771429270682592
+    },
+    {
+      "seed": 41,
+      "p_best_action": 0.979481306640717,
+      "expected_reward": 0.7876887839844302,
+      "final_baseline": 0.794743789612905
+    }
+  ],
+  "checkpoint_and_first_batch": {
+    "device": "cuda",
+    "replay_episodes": 16,
+    "interruption_after": 8,
+    "max_parameter_difference": 0.0,
+    "baseline_and_optimizer_diagnostics_identical": true,
+    "part1_part2_first_batch_parameter_difference": 0.0
+  }
+}
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Part 2 pong episode=160 mean_last_100=-20.80 baseline=-1.2225 entropy=0.641
+Part 2 pong episode=320 mean_last_100=-20.54 baseline=-1.1915 entropy=0.652
+Part 2 pong episode=480 mean_last_100=-20.83 baseline=-1.1390 entropy=0.521
+Part 2 pong episode=640 mean_last_100=-20.82 baseline=-1.0839 entropy=0.432
+Part 2 pong episode=800 mean_last_100=-20.76 baseline=-0.9782 entropy=0.370
+Part 2 pong episode=960 mean_last_100=-20.42 baseline=-0.7567 entropy=0.316
+Part 2 pong episode=1120 mean_last_100=-20.17 baseline=-0.5759 entropy=0.262
+Part 2 pong episode=1280 mean_last_100=-20.14 baseline=-0.4771 entropy=0.245
+Part 2 pong episode=1440 mean_last_100=-20.22 baseline=-0.4153 entropy=0.237
+Part 2 pong episode=1600 mean_last_100=-20.13 baseline=-0.3112 entropy=0.232
+Part 2 pong episode=1760 mean_last_100=-20.10 baseline=-0.2808 entropy=0.210
+Part 2 pong episode=1920 mean_last_100=-20.07 baseline=-0.2836 entropy=0.213
+Part 2 pong episode=2080 mean_last_100=-19.96 baseline=-0.2636 entropy=0.180
+Part 2 pong episode=2240 mean_last_100=-19.96 baseline=-0.1957 entropy=0.157
+Part 2 pong episode=2400 mean_last_100=-19.88 baseline=-0.1203 entropy=0.147
+Part 2 pong episode=2560 mean_last_100=-20.02 baseline=-0.1241 entropy=0.136
+Part 2 pong episode=2720 mean_last_100=-20.02 baseline=-0.1870 entropy=0.127
+Part 2 pong episode=2880 mean_last_100=-19.96 baseline=-0.1865 entropy=0.129
+Part 2 pong episode=3040 mean_last_100=-19.94 baseline=-0.1394 entropy=0.124
+Part 2 pong episode=3200 mean_last_100=-19.89 baseline=-0.0915 entropy=0.128
+Part 2 pong episode=3360 mean_last_100=-19.84 baseline=-0.0452 entropy=0.118
+Part 2 pong episode=3520 mean_last_100=-19.93 baseline=-0.0796 entropy=0.125
+Part 2 pong episode=3680 mean_last_100=-19.59 baseline=-0.0239 entropy=0.130
+Part 2 pong episode=3840 mean_last_100=-19.77 baseline=-0.0088 entropy=0.120
+Part 2 pong episode=4000 mean_last_100=-19.56 baseline=0.0078 entropy=0.130
+Part 2 pong episode=4160 mean_last_100=-19.77 baseline=-0.0052 entropy=0.118
+Part 2 pong episode=4320 mean_last_100=-19.51 baseline=0.0223 entropy=0.106
+Part 2 pong episode=4480 mean_last_100=-19.95 baseline=-0.0447 entropy=0.113
+Part 2 pong episode=4640 mean_last_100=-19.80 baseline=-0.0138 entropy=0.109
+Part 2 pong episode=4800 mean_last_100=-19.71 baseline=0.0034 entropy=0.116
+Part 2 pong episode=4960 mean_last_100=-19.72 baseline=0.0242 entropy=0.112
+Part 2 pong episode=5120 mean_last_100=-19.61 baseline=0.0495 entropy=0.120
+Part 2 pong episode=5280 mean_last_100=-19.62 baseline=0.0571 entropy=0.103
+Part 2 pong episode=5440 mean_last_100=-19.50 baseline=0.0768 entropy=0.102
+Part 2 pong episode=5600 mean_last_100=-19.73 baseline=0.0520 entropy=0.106
+Part 2 pong episode=5760 mean_last_100=-19.66 baseline=0.0719 entropy=0.093
+Part 2 pong episode=5920 mean_last_100=-19.81 baseline=0.0008 entropy=0.087
+Part 2 pong episode=6080 mean_last_100=-19.82 baseline=-0.0873 entropy=0.080
+Part 2 pong episode=6240 mean_last_100=-19.78 baseline=-0.1291 entropy=0.081
+Part 2 pong episode=6400 mean_last_100=-19.77 baseline=-0.1207 entropy=0.084
+Part 2 pong episode=6560 mean_last_100=-19.84 baseline=-0.1136 entropy=0.085
+Part 2 pong episode=6720 mean_last_100=-19.70 baseline=-0.0451 entropy=0.079
+Part 2 pong episode=6880 mean_last_100=-19.84 baseline=-0.1133 entropy=0.076
+Part 2 pong episode=7040 mean_last_100=-19.80 baseline=-0.1124 entropy=0.082
+Part 2 pong episode=7200 mean_last_100=-19.84 baseline=-0.0730 entropy=0.090
+Part 2 pong episode=7360 mean_last_100=-19.66 baseline=-0.0051 entropy=0.090
+Part 2 pong episode=7520 mean_last_100=-19.73 baseline=0.0286 entropy=0.092
+Part 2 pong episode=7680 mean_last_100=-19.77 baseline=0.0198 entropy=0.080
+Part 2 pong episode=7840 mean_last_100=-19.66 baseline=0.0307 entropy=0.068
+Part 2 pong episode=8000 mean_last_100=-19.76 baseline=0.0241 entropy=0.064
+Part 2 pong episode=8160 mean_last_100=-19.85 baseline=-0.0208 entropy=0.059
+Part 2 pong episode=8320 mean_last_100=-19.73 baseline=-0.0489 entropy=0.053
+Part 2 pong episode=8480 mean_last_100=-19.67 baseline=-0.0587 entropy=0.056
+Part 2 pong episode=8640 mean_last_100=-19.87 baseline=-0.1082 entropy=0.060
+Part 2 pong episode=8800 mean_last_100=-19.65 baseline=-0.0760 entropy=0.065
+Part 2 pong episode=8960 mean_last_100=-19.61 baseline=0.0061 entropy=0.098
+Part 2 pong episode=9120 mean_last_100=-19.55 baseline=0.0621 entropy=0.086
+Part 2 pong episode=9280 mean_last_100=-19.55 baseline=0.0888 entropy=0.068
+Part 2 pong episode=9440 mean_last_100=-19.54 baseline=0.1034 entropy=0.069
+Part 2 pong episode=9600 mean_last_100=-19.50 baseline=0.1162 entropy=0.070
+Part 2 pong episode=9760 mean_last_100=-19.30 baseline=0.1380 entropy=0.068
+Part 2 pong episode=9920 mean_last_100=-19.43 baseline=0.1337 entropy=0.073
+Part 2 pong episode=10000 mean_last_100=-19.52 baseline=0.1237 entropy=0.075
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Part 2 evaluation 16/500
+Part 2 evaluation 32/500
+Part 2 evaluation 48/500
+Part 2 evaluation 64/500
+Part 2 evaluation 80/500
+Part 2 evaluation 96/500
+Part 2 evaluation 112/500
+Part 2 evaluation 128/500
+Part 2 evaluation 144/500
+Part 2 evaluation 160/500
+Part 2 evaluation 176/500
+Part 2 evaluation 192/500
+Part 2 evaluation 208/500
+Part 2 evaluation 224/500
+Part 2 evaluation 240/500
+Part 2 evaluation 256/500
+Part 2 evaluation 272/500
+Part 2 evaluation 288/500
+Part 2 evaluation 304/500
+Part 2 evaluation 320/500
+Part 2 evaluation 336/500
+Part 2 evaluation 352/500
+Part 2 evaluation 368/500
+Part 2 evaluation 384/500
+Part 2 evaluation 400/500
+Part 2 evaluation 416/500
+Part 2 evaluation 432/500
+Part 2 evaluation 448/500
+Part 2 evaluation 464/500
+Part 2 evaluation 480/500
+Part 2 evaluation 496/500
+Part 2 evaluation 500/500
+{
+  "env_id": "ALE/Pong-v5",
+  "episodes": 500,
+  "mean": -19.46,
+  "sample_standard_deviation": 0.995178758577094,
+  "population_standard_deviation": 0.9941830817309254,
+  "mean_approx_95_ci": [
+    -19.547231264274536,
+    -19.372768735725465
+  ],
+  "min": -21.0,
+  "max": -15.0,
+  "discounted_return_mean": 0.12594677618087372,
+  "terminated_episodes": 500,
+  "truncated_episodes": 0,
+  "win_fraction": 0.0,
+  "cartpole_500_fraction": null,
+  "policy": "trained stochastic policy",
+  "training_episodes": 10000,
+  "training_seed": 3817,
+  "evaluation_seed": 1500000000,
+  "method": "REINFORCE with lagged EMA baseline",
+  "checkpoint": "/nfs/home/zfl2845/iems_HW1/results/q3/pong/seed3817_lr001/checkpoint.pt",
+  "checkpoint_sha256": "c2dd9c1f004b6f921833a86e51729b4627d5703ed1366b334e37380fd10d2d00",
+  "versions": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "ale-py": "0.12.1",
+    "matplotlib": "3.11.2"
+  },
+  "collector": "batched score-only, no autoreset",
+  "workers": 8,
+  "action_rng_protocol": "independent SeedSequence([evaluation_seed, episode_index, 42])"
+}

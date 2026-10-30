@@ -1,0 +1,24 @@
+{
+  "variable_length_exact_objective": {
+    "paths": 4,
+    "termination_lengths": [
+      1,
+      2,
+      3,
+      3
+    ],
+    "finite_difference_error": 1.5724976876185792e-11,
+    "weight_error": 4.440892098500626e-16
+  },
+  "chunked_production_update": {
+    "lengths": [
+      1205,
+      17
+    ],
+    "max_parameter_error": 9.313225746154785e-10
+  },
+  "saved_checkpoint_replay": {
+    "heldout_episodes_recomputed": 10,
+    "all_results_exact": true
+  }
+}

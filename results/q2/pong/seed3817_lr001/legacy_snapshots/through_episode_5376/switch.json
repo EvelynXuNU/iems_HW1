@@ -1,0 +1,6 @@
+{
+  "completed_episodes": 5376,
+  "checkpoint_sha256": "b78dee636685aaf1bd77299c7d5fcb5b6677ec34bf4f62dc9e1dc88b907a0c2d",
+  "reason": "Validated batched collector: eight CPU workers, one GPU; preserve 16-episode actor batch and full budget",
+  "rng_change": "independent per-episode seeds from saved generator; continuation is statistically on-policy, not bitwise legacy replay"
+}

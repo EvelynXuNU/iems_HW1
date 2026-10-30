@@ -1,0 +1,131 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Part 1 pong episode=5440 mean_last_100=-20.04 baseline=0.0000 entropy=0.132
+Part 1 pong episode=5600 mean_last_100=-19.82 baseline=0.0000 entropy=0.114
+Part 1 pong episode=5760 mean_last_100=-20.11 baseline=0.0000 entropy=0.128
+Part 1 pong episode=5920 mean_last_100=-20.18 baseline=0.0000 entropy=0.121
+Part 1 pong episode=6080 mean_last_100=-19.96 baseline=0.0000 entropy=0.119
+Part 1 pong episode=6240 mean_last_100=-20.03 baseline=0.0000 entropy=0.118
+Part 1 pong episode=6400 mean_last_100=-20.18 baseline=0.0000 entropy=0.124
+Part 1 pong episode=6560 mean_last_100=-19.54 baseline=0.0000 entropy=0.114
+Part 1 pong episode=6720 mean_last_100=-19.93 baseline=0.0000 entropy=0.102
+Part 1 pong episode=6880 mean_last_100=-19.54 baseline=0.0000 entropy=0.111
+Part 1 pong episode=7040 mean_last_100=-19.98 baseline=0.0000 entropy=0.116
+Part 1 pong episode=7200 mean_last_100=-20.05 baseline=0.0000 entropy=0.132
+Part 1 pong episode=7360 mean_last_100=-19.78 baseline=0.0000 entropy=0.123
+Part 1 pong episode=7520 mean_last_100=-20.38 baseline=0.0000 entropy=0.122
+Part 1 pong episode=7680 mean_last_100=-19.47 baseline=0.0000 entropy=0.123
+Part 1 pong episode=7840 mean_last_100=-19.42 baseline=0.0000 entropy=0.131
+Part 1 pong episode=8000 mean_last_100=-19.42 baseline=0.0000 entropy=0.132
+Part 1 pong episode=8160 mean_last_100=-19.52 baseline=0.0000 entropy=0.125
+Part 1 pong episode=8320 mean_last_100=-19.62 baseline=0.0000 entropy=0.120
+Part 1 pong episode=8480 mean_last_100=-19.43 baseline=0.0000 entropy=0.109
+Part 1 pong episode=8640 mean_last_100=-19.24 baseline=0.0000 entropy=0.110
+Part 1 pong episode=8800 mean_last_100=-19.31 baseline=0.0000 entropy=0.116
+Part 1 pong episode=8960 mean_last_100=-19.04 baseline=0.0000 entropy=0.109
+Part 1 pong episode=9120 mean_last_100=-19.81 baseline=0.0000 entropy=0.103
+Part 1 pong episode=9280 mean_last_100=-19.24 baseline=0.0000 entropy=0.115
+Part 1 pong episode=9440 mean_last_100=-19.45 baseline=0.0000 entropy=0.118
+Part 1 pong episode=9600 mean_last_100=-19.87 baseline=0.0000 entropy=0.118
+Part 1 pong episode=9760 mean_last_100=-19.23 baseline=0.0000 entropy=0.094
+Part 1 pong episode=9920 mean_last_100=-18.40 baseline=0.0000 entropy=0.108
+Part 1 pong episode=10000 mean_last_100=-18.46 baseline=0.0000 entropy=0.107
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Part 1 evaluation 16/500
+Part 1 evaluation 32/500
+Part 1 evaluation 48/500
+Part 1 evaluation 64/500
+Part 1 evaluation 80/500
+Part 1 evaluation 96/500
+Part 1 evaluation 112/500
+Part 1 evaluation 128/500
+Part 1 evaluation 144/500
+Part 1 evaluation 160/500
+Part 1 evaluation 176/500
+Part 1 evaluation 192/500
+Part 1 evaluation 208/500
+Part 1 evaluation 224/500
+Part 1 evaluation 240/500
+Part 1 evaluation 256/500
+Part 1 evaluation 272/500
+Part 1 evaluation 288/500
+Part 1 evaluation 304/500
+Part 1 evaluation 320/500
+Part 1 evaluation 336/500
+Part 1 evaluation 352/500
+Part 1 evaluation 368/500
+Part 1 evaluation 384/500
+Part 1 evaluation 400/500
+Part 1 evaluation 416/500
+Part 1 evaluation 432/500
+Part 1 evaluation 448/500
+Part 1 evaluation 464/500
+Part 1 evaluation 480/500
+Part 1 evaluation 496/500
+Part 1 evaluation 500/500
+{
+  "env_id": "ALE/Pong-v5",
+  "episodes": 500,
+  "mean": -19.046,
+  "sample_standard_deviation": 2.5987286856390237,
+  "population_standard_deviation": 2.596128656288051,
+  "mean_approx_95_ci": [
+    -19.273788612649767,
+    -18.81821138735023
+  ],
+  "min": -21.0,
+  "max": -3.0,
+  "discounted_return_mean": -0.26569443303207163,
+  "terminated_episodes": 500,
+  "truncated_episodes": 0,
+  "win_fraction": 0.0,
+  "cartpole_500_fraction": null,
+  "policy": "trained stochastic policy",
+  "training_episodes": 10000,
+  "training_seed": 3817,
+  "evaluation_seed": 1500000000,
+  "method": "REINFORCE without baseline",
+  "checkpoint": "/nfs/home/zfl2845/iems_HW1/results/q2/pong/seed3817_lr001/checkpoint.pt",
+  "checkpoint_sha256": "23f38c970d828de7087603b51435248a3093d41212c992827f864bdb3f61a0da",
+  "versions": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "ale-py": "0.12.1",
+    "matplotlib": "3.11.2"
+  },
+  "collector": "batched score-only, no autoreset",
+  "workers": 8,
+  "action_rng_protocol": "independent SeedSequence([evaluation_seed, episode_index, 42])"
+}

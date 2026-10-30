@@ -1,8 +1,11 @@
 # Policy Gradient: Part 1
 
-Part 1 is Section 3 of the assignment (40 points: 20 for plots and 20 for edge
-cases and validation). The implementation is PyTorch episodic REINFORCE with
-Adam. It has **no baseline, return centering, advantage normalization, critic,
+GitHub username: **EvelynXuNU**. Repository: **iems_HW1**.
+Source and experiment evidence: <https://github.com/EvelynXuNU/iems_HW1>.
+
+The implementation is PyTorch episodic REINFORCE with Adam. Both CartPole-v1
+and Pong-v5 training and their required 500-game evaluations are complete.
+It has **no baseline, return centering, advantage normalization, critic,
 entropy bonus, reward clipping, or point-boundary resets**. Part 2 remains a
 separate experiment.
 
@@ -55,8 +58,8 @@ and does not introduce an action-independent baseline.
 | Network | 4 -> 64 tanh -> 2 logits | 6,400 -> 64 ReLU -> 2 logits |
 | Action sampling | Categorical, actions 0 and 1 | Categorical indices 0 and 1 mapped to actions 2 and 3 |
 | Batch | 16 complete episodes | 16 complete episodes |
-| Adam rate | 0.003, after training-only pilots | 0.01 initial setting; remote stability still to be measured |
-| Training budget | 6,000 episodes, fixed before final evaluation | 10,000 episodes in prepared launcher |
+| Adam rate | 0.003, after training-only pilots | 0.01; weak final performance discussed below |
+| Training budget | 6,000 episodes, fixed before final evaluation | 10,000 completed episodes |
 
 Both networks start close to a uniform action distribution. Training and required
 evaluation sample actions from the stochastic policy; greedy evaluation is not
@@ -98,6 +101,9 @@ so it was used for a fresh, fixed 6,000-episode final run. This is a single-seed
 hyperparameter comparison, not evidence that 0.003 is universally best. The final
 100 training scores averaged 166.72, showing that even this rate does not eliminate
 performance degradation. No best-looking checkpoint was selected after evaluation.
+For the primary seed, the best 100-episode training window averaged 290.36 and
+ended at episode 3,097, whereas the final 100 averaged 166.72. More training did
+not reliably improve this run.
 
 ![CartPole training rewards and trailing 100-episode mean](results/q2/cartpole/final_seed3817/training_rewards.png)
 
@@ -122,23 +128,67 @@ versus 12.55544 for random. The score histogram exposes variability hidden by a
 near-saturated discounted objective. Confidence intervals describe evaluation
 sampling variation for this checkpoint, not training variation across seeds.
 
-## Pong status and required outputs
+Two additional training seeds used the same settings and budget, with 500 frozen
+evaluation episodes each. The predeclared primary seed remains 3817.
 
-The implementation, a four-episode CPU smoke run, and a 16-episode CUDA smoke run
-have executed. The CPU smoke-game scores were all -21; the CUDA smoke scores
-averaged -20.5625. These runs verify interaction, gradient computation, and
-checkpoint writing; they are **not** evidence of successful learning. Full
-10,000-episode training is now running on one RTX PRO 5000 Blackwell GPU on
-Deepdish5, followed automatically by the required 500-episode evaluation. Until
-that run finishes, no final Pong learning curve, reward histogram, or trained
-mean/SD is claimed here.
+| Training seed | Evaluation games | Mean score | Episode-score sample SD | Games reaching 500 |
+|---:|---:|---:|---:|---:|
+| 3817 (primary) | 500 | 181.612 | 97.2304 | 15 |
+| 3818 | 500 | 131.218 | 23.3961 | 0 |
+| 3819 | 500 | 174.812 | 59.8051 | 0 |
 
-The launcher produces training_rewards.png, evaluation_trained/reward_histogram.png,
-and evaluation_trained/evaluation.json containing the 500 scores' mean and SD.
-It also evaluates a uniform policy for 500 games, records truncations and win
-fraction, and logs gradient norm and entropy during training. All episode-level
-scores remain available in CSV. A completed evaluation is tied to its checkpoint
-by SHA-256 so extending training cannot silently reuse an old histogram.
+The mean of these three checkpoint means is 162.5473; their sample SD is 27.3442.
+This between-run SD differs from the episode-score SD of a fixed checkpoint.
+All three improve over the recorded uniform reference, but none is a dependable
+500-step policy. Initialization/action seeds differ; reset-seed banks overlap,
+so the three-run summary is descriptive rather than an independent-seed
+confidence statement. Test results were not used to select a replacement seed.
+
+## Pong results and required plots
+
+![Pong training rewards and trailing 100-episode mean](results/q2/pong/seed3817_lr001/training_rewards.png)
+
+**Figure 3.** All 10,000 training episodes, with raw scores and the exact trailing
+100-episode average. The first 500 scores averaged -20.742, and the last 500
+averaged -19.142. The last 100 averaged -18.46. These are descriptive training
+comparisons involving changing policies, not held-out estimates of one policy.
+
+![Pong frozen trained policy, 500 held-out games](results/q2/pong/seed3817_lr001/evaluation_trained/reward_histogram.png)
+
+**Figure 4.** The final frozen stochastic policy over 500 official held-out games.
+Its mean score is **-19.046**, sample SD **2.5987**, approximate 95% interval for
+the mean **[-19.2738, -18.8182]**, and range **-21 to -3**. It won **0/500** games;
+all 500 terminated naturally and none truncated. Exactly 208 games ended at -21.
+The policy learned to score more often, but it did not learn to win Pong.
+
+The final training-batch action entropy was 0.1065 nats, compared with ln(2)
+approximately 0.6931 for a uniform binary policy. Poor scores combined with low
+entropy motivate checking premature action concentration; they do not prove
+that this caused the failure. A high-value next tuning experiment is matched,
+training-only learning-rate pilots at 0.01, 0.003, and 0.001, inspecting scores,
+discounted returns, and entropy. These smaller rates are untested candidates,
+not demonstrated fixes. Evaluation data must remain outside that selection.
+
+### Fresh fixed-policy diagnostic controls
+
+Existing independent controls used 64 fresh games per policy, reset seeds starting
+at 1,600,000,000, and independent per-episode action streams. Weights were frozen;
+these games were not used for training or checkpoint selection.
+
+| Policy | Diagnostic games | Mean score | Sample SD | Wins |
+|---|---:|---:|---:|---:|
+| Final trained policy | 64 | -18.6563 | 2.9343 | 0 |
+| Uniform random | 64 | -20.5781 | 0.7304 | 0 |
+| Always RIGHT | 64 | -21.0000 | 0 | 0 |
+| Always LEFT | 64 | -21.0000 | 0 | 0 |
+
+These controls support limited learning beyond simple reference policies, while
+showing no winning policy. They remain separate from the required 500-game
+evaluation: their scores are not pooled into its histogram or summary. Raw
+diagnostic scores and summaries are in results/q2/verifier/pong_controls.csv and
+pong_controls.json. Reproduce them with `python verify_q2_pong_controls.py`.
+The optional 500-game random Pong reference was omitted to reduce runtime;
+this smaller, clearly labeled diagnostic supplies a direct comparison.
 
 ## Edge cases and quantitative validation
 
@@ -212,16 +262,32 @@ predicted behavior, independently check the objective, and expose task limitatio
    The same interruption experiment also passed on Deepdish5's RTX PRO 5000 GPU,
    with exactly zero parameter difference. Its independent validation evidence
    is saved under results/q2/deepdish/validation.
-   CUDA's logical device 0 maps to nvidia-smi index 1 on this host; the selected
-   GPU name and one-device visibility were verified. The connection guide uses
-   UUID selection to avoid index ambiguity in future launches.
+   The GPU identity and one-device visibility were verified; server-specific
+   selection details are in DEEPDISH.md.
 
 9. **Learning stability and frozen evaluation.** The three learning-rate pilots
    expose late-training instability rather than hiding it behind a peak score.
    The final evaluation keeps weights fixed, samples the trained stochastic
    policy, uses 500 held-out reset seeds, and compares against a 500-episode
    uniform reference. Evaluation data were not used to choose the learning rate.
-   Multiple independent training seeds remain necessary to estimate reliability.
+   The three completed CartPole seeds and fresh frozen Pong controls above
+   add task-specific evidence. Broader independent seed replication is still
+   needed to estimate training reliability.
+
+10. **Independent completed-run audit.** Existing evidence verifies all four
+    evaluation checkpoint hashes, the 10,000 Pong episodes and 625 updates, and
+    disjoint training/evaluation reset ranges. The first 5,376 episode records
+    and 336 updates exactly match the archived serial run; its checkpoint hash
+    matches continuation metadata. Part 1 has no baseline state. An independent
+    variable-length finite-difference gradient check agrees within 1.57e-11, and
+    the production chunked Adam update agrees with an unchunked update within
+    9.32e-10 in parameters. Serial/batched partial Pong trajectories and
+    score-only reset handling agree, and the first two official GPU evaluation
+    games replay exactly on CPU, including lengths and ending flags. This
+    evidence is preserved under results/q2/verifier; it was incorporated without
+    repeating training. Reproduce the mathematical/update checks with
+    `python verify_q2_independent.py`, and the completed Pong collector replay
+    with `python verify_q2_completed_collector.py`.
 
 For CartPole's constant reward, a 100-step episode already has discounted return
 19.88159, while a 500-step episode has return almost exactly 20. Thus gamma=0.95
@@ -231,7 +297,7 @@ without reliable 500-step scores. A rising curve alone would not have revealed
 that distinction. Similarly, Pong's sparse rewards, partial observation, sticky
 actions, and negative early scores make baselineless Monte Carlo gradients noisy.
 
-## Execution and remaining submission work
+## Execution and reproducibility
 
 Use Python 3.11+ with requirements-q2.txt. The tested local environment used Python
 3.13.13, PyTorch 2.15.0, Gymnasium 1.4.0, ALE 0.12.1, NumPy 2.5.4, and Matplotlib
@@ -239,10 +305,47 @@ Use Python 3.11+ with requirements-q2.txt. The tested local environment used Pyt
 a compatible CUDA-enabled PyTorch installation and expose exactly one GPU.
 See README.md and DEEPDISH.md for complete commands and output locations.
 
-The final assignment PDF must combine all sections and include GitHub username,
-repository name and URL, execution directions, and all required discussion and
-figures. This Markdown is the Part 1 report draft; full Pong results and Part 2
-are still needed before the final submission is complete.
+This report covers Policy Gradient Part 1. The shuttle and baseline experiments
+are documented separately. All experiment source, figures, CSVs, metadata, and
+independent verification code are published in the repository identified above.
+
+The serial/batched transition changes the action RNG protocol. To reproduce the
+reported two-stage Pong experiment on one assigned GPU from a fresh directory:
+
+```bash
+python q2_policy_gradient.py train --game pong --episodes 5376 --lr 0.01 \
+  --reward-scale 1 --device cuda --output-dir results/q2/pong/reproduction
+python fast_pg.py train --part 1 --game pong --episodes 10000 --lr 0.01 \
+  --reward-scale 1 --batch-episodes 16 --workers 8 --save-every 4 --device cuda \
+  --resume results/q2/pong/reproduction/checkpoint.pt \
+  --output-dir results/q2/pong/reproduction
+python fast_pg.py evaluate --checkpoint results/q2/pong/reproduction/checkpoint.pt \
+  --episodes 500 --workers 8 --device cuda \
+  --output-dir results/q2/pong/reproduction/evaluation_trained
+```
+
+Set CUDA_VISIBLE_DEVICES to the one assigned card and
+CUBLAS_WORKSPACE_CONFIG=:4096:8 before CUDA execution. Use the recorded package
+versions for the closest replay; cross-device bitwise agreement is not assumed.
+To reproduce the continuation without repeating the first stage, copy the
+archived checkpoint at legacy_snapshots/through_episode_5376/ to a new run
+directory, then use the last two commands with that checkpoint path. A fresh
+10,000-episode serial run would use a different action stream after episode 5,376
+and is not an exact reproduction of this experiment.
+
+### Recorded runtime continuation
+
+After episode 5,376, the Part 1 checkpoint, source, and logs were archived and
+training resumed with a validated batched collector. Eight CPU workers feed one
+GPU, complete all 16 trajectories under fixed policy parameters, and then perform
+the same actor update. In an isolated remote benchmark all 32 game scores and
+lengths matched across serial CPU/GPU and batched collectors; actor updates also
+matched in worker-count validation. The new action RNG protocol and source hashes
+are recorded. The continuation is statistically on-policy, but is not a claim of
+bitwise replay of the legacy serial action stream. Training completed at
+10,000 episodes and frozen evaluation at 500; the optional random reference was
+omitted. Checkpoints now save every 64 episodes and at completion. See DEEPDISH.md
+and results/q3/collector_benchmark_deepdish.json for timing and validation evidence.
 
 ## With three additional months
 

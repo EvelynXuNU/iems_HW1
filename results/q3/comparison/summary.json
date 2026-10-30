@@ -1,0 +1,89 @@
+{
+  "cartpole": {
+    "part1": {
+      "mean_of_three_seed_means": 162.54733333333334,
+      "sample_sd_of_three_seed_means": 27.34420131094221
+    },
+    "part2": {
+      "mean_of_three_seed_means": 420.348,
+      "sample_sd_of_three_seed_means": 27.880570080254802
+    }
+  },
+  "pong": {
+    "part1": {
+      "env_id": "ALE/Pong-v5",
+      "episodes": 500,
+      "mean": -19.046,
+      "sample_standard_deviation": 2.5987286856390237,
+      "population_standard_deviation": 2.596128656288051,
+      "mean_approx_95_ci": [
+        -19.273788612649767,
+        -18.81821138735023
+      ],
+      "min": -21.0,
+      "max": -3.0,
+      "discounted_return_mean": -0.26569443303207163,
+      "terminated_episodes": 500,
+      "truncated_episodes": 0,
+      "win_fraction": 0.0,
+      "cartpole_500_fraction": null,
+      "policy": "trained stochastic policy",
+      "training_episodes": 10000,
+      "training_seed": 3817,
+      "evaluation_seed": 1500000000,
+      "method": "REINFORCE without baseline",
+      "checkpoint": "/nfs/home/zfl2845/iems_HW1/results/q2/pong/seed3817_lr001/checkpoint.pt",
+      "checkpoint_sha256": "23f38c970d828de7087603b51435248a3093d41212c992827f864bdb3f61a0da",
+      "versions": {
+        "python": "3.13.5",
+        "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+        "torch": "2.15.0",
+        "numpy": "2.5.4",
+        "gymnasium": "1.4.0",
+        "ale-py": "0.12.1",
+        "matplotlib": "3.11.2"
+      },
+      "collector": "batched score-only, no autoreset",
+      "workers": 8,
+      "action_rng_protocol": "independent SeedSequence([evaluation_seed, episode_index, 42])"
+    },
+    "part2": {
+      "env_id": "ALE/Pong-v5",
+      "episodes": 500,
+      "mean": -19.46,
+      "sample_standard_deviation": 0.995178758577094,
+      "population_standard_deviation": 0.9941830817309254,
+      "mean_approx_95_ci": [
+        -19.547231264274536,
+        -19.372768735725465
+      ],
+      "min": -21.0,
+      "max": -15.0,
+      "discounted_return_mean": 0.12594677618087372,
+      "terminated_episodes": 500,
+      "truncated_episodes": 0,
+      "win_fraction": 0.0,
+      "cartpole_500_fraction": null,
+      "policy": "trained stochastic policy",
+      "training_episodes": 10000,
+      "training_seed": 3817,
+      "evaluation_seed": 1500000000,
+      "method": "REINFORCE with lagged EMA baseline",
+      "checkpoint": "/nfs/home/zfl2845/iems_HW1/results/q3/pong/seed3817_lr001/checkpoint.pt",
+      "checkpoint_sha256": "c2dd9c1f004b6f921833a86e51729b4627d5703ed1366b334e37380fd10d2d00",
+      "versions": {
+        "python": "3.13.5",
+        "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+        "torch": "2.15.0",
+        "numpy": "2.5.4",
+        "gymnasium": "1.4.0",
+        "ale-py": "0.12.1",
+        "matplotlib": "3.11.2"
+      },
+      "collector": "batched score-only, no autoreset",
+      "workers": 8,
+      "action_rng_protocol": "independent SeedSequence([evaluation_seed, episode_index, 42])"
+    }
+  },
+  "limitation": "Three distinct initialization/action seeds; reset seed banks overlap. Descriptive comparison, no independent-seed confidence claim."
+}

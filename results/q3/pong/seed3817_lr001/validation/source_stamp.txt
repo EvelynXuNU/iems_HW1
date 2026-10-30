@@ -1,0 +1,6 @@
+4ffd53d2dce3ca035257aec5a86f9fb6dd82f9edc42548ad5adecd45e43f6d5a  q3_policy_gradient.py
+f2989f109ec8c9111fb698a4eb7a01e6c800b30a0cefde11468480aa7e0a16ab  validate_q3.py
+6cb49720dfa6969e75b12da2609652978edddef33f4a2fa4a119b39638c0593e  q2_policy_gradient.py
+c666699ed6b9be1d6ec6a716d47f387ec176195b6df2a918a9601ed26a44e75f  fast_pg.py
+7abf305d10da4b116175f4c222189f2d7a9a955629545b1ea5789eba2a3c6fbb  batched_rollout.py
+{"cuda": "13.2", "gpu": "NVIDIA RTX PRO 5000 Blackwell", "versions": {"ale-py": "0.12.1", "gymnasium": "1.4.0", "matplotlib": "3.11.2", "numpy": "2.5.4", "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41", "python": "3.13.5", "torch": "2.15.0"}}

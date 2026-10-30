@@ -1,0 +1,134 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Assigned GPU: 0
+GPU: NVIDIA RTX PRO 5000 Blackwell torch: 2.15.0+cu132 CUDA: 13.2
+Environment: EnvSpec(id='ALE/Pong-v5', entry_point='ale_py.env:AtariEnv', reward_threshold=None, nondeterministic=False, max_episode_steps=None, order_enforce=True, disable_env_checker=False, kwargs={'game': 'pong', 'repeat_action_probability': 0.25, 'full_action_space': False, 'frameskip': 4, 'max_num_frames_per_episode': 108000, 'obs_type': 'rgb'}, namespace='ALE', name='Pong', version=5, additional_wrappers=(), vector_entry_point='ale_py.vector_env:AtariVectorEnv')
+cartpole episode=16 mean_last_100=21.56 grad=0.6186 entropy=0.692
+cartpole episode=8 mean_last_100=19.12 grad=0.1656 entropy=0.693
+cartpole episode=16 mean_last_100=21.56 grad=0.6186 entropy=0.692
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+{
+  "exact_multistep_gradient": {
+    "paths": 8,
+    "exact_objective": -1.0370428182369238,
+    "max_gradient_error": 1.1102230246251565e-16,
+    "missing_outer_discount_error": 0.218540933900586
+  },
+  "three_seed_bandit_learning": [
+    {
+      "seed": 7,
+      "p_best_action": 0.9778712602616899,
+      "expected_reward": 0.786722756157014,
+      "random_expected_reward": 0.5
+    },
+    {
+      "seed": 19,
+      "p_best_action": 0.9789749152756098,
+      "expected_reward": 0.7873849491653659,
+      "random_expected_reward": 0.5
+    },
+    {
+      "seed": 41,
+      "p_best_action": 0.9797376689668736,
+      "expected_reward": 0.7878426013801241,
+      "random_expected_reward": 0.5
+    }
+  ],
+  "discount_and_sparse_reward": {
+    "gamma0_delayed_credit": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "1000_step_delayed_weight": 4.317124741065784e-05,
+    "cartpole_discounted_score_100": 19.8815894155933,
+    "cartpole_discounted_score_500": 19.999999999854495,
+    "pong_late_weight_5000": 1.499591560997954e-22
+  },
+  "zero_and_negative_rewards": {
+    "zero_reward_gradient": 0,
+    "punished_action_probability_before": 0.5,
+    "punished_action_probability_after": 0.4950002133846283,
+    "extreme_logits_loss_is_finite": true
+  },
+  "cartpole": {
+    "physics_max_error": 1.7081591280332376e-09,
+    "seeded_rollout_identical": true,
+    "trace_episode_length": 13,
+    "trace_episode_score": 13.0,
+    "random_100_mean": 21.54,
+    "random_100_sample_sd": 10.89010300384452,
+    "time_limit_1_return": 1.0
+  },
+  "checkpoint_replay": {
+    "episodes": 16,
+    "interruption_after": 8,
+    "max_parameter_difference": 0.0,
+    "all_scores_actions_lengths_reproduced": true,
+    "device": "cuda",
+    "limitation": "same-device replay; cross-device identity is not assumed"
+  },
+  "pong": {
+    "env_id": "ALE/Pong-v5",
+    "action_meanings": [
+      "NOOP",
+      "FIRE",
+      "RIGHT",
+      "LEFT",
+      "RIGHTFIRE",
+      "LEFTFIRE"
+    ],
+    "frameskip": 4,
+    "sticky_action_probability": 0.25,
+    "allowed_environment_actions": [
+      2,
+      3
+    ],
+    "uniform_policy_game_score": -21.0,
+    "agent_points": 0,
+    "opponent_points": 21,
+    "length": 888,
+    "terminated": true,
+    "truncated": false,
+    "first_point_step": 63,
+    "last_point_step": 887,
+    "image_input_not_mutated": true
+  }
+}
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+pong episode=160 mean_last_100=-20.82 grad=7.352 entropy=0.624
+pong episode=320 mean_last_100=-20.88 grad=4.631 entropy=0.607
+pong episode=480 mean_last_100=-20.53 grad=5.787 entropy=0.669
+pong episode=640 mean_last_100=-20.38 grad=5.348 entropy=0.647
+pong episode=800 mean_last_100=-20.58 grad=9.265 entropy=0.618
+pong episode=960 mean_last_100=-20.62 grad=8.71 entropy=0.567
+pong episode=1120 mean_last_100=-20.44 grad=7.991 entropy=0.511
+pong episode=1280 mean_last_100=-20.93 grad=8.657 entropy=0.458
+pong episode=1440 mean_last_100=-20.91 grad=6.418 entropy=0.427
+pong episode=1600 mean_last_100=-20.97 grad=5.874 entropy=0.383
+pong episode=1760 mean_last_100=-20.90 grad=6.81 entropy=0.334
+pong episode=1920 mean_last_100=-20.80 grad=5.927 entropy=0.272
+pong episode=2080 mean_last_100=-20.45 grad=7.003 entropy=0.259
+pong episode=2240 mean_last_100=-19.85 grad=11.02 entropy=0.240
+pong episode=2400 mean_last_100=-20.60 grad=5.516 entropy=0.211
+pong episode=2560 mean_last_100=-20.66 grad=8.371 entropy=0.205
+pong episode=2720 mean_last_100=-20.65 grad=5.399 entropy=0.192
+pong episode=2880 mean_last_100=-20.51 grad=5.955 entropy=0.188
+pong episode=3040 mean_last_100=-20.60 grad=4.653 entropy=0.181
+pong episode=3200 mean_last_100=-20.56 grad=4.826 entropy=0.188
+pong episode=3360 mean_last_100=-20.39 grad=4.964 entropy=0.206
+pong episode=3520 mean_last_100=-20.43 grad=5.403 entropy=0.193
+pong episode=3680 mean_last_100=-20.17 grad=3.597 entropy=0.197
+pong episode=3840 mean_last_100=-20.28 grad=4.743 entropy=0.208
+pong episode=4000 mean_last_100=-20.44 grad=5.307 entropy=0.190
+pong episode=4160 mean_last_100=-20.48 grad=5.047 entropy=0.169
+pong episode=4320 mean_last_100=-20.18 grad=4.423 entropy=0.152
+pong episode=4480 mean_last_100=-20.14 grad=3.336 entropy=0.151
+pong episode=4640 mean_last_100=-20.35 grad=5.009 entropy=0.145
+pong episode=4800 mean_last_100=-20.26 grad=2.934 entropy=0.159
+pong episode=4960 mean_last_100=-20.23 grad=3.109 entropy=0.164
+pong episode=5120 mean_last_100=-19.92 grad=3.85 entropy=0.153
+pong episode=5280 mean_last_100=-20.10 grad=3.096 entropy=0.136
+Terminated
