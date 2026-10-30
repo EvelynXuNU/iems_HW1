@@ -1,0 +1,28 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Part 2 pong episode=160 mean_last_100=-20.43 baseline=-1.2966 entropy=0.689
+Part 2 pong episode=320 mean_last_100=-20.47 baseline=-1.2083 entropy=0.679
+Part 2 pong episode=480 mean_last_100=-20.73 baseline=-1.1474 entropy=0.664
+Part 2 pong episode=640 mean_last_100=-20.65 baseline=-1.1570 entropy=0.667
+Part 2 pong episode=800 mean_last_100=-20.69 baseline=-1.2086 entropy=0.669
+Part 2 pong episode=960 mean_last_100=-20.53 baseline=-1.1909 entropy=0.665
+Part 2 pong episode=1120 mean_last_100=-20.78 baseline=-1.1397 entropy=0.637
+Part 2 pong episode=1280 mean_last_100=-20.87 baseline=-1.1075 entropy=0.613
+Part 2 pong episode=1440 mean_last_100=-20.68 baseline=-1.0456 entropy=0.591
+Part 2 pong episode=1600 mean_last_100=-20.53 baseline=-0.9684 entropy=0.546
+Part 2 pong episode=1760 mean_last_100=-20.77 baseline=-0.9172 entropy=0.519
+Part 2 pong episode=1920 mean_last_100=-20.79 baseline=-0.9172 entropy=0.504
+Part 2 pong episode=2080 mean_last_100=-20.82 baseline=-0.8751 entropy=0.468
+Part 2 pong episode=2240 mean_last_100=-20.75 baseline=-0.8115 entropy=0.429
+Part 2 pong episode=2400 mean_last_100=-20.72 baseline=-0.7643 entropy=0.397
+Part 2 pong episode=2560 mean_last_100=-20.62 baseline=-0.6740 entropy=0.377
+Part 2 pong episode=2720 mean_last_100=-20.48 baseline=-0.6264 entropy=0.381
+Part 2 pong episode=2880 mean_last_100=-20.51 baseline=-0.5900 entropy=0.388
+Part 2 pong episode=3040 mean_last_100=-20.48 baseline=-0.5482 entropy=0.369
+Part 2 pong episode=3072 mean_last_100=-20.44 baseline=-0.5419 entropy=0.365

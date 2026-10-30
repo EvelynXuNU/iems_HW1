@@ -1,0 +1,8 @@
+{
+  "status": "stopped_for_time_budget",
+  "planned_target_episodes": 6144,
+  "retained_checkpoint_episodes": 4480,
+  "plot_regenerated_from": "selected_model checkpoint history, 4480 episodes",
+  "pilot_plot_preserved_as": "pilot_3072_training_rewards.png",
+  "final_frozen_evaluation": "../../selected_model/evaluation_final/evaluation.json"
+}

@@ -1,0 +1,11 @@
+{
+  "rule": "largest last-512 training score mean among saved pilot and budget-limited extension",
+  "chosen_checkpoint": "results/pong_tuning/vision_screen/current_diff_cnn_lr0.001/checkpoint.pt",
+  "training_episodes": 4480,
+  "last512_training_score_mean": -17.302734375,
+  "checkpoint_sha256": "6988b693bf70134822cfd6e284ccb42d06e2bf59c7a52c24302626f0210f18b8",
+  "evaluation_seed": 1900000000,
+  "evaluation_episodes": 500,
+  "evaluation_used_for_selection": false,
+  "training_stopped_reason": "leave evaluation time within approximately 30-minute improvement budget"
+}

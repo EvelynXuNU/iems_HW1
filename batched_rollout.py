@@ -11,7 +11,7 @@ import traceback
 import numpy as np
 
 
-def _environment_worker(connection, slots, game):
+def _environment_worker(connection, slots, game, feature_mode):
     import gymnasium as gym
     if game == "pong":
         import ale_py
@@ -26,7 +26,7 @@ def _environment_worker(connection, slots, game):
         current=(crop!=0).astype(np.int8)
         result=np.zeros_like(current) if reset else current-previous[slot]
         previous[slot]=current
-        return result.ravel()
+        return (np.stack((current,result)) if feature_mode=='current_diff' else result).ravel()
 
     try:
         for slot in slots:
@@ -65,15 +65,18 @@ def _environment_worker(connection, slots, game):
 
 
 class EpisodeBatch:
-    def __init__(self, game, slots=16, workers=4):
+    def __init__(self, game, slots=16, workers=4, feature_mode='diff',cuda_graph=False):
         if not 1<=workers<=slots:raise ValueError("Require 1 <= workers <= episode slots")
         self.game,self.slots,self.workers=game,slots,workers
+        self.cuda_graph=cuda_graph
+        self.graph_inference=None
+        self.graph_policy=None
         self.connections,self.processes,self.owner=[],[],{}
         context=mp.get_context("spawn")
         for worker in range(workers):
             group=list(range(worker,slots,workers))
             parent,child=context.Pipe()
-            process=context.Process(target=_environment_worker,args=(child,group,game),daemon=True)
+            process=context.Process(target=_environment_worker,args=(child,group,game,feature_mode),daemon=True)
             process.start()
             child.close()
             self.connections.append(parent)
@@ -107,8 +110,15 @@ class EpisodeBatch:
         with torch.no_grad():
             while active:
                 states=np.stack([features[slot] for slot in active])
-                logits=policy(torch.as_tensor(states,dtype=torch.float32,device=device))
-                probabilities=logits.softmax(-1).cpu().numpy()  # one transfer for the whole batch
+                if self.cuda_graph and device=='cuda':
+                    if self.graph_policy is not policy:
+                        from cuda_inference import CudaPolicyInference
+                        self.graph_inference=CudaPolicyInference(policy,self.slots,states.shape[1])
+                        self.graph_policy=policy
+                    probabilities=self.graph_inference(states)
+                else:
+                    logits=policy(torch.as_tensor(states,dtype=torch.float32,device=device))
+                    probabilities=logits.softmax(-1).cpu().numpy()
                 actions={slot:int(rngs[slot].random()>=float(probabilities[j,0])) for j,slot in enumerate(active)}
                 traces={}
                 for j,slot in enumerate(active):

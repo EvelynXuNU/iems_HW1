@@ -1,0 +1,14 @@
+[
+  {
+    "network": "mlp",
+    "pid": 1850148,
+    "process_group": 1850148,
+    "directory": "/nfs/home/zfl2845/iems_HW1/results/pong_tuning/vision_screen/current_diff_mlp_lr0.001"
+  },
+  {
+    "network": "cnn",
+    "pid": 1850149,
+    "process_group": 1850149,
+    "directory": "/nfs/home/zfl2845/iems_HW1/results/pong_tuning/vision_screen/current_diff_cnn_lr0.001"
+  }
+]

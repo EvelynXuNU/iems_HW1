@@ -252,6 +252,38 @@ Both reference experiments now have their required Pong figures and statistics.
 They remain reproducible evidence of limited learning, alongside the much
 stronger CartPole results. Any improved experiment must be labeled separately.
 
+## Budgeted Pong follow-up
+
+A separate 29.8-minute single-GPU campaign screened lower learning rates and
+current-frame-plus-motion observations. The selected model used two convolution
+layers (16 and 32 filters, kernel 5, stride 2), a 64-unit hidden layer, Adam
+0.001, and the same lagged EMA baseline. It trained for 4,480 episodes before the
+budget stop. The checkpoint was selected using training scores only, then frozen
+for 500 games on a new seed bank beginning at 1,900,000,000.
+
+![Follow-up CNN training scores](results/pong_tuning/selected_model/training_rewards.png)
+
+**Figure 8.** The budget-limited CNN follow-up. Its current-frame channel retains
+foreground even when frame differences are zero. The baseline and assigned
+discounted objective are unchanged.
+
+![Follow-up CNN: 500 fresh evaluation games](results/pong_tuning/selected_model/evaluation_final/reward_histogram.png)
+
+**Figure 9.** Mean score -18.492, sample SD 1.8722, approximate 95% interval
+[-18.6561, -18.3279], range -21 to -11. All games ended naturally, with no
+truncations, and **0/500 were wins**. This improves scoring over the Part 2
+reference's -19.460 but does not resolve the winning-performance failure.
+Architecture, observations, learning rate, and budget differ from the reference;
+this is a tuning follow-up, not an isolated test of the baseline's effect.
+
+The complete screening table, selection rule, validation, source snapshots,
+checkpoint, and remaining limitations are documented in PONG_TUNING.md and
+results/pong_tuning. Smaller rates alone did not improve the short difference-only
+pilots. New observations helped early training, but recent training scores were
+optimistic relative to the final frozen evaluation. No successful Pong agent or
+robust multi-seed improvement is claimed. GPU work finished within the campaign
+budget; no further experiment was queued.
+
 ## With three additional months
 
 **Month 1: stronger variance estimates and optimization comparisons.** Repeat

@@ -1,0 +1,13 @@
+{
+  "episodes": 4,
+  "actions_and_rewards_identical_with_matched_uniform_policy": true,
+  "motion_channel_identical_to_legacy_features": true,
+  "current_channel_retains_stationary_foreground": true,
+  "episode_reset_has_zero_motion_and_preserves_current_frame": true,
+  "reset_replay_identical": true,
+  "input_shape": [
+    2,
+    80,
+    80
+  ]
+}

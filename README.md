@@ -10,6 +10,11 @@ Pong Part 1 is complete: 10,000 training episodes and 500 evaluation games.
 Part 2 Pong also completed: mean -19.460, sample SD 0.9952, and 0/500 wins.
 Both are reference experiments with insufficient learning, not successful models.
 
+A focused follow-up CNN improved Part 2's mean score to -18.492 in 500 fresh
+games, but still won 0/500. See [PONG_TUNING.md](PONG_TUNING.md) for the full
+29.8-minute pilot campaign, selected checkpoint, and limitations. GPU work has
+finished; no additional runs are queued.
+
 ## Run
 
 Use Python 3.10 or newer. From this directory:
@@ -165,4 +170,6 @@ to the grader according to the course's submission rules.
 
 The complete reference-results report is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
 Rebuild it with `python build_report.py` using Pandoc and XeLaTeX. It incorporates
-all three sections and labels the failed Pong configurations honestly.
+all three sections, the budgeted CNN follow-up, and labels the failed Pong
+configurations honestly. The original runtime source is preserved at commit
+`5b1d407`; follow-up source snapshots accompany the tuning evidence.

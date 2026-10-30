@@ -1,0 +1,47 @@
+{
+  "method": "REINFORCE with lagged EMA baseline",
+  "config": {
+    "game": "pong",
+    "seed": 3817,
+    "learning_rate": 0.001,
+    "hidden": 64,
+    "batch_episodes": 16,
+    "reward_scale": 1.0
+  },
+  "env_id": "ALE/Pong-v5",
+  "gamma": 0.99,
+  "versions": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "ale-py": "0.12.1",
+    "matplotlib": "3.11.2"
+  },
+  "device": "cuda",
+  "gpu_name": "NVIDIA RTX PRO 5000 Blackwell",
+  "cuda_runtime": "13.2",
+  "target_episodes": 6144,
+  "collector": "complete batched episodes, no autoreset, no replacement",
+  "workers": 8,
+  "feature_mode": "current_diff",
+  "network": "cnn",
+  "cuda_graph_inference": true,
+  "action_rng_protocol": "one uint63 seed drawn per episode from saved batch generator",
+  "checkpoint_interval_batches": 4,
+  "resume_episode": 3072,
+  "resume_elapsed_seconds": 765.3910108469427,
+  "resume_sha256": "88bd49481d337e0521d00f4fd9ddface7e6811df45117eede20b7fe8b663c4b7",
+  "baseline_kind": "ema",
+  "baseline_decay": 0.9,
+  "critic_target": null,
+  "source_sha256": {
+    "fast_pg.py": "983d4cadf5307de02e8004362d8ddb622bbe99de3f47a3269aa17a73cadc8999",
+    "q2_policy_gradient.py": "6cb49720dfa6969e75b12da2609652978edddef33f4a2fa4a119b39638c0593e",
+    "q3_policy_gradient.py": "4ffd53d2dce3ca035257aec5a86f9fb6dd82f9edc42548ad5adecd45e43f6d5a",
+    "batched_rollout.py": "d5b8495f29c53ab3eb43335b883fd569f9165499d1496c7ee79ef066e3265eef",
+    "vision_policy.py": "205204f88725040032cabb3e8a0cce7c13e00c0e14d20a9ce0964b3c2f0007b1",
+    "cuda_inference.py": "fe995ff605e486bf186c39f64a7480cc1ab5cbdc12bab58fc089be5a47e9e50e"
+  }
+}

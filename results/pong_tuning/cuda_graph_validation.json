@@ -1,0 +1,17 @@
+{
+  "max_probability_error": 5.960464477539063e-08,
+  "partial_batches": [
+    16,
+    7,
+    1
+  ],
+  "parameter_updates_read_correctly": true,
+  "iterations": 200,
+  "seconds": {
+    "eager": 0.043348200153559446,
+    "graph": 0.031466151122003794
+  },
+  "probability_change_after_parameter_update": 0.05172550678253174,
+  "inference_speedup": 1.3776136771696466,
+  "scope": "inference-only benchmark; other same-GPU pilots may be active"
+}

@@ -1,0 +1,25 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Part 2 pong episode=3200 mean_last_100=-19.02 baseline=-0.2170 entropy=0.089
+Part 2 pong episode=3360 mean_last_100=-18.09 baseline=-0.1546 entropy=0.093
+Part 2 pong episode=3520 mean_last_100=-17.58 baseline=-0.1515 entropy=0.095
+Part 2 pong episode=3680 mean_last_100=-17.40 baseline=-0.2009 entropy=0.085
+Part 2 pong episode=3840 mean_last_100=-16.13 baseline=-0.2195 entropy=0.085
+Part 2 pong episode=4000 mean_last_100=-16.61 baseline=-0.1854 entropy=0.086
+Part 2 pong episode=4160 mean_last_100=-17.62 baseline=-0.2074 entropy=0.093
+Part 2 pong episode=4320 mean_last_100=-16.89 baseline=-0.2209 entropy=0.086
+Part 2 pong episode=4480 mean_last_100=-17.64 baseline=-0.2171 entropy=0.080

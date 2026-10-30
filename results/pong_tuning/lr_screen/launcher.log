@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-10-29T22:33:50.859719-05:00",
+  "hypothesis": "Adam 0.01 produces premature policy concentration; smaller actor steps may improve learning",
+  "part": 2,
+  "learning_rates": [
+    0.003,
+    0.001,
+    0.0003
+  ],
+  "episodes_per_rate": 3072,
+  "workers_per_pilot": 4,
+  "gpu_uuid": "GPU-ec0c988c-3d23-d55e-7713-293719142e7d",
+  "physical_gpu_count": 1,
+  "seed": 3817,
+  "hidden_units": 64,
+  "observation": "80x80 frame difference",
+  "batch_episodes": 16,
+  "baseline": "lagged EMA, decay 0.9",
+  "gamma": 0.99,
+  "control": "existing Part 2 lr=0.01 history, first N episodes only",
+  "selection": "last 512 training score mean; inspect discounted return and entropy for stability; no heldout-game selection",
+  "reserved_new_final_evaluation_seed": 1900000000,
+  "reserved_final_episodes": 500,
+  "reference_source_commit": "5b1d407",
+  "source_sha256": {
+    "fast_pg.py": "c666699ed6b9be1d6ec6a716d47f387ec176195b6df2a918a9601ed26a44e75f",
+    "batched_rollout.py": "7abf305d10da4b116175f4c222189f2d7a9a955629545b1ea5789eba2a3c6fbb",
+    "q2_policy_gradient.py": "6cb49720dfa6969e75b12da2609652978edddef33f4a2fa4a119b39638c0593e",
+    "q3_policy_gradient.py": "4ffd53d2dce3ca035257aec5a86f9fb6dd82f9edc42548ad5adecd45e43f6d5a"
+  },
+  "jobs": [
+    {
+      "learning_rate": 0.003,
+      "pid": 1849843,
+      "directory": "results/pong_tuning/lr_screen/part2_lr0.003"
+    },
+    {
+      "learning_rate": 0.001,
+      "pid": 1849844,
+      "directory": "results/pong_tuning/lr_screen/part2_lr0.001"
+    },
+    {
+      "learning_rate": 0.0003,
+      "pid": 1849845,
+      "directory": "results/pong_tuning/lr_screen/part2_lr0.0003"
+    }
+  ],
+  "status": "running"
+}
+[
+  {
+    "learning_rate": 0.003,
+    "episodes": 3072,
+    "last512_score_mean": -20.48046875,
+    "last512_discounted_return_mean": -0.557219067067537,
+    "last_batch_entropy": 0.36524738175335664,
+    "last_batch_gradient_norm": 3.0425068763824736,
+    "directory": "results/pong_tuning/lr_screen/part2_lr0.003"
+  },
+  {
+    "learning_rate": 0.001,
+    "episodes": 3072,
+    "last512_score_mean": -20.673828125,
+    "last512_discounted_return_mean": -1.0905458551091654,
+    "last_batch_entropy": 0.6548605430888164,
+    "last_batch_gradient_norm": 2.7305120594031074,
+    "directory": "results/pong_tuning/lr_screen/part2_lr0.001"
+  },
+  {
+    "learning_rate": 0.0003,
+    "episodes": 3072,
+    "last512_score_mean": -20.63671875,
+    "last512_discounted_return_mean": -1.1687773454785726,
+    "last_batch_entropy": 0.6769113854634321,
+    "last_batch_gradient_norm": 1.4809304686092908,
+    "directory": "results/pong_tuning/lr_screen/part2_lr0.0003"
+  }
+]

@@ -40,6 +40,11 @@ saved as requirements-linux-lock.txt in results/q2/deepdish.
 
 ## Completed reference runs and measured runtime change
 
+The reference experiments and the focused follow-up campaign are complete. No
+training or evaluation job remains on the GPU. The selected follow-up checkpoint
+and final 500-game result are under results/pong_tuning/selected_model; its mean
+score is -18.492 with zero wins. See PONG_TUNING.md for the screening record.
+
 The 10,000-episode Part 1 Pong reference run was started on
 October 29, 2026. It and its 500-game evaluation have completed.
 Only the RTX PRO 5000 is used. Its UUID is

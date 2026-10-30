@@ -1,0 +1,29 @@
+{
+  "hypothesis": "Frame differences omit stationary paddle position; current pixels plus motion can improve observability",
+  "variants": [
+    {
+      "feature_mode": "current_diff",
+      "network": "mlp",
+      "hidden": 64
+    },
+    {
+      "feature_mode": "current_diff",
+      "network": "cnn",
+      "hidden": 64
+    }
+  ],
+  "part": 2,
+  "learning_rate": 0.001,
+  "episodes": 3072,
+  "seed": 3817,
+  "gamma": 0.99,
+  "batch_episodes": 16,
+  "baseline": "lagged EMA, decay 0.9",
+  "gpu_count": 1,
+  "workers_per_pilot": 4,
+  "control": "same-budget diff/MLP64 lr0.001 pilot",
+  "selection": "training-only score mean, with entropy/discounted return diagnostics",
+  "input_validation": "motion matches legacy; current frame retains foreground at zero motion; reset replay identical",
+  "new_final_eval_seed_reserved": 1900000000,
+  "budget_deadline_utc": "2026-10-30T04:03:46Z"
+}

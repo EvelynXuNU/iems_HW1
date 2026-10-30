@@ -1,0 +1,40 @@
+{
+  "env_id": "ALE/Pong-v5",
+  "episodes": 500,
+  "mean": -18.492,
+  "sample_standard_deviation": 1.8721500719182653,
+  "population_standard_deviation": 1.8702769848340643,
+  "mean_approx_95_ci": [
+    -18.656101189135704,
+    -18.327898810864298
+  ],
+  "min": -21.0,
+  "max": -11.0,
+  "discounted_return_mean": -0.28919971111717674,
+  "terminated_episodes": 500,
+  "truncated_episodes": 0,
+  "win_fraction": 0.0,
+  "cartpole_500_fraction": null,
+  "policy": "trained stochastic policy",
+  "training_episodes": 4480,
+  "training_seed": 3817,
+  "evaluation_seed": 1900000000,
+  "method": "REINFORCE with lagged EMA baseline",
+  "checkpoint": "/nfs/home/zfl2845/iems_HW1/results/pong_tuning/selected_model/checkpoint.pt",
+  "checkpoint_sha256": "6988b693bf70134822cfd6e284ccb42d06e2bf59c7a52c24302626f0210f18b8",
+  "versions": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "ale-py": "0.12.1",
+    "matplotlib": "3.11.2"
+  },
+  "collector": "batched score-only, no autoreset",
+  "workers": 8,
+  "feature_mode": "current_diff",
+  "network": "cnn",
+  "cuda_graph_inference": true,
+  "action_rng_protocol": "independent SeedSequence([evaluation_seed, episode_index, 42])"
+}

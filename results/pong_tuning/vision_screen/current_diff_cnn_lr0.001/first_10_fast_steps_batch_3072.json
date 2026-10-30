@@ -1,0 +1,172 @@
+[
+  {
+    "step": 0,
+    "observation": {
+      "nonzero_motion_pixels": 18
+    },
+    "p_action_0": 0.018461311236023903,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.4369842825006656,
+    "gradient_weight": -0.24846119002034836,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.24846119002034836
+  },
+  {
+    "step": 1,
+    "observation": {
+      "nonzero_motion_pixels": 34
+    },
+    "p_action_0": 0.0328938364982605,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.4413982651521875,
+    "gradient_weight": -0.2503464209451515,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.2528751726718702
+  },
+  {
+    "step": 2,
+    "observation": {
+      "nonzero_motion_pixels": 48
+    },
+    "p_action_0": 0.9998588562011719,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.44585683348705807,
+    "gradient_weight": -0.25221279956070664,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.2573337410067408
+  },
+  {
+    "step": 3,
+    "observation": {
+      "nonzero_motion_pixels": 20
+    },
+    "p_action_0": 0.9981535077095032,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.4503604378657152,
+    "gradient_weight": -0.2540605143901062,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.26183734538539793
+  },
+  {
+    "step": 4,
+    "observation": {
+      "nonzero_motion_pixels": 48
+    },
+    "p_action_0": 0.31574684381484985,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.4549095331976922,
+    "gradient_weight": -0.2558897520712119,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.26638644071737494
+  },
+  {
+    "step": 5,
+    "observation": {
+      "nonzero_motion_pixels": 20
+    },
+    "p_action_0": 0.33628153800964355,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.45950457898756786,
+    "gradient_weight": -0.25770069737550644,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.2709814865072506
+  },
+  {
+    "step": 6,
+    "observation": {
+      "nonzero_motion_pixels": 48
+    },
+    "p_action_0": 0.9998617172241211,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.46414603938138166,
+    "gradient_weight": -0.259493533226758,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.27562294690106437
+  },
+  {
+    "step": 7,
+    "observation": {
+      "nonzero_motion_pixels": 20
+    },
+    "p_action_0": 0.9981535077095032,
+    "policy_action": 0,
+    "environment_action": 2,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.46883438321351684,
+    "gradient_weight": -0.26126844071949706,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.2803112907331996
+  },
+  {
+    "step": 8,
+    "observation": {
+      "nonzero_motion_pixels": 48
+    },
+    "p_action_0": 0.31574684381484985,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.4735700840540574,
+    "gradient_weight": -0.2630255991373088,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.28504699157374014
+  },
+  {
+    "step": 9,
+    "observation": {
+      "nonzero_motion_pixels": 36
+    },
+    "p_action_0": 0.037588249891996384,
+    "policy_action": 1,
+    "environment_action": 3,
+    "reward": 0.0,
+    "terminated": false,
+    "truncated": false,
+    "next_observation": null,
+    "reward_to_go": -0.47835362025662365,
+    "gradient_weight": -0.2647651859709423,
+    "baseline_used": -0.18852309248031726,
+    "advantage": -0.28983052777630636
+  }
+]

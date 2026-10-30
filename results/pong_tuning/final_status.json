@@ -1,0 +1,11 @@
+{
+  "gpu_work_complete": true,
+  "new_runs_queued": false,
+  "elapsed_minutes_to_final_evaluation": 29.8,
+  "completed_at_chicago": "2026-10-29T23:03:34-05:00",
+  "selected_training_episodes": 4480,
+  "final_evaluation_games": 500,
+  "mean": -18.492,
+  "sample_sd": 1.8721500719182653,
+  "wins": 0
+}

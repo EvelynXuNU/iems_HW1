@@ -1,0 +1,15 @@
+{
+  "checkpoint_sha256": "6988b693bf70134822cfd6e284ccb42d06e2bf59c7a52c24302626f0210f18b8",
+  "training_rows": 4480,
+  "evaluation_rows": 500,
+  "statistics_recomputed_from_raw_scores": true,
+  "cnn_extension_sources_match_checkpoint_metadata": true,
+  "python_syntax_checks_passed": true,
+  "updated_pdf_pages": 28,
+  "updated_pdf_visual_check_pages": [
+    26,
+    27,
+    28
+  ],
+  "gpu_compute_processes_after_completion": 0
+}

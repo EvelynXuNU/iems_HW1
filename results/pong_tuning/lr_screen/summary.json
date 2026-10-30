@@ -1,0 +1,29 @@
+[
+  {
+    "learning_rate": 0.003,
+    "episodes": 3072,
+    "last512_score_mean": -20.48046875,
+    "last512_discounted_return_mean": -0.557219067067537,
+    "last_batch_entropy": 0.36524738175335664,
+    "last_batch_gradient_norm": 3.0425068763824736,
+    "directory": "results/pong_tuning/lr_screen/part2_lr0.003"
+  },
+  {
+    "learning_rate": 0.001,
+    "episodes": 3072,
+    "last512_score_mean": -20.673828125,
+    "last512_discounted_return_mean": -1.0905458551091654,
+    "last_batch_entropy": 0.6548605430888164,
+    "last_batch_gradient_norm": 2.7305120594031074,
+    "directory": "results/pong_tuning/lr_screen/part2_lr0.001"
+  },
+  {
+    "learning_rate": 0.0003,
+    "episodes": 3072,
+    "last512_score_mean": -20.63671875,
+    "last512_discounted_return_mean": -1.1687773454785726,
+    "last_batch_entropy": 0.6769113854634321,
+    "last_batch_gradient_norm": 1.4809304686092908,
+    "directory": "results/pong_tuning/lr_screen/part2_lr0.0003"
+  }
+]
