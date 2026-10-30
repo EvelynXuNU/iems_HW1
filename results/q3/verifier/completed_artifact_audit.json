@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "scope": "saved-artifact audit; no new training or evaluation",
+  "runs": [
+    {
+      "directory": "results/q3/cartpole/final_seed3817",
+      "training_episodes": 6000,
+      "actor_updates": 375,
+      "max_baseline_reconstruction_error": 7.105427357601002e-15,
+      "trace_steps_checked": 20,
+      "evaluation_episodes": 500,
+      "mean": 438.342,
+      "sample_sd": 95.76786519500169,
+      "checkpoint_matches_evaluation": true,
+      "training_and_evaluation_reset_banks_disjoint": true
+    },
+    {
+      "directory": "results/q3/cartpole/seed3818",
+      "training_episodes": 6000,
+      "actor_updates": 375,
+      "max_baseline_reconstruction_error": 1.4210854715202004e-14,
+      "trace_steps_checked": 20,
+      "evaluation_episodes": 500,
+      "mean": 434.47,
+      "sample_sd": 102.06568428132753,
+      "checkpoint_matches_evaluation": true,
+      "training_and_evaluation_reset_banks_disjoint": true
+    },
+    {
+      "directory": "results/q3/cartpole/seed3819",
+      "training_episodes": 6000,
+      "actor_updates": 375,
+      "max_baseline_reconstruction_error": 7.105427357601002e-15,
+      "trace_steps_checked": 20,
+      "evaluation_episodes": 500,
+      "mean": 388.232,
+      "sample_sd": 104.64794580459879,
+      "checkpoint_matches_evaluation": true,
+      "training_and_evaluation_reset_banks_disjoint": true
+    },
+    {
+      "directory": "results/q3/pong/seed3817_lr001",
+      "training_episodes": 10000,
+      "actor_updates": 625,
+      "max_baseline_reconstruction_error": 4.440892098500626e-16,
+      "trace_steps_checked": 20,
+      "evaluation_episodes": 500,
+      "mean": -19.46,
+      "sample_sd": 0.995178758577094,
+      "checkpoint_matches_evaluation": true,
+      "training_and_evaluation_reset_banks_disjoint": true
+    },
+    {
+      "directory": "results/pong_tuning/selected_model",
+      "training_episodes": 4480,
+      "actor_updates": 280,
+      "max_baseline_reconstruction_error": 4.440892098500626e-16,
+      "trace_steps_checked": 0,
+      "evaluation_episodes": 500,
+      "mean": -18.492,
+      "sample_sd": 1.8721500719182655,
+      "checkpoint_matches_evaluation": true,
+      "training_and_evaluation_reset_banks_disjoint": true
+    }
+  ]
+}

@@ -50,9 +50,9 @@ October 29, 2026. It and its 500-game evaluation have completed.
 Only the RTX PRO 5000 is used. Its UUID is
 `GPU-ec0c988c-3d23-d55e-7713-293719142e7d`.
 
-- Current fast Part 1 launcher PID: 1847958 (read launcher.pid after a restart).
+- Former fast Part 1 launcher PID: 1847958; the job has finished.
 - Output directory: ~/iems_HW1/results/q2/pong/seed3817_lr001.
-- Current console log: that directory's fast_console.log.
+- Completed console log: that directory's fast_console.log.
 - Part 1 training and its required 500-game evaluation are complete.
 - Part 1 mean score: -19.046; sample SD: 2.5987; wins: 0/500.
 

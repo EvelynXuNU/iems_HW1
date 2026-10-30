@@ -5,11 +5,20 @@
   "statistics_recomputed_from_raw_scores": true,
   "cnn_extension_sources_match_checkpoint_metadata": true,
   "python_syntax_checks_passed": true,
-  "updated_pdf_pages": 28,
+  "updated_pdf_pages": 29,
   "updated_pdf_visual_check_pages": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
     26,
     27,
-    28
+    28,
+    29
   ],
-  "gpu_compute_processes_after_completion": 0
+  "gpu_compute_processes_after_completion": 0,
+  "tuning_publication_pdf_pages": 28,
+  "part2_completion_audit": "results/q3/verifier/completed_artifact_audit.json"
 }

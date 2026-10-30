@@ -3,8 +3,19 @@
 This section repeats the two Part 1 experiments with a baseline (20 points:
 10 for plots, 10 for edge cases and tests). CartPole training and the required
 500-game evaluations are complete, as are the full Pong reference experiment and
-its 500-game evaluation. Pong failed to learn a winning policy; the results below
-are preserved as reference evidence for further tuning.
+its 500-game evaluation. The required baseline explanation, four game-specific
+plots, quantitative validation, edge cases, and three-month experiment plan are
+included below. Pong failed to learn a winning policy; this limitation remains
+explicit in the final results.
+
+| Completed configuration | Training episodes | Evaluation games | Mean score | Sample SD |
+|---|---:|---:|---:|---:|
+| CartPole, EMA baseline, primary seed | 6,000 | 500 | 438.342 | 95.7679 |
+| Pong, EMA baseline, matched reference | 10,000 | 500 | -19.460 | 0.9952 |
+| Pong, EMA baseline, CNN follow-up | 4,480 | 500 | -18.492 | 1.8722 |
+
+The first two rows are the required repeated experiments; the CNN is an
+additional tuning experiment. Both Pong configurations lost all evaluation games.
 
 ## Baseline and implementation
 
@@ -54,7 +65,7 @@ ALE/Pong-v5 gamma=0.99 and Adam=0.01; 64 hidden units, two output logits,
 16 complete episodes per update, stochastic actions, and the same fixed reward
 scales. Pong retains the 80x80 frame differences, actions 2/3 only, v5 frame skip
 4, sticky-action probability 0.25, and the official episode limit. CartPole has
-6,000 training episodes; Pong has a 10,000-episode target. Every run starts from
+6,000 completed training episodes; Pong has 10,000. Every run starts from
 a fresh policy, rather than warm-starting Part 2 from the Part 1 trained network.
 
 ## CartPole results
@@ -191,6 +202,47 @@ under results/q3/validation preserve all predictions and measurements.
    reproduces parameters exactly even when the number of CPU workers changes.
    Continuing an old checkpoint preserves its prior episode history.
 
+8. **Audit of the completed runs.** `python verify_q3_completed.py` independently
+   reconstructs every EMA from saved returns, without importing the training
+   implementation or running any games. Across three CartPole runs, the Pong
+   reference, and the selected CNN, all 2,030 actor updates agree within
+   1.43e-14. It checks 80 saved decision records, recomputes all five 500-game
+   score summaries, checks nonoverlapping training/evaluation reset banks, and
+   matches each evaluation's checkpoint SHA-256. Evidence is in
+   results/q3/verifier/completed_artifact_audit.json. This verifies consistency
+   of saved evidence; algorithmic correctness is supported separately by the
+   exact-gradient, variance, learning, and replay experiments above.
+
+### Ten-step credit-assignment example
+
+For the first CartPole episode after the initial batch, the baseline is
+13.6720064, computed from the preceding 16 episodes. The initial state
+(cart position, velocity, pole angle, angular velocity) is approximately
+(-0.001779, -0.042984, -0.007022, -0.012988). Every displayed reward is +1.
+The policy stays fixed throughout the episode; its probabilities change because
+the state changes. The last column is gamma^t(G_t-b)/20, before averaging over
+the 16 episodes in the actor update.
+
+| Step | Pole angle | Action | P(action) | G_t | G_t-b | Weight |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0 | -0.00702 | 0 | 0.5015 | 15.4813 | 1.8093 | 0.09046 |
+| 1 | -0.00728 | 1 | 0.5019 | 15.2435 | 1.5715 | 0.07464 |
+| 2 | -0.00173 | 0 | 0.5016 | 14.9931 | 1.3211 | 0.05962 |
+| 3 | -0.00208 | 1 | 0.5018 | 14.7296 | 1.0576 | 0.04534 |
+| 4 | 0.00341 | 0 | 0.5016 | 14.4522 | 0.7802 | 0.03177 |
+| 5 | 0.00304 | 1 | 0.5018 | 14.1602 | 0.4882 | 0.01889 |
+| 6 | 0.00854 | 0 | 0.5016 | 13.8529 | 0.1809 | 0.00665 |
+| 7 | 0.00820 | 0 | 0.4981 | 13.5293 | -0.1427 | -0.00498 |
+| 8 | 0.01378 | 0 | 0.4947 | 13.1888 | -0.4832 | -0.01603 |
+| 9 | 0.02526 | 1 | 0.5087 | 12.8303 | -0.8417 | -0.02652 |
+
+At step 7 the return falls below the frozen baseline despite a positive immediate
+reward, so that decision's contribution discourages its sampled action. The full
+update sums contributions from all decisions and episodes; the sign of one term
+does not determine the eventual parameter change. Full states, next states,
+rewards, and ending flags are in
+results/q3/cartpole/final_seed3817/first_10_steps_after_baseline.json.
+
 ## Pong reference result and runtime
 
 Pong Part 2 trained a fresh policy for 10,000 episodes on the same single GPU,
@@ -210,9 +262,8 @@ produce effective game-level learning with these settings.
 Part 1's -19.046. Its discounted return mean, however, is 0.12595 versus Part 1's
 -0.26569. Improvement in the assigned discounted objective did not translate to
 winning games. This is a failed training configuration, not a successful Pong
-model. Smaller learning rates and richer frame information require controlled
-training-only experiments before another model is selected; the existing test
-results are not used to choose among new checkpoints.
+model. This failure motivated the controlled training-only experiments reported
+below; their checkpoints were selected without using the final test games.
 
 The fast collector uses eight CPU workers and batches inference on one GPU.
 A remote fixed-policy benchmark measured 3,007 decisions/second with sequential
@@ -237,6 +288,7 @@ Use the same requirements-q2.txt environment as Part 1. Typical local commands:
 ```bash
 python validate_q3.py --variance --pong
 python validate_fast_pg.py
+python verify_q3_completed.py
 python compare_policy_gradients.py
 python q3_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
   --output-dir results/q3/cartpole/reproduction

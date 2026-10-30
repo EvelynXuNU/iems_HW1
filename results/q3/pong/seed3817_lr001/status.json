@@ -1,8 +1,14 @@
 {
-  "observed_at": "2026-10-29T22:19:07.576140-05:00",
-  "completed_training_episodes": 9152,
+  "observed_at": "2026-10-29T23:22:55.789086-05:00",
+  "completed_training_episodes": 10000,
   "target_episodes": 10000,
-  "last100_mean": -19.57,
-  "evaluation_complete": false,
-  "new_runs_started_for_report_fix": false
+  "last100_mean": -19.52,
+  "evaluation_complete": true,
+  "evaluation_episodes": 500,
+  "mean": -19.46,
+  "sample_standard_deviation": 0.995178758577094,
+  "win_fraction": 0.0,
+  "status": "complete",
+  "previous_status_archived_as": "status_before_completion_audit.json",
+  "new_runs_started_for_completion": false
 }

@@ -5,7 +5,7 @@ Repository URL: https://github.com/EvelynXuNU/iems_HW1
 
 This project covers **Value and Policy Iteration** (Section 2) and
 **Policy Gradient Parts 1 and 2** (Section 3). Both CartPole methods have completed
-6,000-episode training and 500-game evaluation for three training seeds. Part 1
+6,000-episode training and 500-game evaluation for three training seeds.
 Pong Part 1 is complete: 10,000 training episodes and 500 evaluation games.
 Part 2 Pong also completed: mean -19.460, sample SD 0.9952, and 0/500 wins.
 Both are reference experiments with insufficient learning, not successful models.
@@ -36,7 +36,7 @@ differences in the last digits can occur across NumPy/linear algebra implementat
 
 ## Files
 
-- `q1_report.md`: report draft, model assumptions, equations, results, edge cases,
+- `q1_report.md`: final report section, model assumptions, equations, results, edge cases,
   validation evidence, and proposed experiments with three more months.
 - `q1_shuttle.py`: finite-horizon enumeration/backward induction, infinite-horizon
   value iteration, exact policy evaluation, and policy iteration.
@@ -64,6 +64,9 @@ differences in the last digits can occur across NumPy/linear algebra implementat
   and random reference, validation evidence, and the small Pong smoke run.
 - `q3_policy_gradient.py`, `validate_q3.py`, `q3_report.md`: Part 2's lagged EMA
   baseline, exact-gradient and variance experiments, results, and discussion.
+- `verify_q3_completed.py`: independent reconstruction of all 2,030 saved Part 2
+  baseline updates, trace credit assignment, checkpoint identities, and statistics.
+- `PART2_COMPLETION.md`: final Part 2 deliverable and evidence checklist.
 - `batched_rollout.py`, `fast_pg.py`: complete batched episodes, one GPU,
   checkpoint continuation, and score-only parallel evaluation.
 - `benchmark_rollouts.py`, `validate_fast_pg.py`: measured throughput,
@@ -137,6 +140,11 @@ with zero wins. The completed report includes its figures and the existing
 
 ## Policy Gradient Part 2
 
+Part 2 is finalized. [PART2_COMPLETION.md](PART2_COMPLETION.md) maps the assignment
+requirements to the final report, plots, code, and quantitative evidence. Pong's
+poor playing performance is documented; completing the submission does not mean
+that a winning Pong agent was obtained.
+
 Use the same Python environment as Part 1. The baseline is a scalar EMA learned
 from previous batches and held fixed during the current actor update.
 
@@ -144,6 +152,7 @@ from previous batches and held fixed during the current actor update.
 python validate_q3.py --variance --pong
 python validate_fast_pg.py
 python compare_policy_gradients.py
+python verify_q3_completed.py
 python q3_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
   --output-dir results/q3/cartpole/reproduction
 python q3_policy_gradient.py evaluate \
@@ -159,11 +168,11 @@ baseline gradient-variance reduction does not guarantee smaller episode-score SD
 Deepdish's measured collector throughput increased from 3,007 to 13,305 decisions
 per second with eight CPU workers feeding one GPU. The required 500 trained-policy
 evaluations and training budgets are preserved. See DEEPDISH.md for the current
-queue, checkpoint archives, RNG change, and monitoring commands.
+completed execution, checkpoint archives, RNG change, and reproduction commands.
 
-The submission ultimately requires a PDF report with GitHub username, repository
-name, repository URL, execution directions, and answers for every question. These
-Markdown files are section drafts for that report. Keep the repository accessible
+The final PDF contains the GitHub username, repository name and URL, execution
+directions, required figures, and discussion answers. The Markdown files are its
+editable source sections. Submit the PDF on Canvas and provide repository access
 to the grader according to the course's submission rules.
 
 ## Report PDF
