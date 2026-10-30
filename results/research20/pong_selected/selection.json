@@ -1,0 +1,20 @@
+{
+  "training_episodes_observed": 201,
+  "training_timesteps": 1191584,
+  "last100_training_score_mean": -7.1,
+  "selected_using": "training episodes only",
+  "chosen_variant": "pong",
+  "chosen_training_score_mean": -7.1,
+  "compared_training_windows": [
+    {
+      "variant": "pong",
+      "last100_training_mean": -7.1
+    },
+    {
+      "variant": "pong_lead",
+      "last100_training_mean": -8.12
+    }
+  ],
+  "final_evaluation_used_for_selection": false,
+  "model_sha256": "7b311acb1e840a1d755dd0b86d9aa6009db5ddc463ebf2f53d7cb08f86f45ae4"
+}

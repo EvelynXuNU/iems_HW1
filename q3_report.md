@@ -25,8 +25,9 @@ states, actions, and decision times within the current batch, and changes only
 between batches. This is a simple constant baseline rather than a learned critic.
 It adds a scalar update, with negligible cost compared with game simulation.
 
-Let m_k be the mean G_0 among the complete episodes in batch k. Initialize
-n_0=z_0=0 and b_0=0. With decay d=0.9, after the actor update for batch k compute
+Let \(m_k\) be the mean \(G_0\) among the complete episodes in batch \(k\).
+Initialize \(n_0=z_0=0\) and \(b_0=0\). With decay \(d=0.9\), after the actor
+update for batch \(k\) compute
 
 \[
 n_{k+1}=d n_k+(1-d)m_k,\quad z_{k+1}=d z_k+(1-d),\quad
@@ -34,23 +35,24 @@ b_{k+1}=n_{k+1}/z_{k+1}.
 \]
 
 The denominator corrects the startup shrinkage toward zero. The next batch uses
-b_(k+1). The current batch uses b_k, fixed before its trajectories are sampled.
+\(b_{k+1}\). The current batch uses \(b_k\), fixed before its trajectories are sampled.
 Using the old value avoids the finite-sample bias that can arise when a trajectory
 helps determine the baseline subtracted from its own return.
 
 The actor still maximizes the assigned episodic objective
-J(theta)=E[sum_t gamma^t r_t]. Its loss is
+\(J(\theta)=\mathbb E[\sum_t\gamma^t r_t]\). Its loss is
 
 \[
 L(\theta)=-\frac{1}{Bc}\sum_{i=1}^{B}\sum_{t=0}^{T_i-1}
 \gamma^t(G_{i,t}-b_k)\log\pi_\theta(a_{i,t}|x_{i,t}).
 \]
 
-The baseline and returns are detached. The fixed scales c=20 for CartPole and
-c=1 for Pong match Part 1. No advantage standardization, critic bootstrap,
+The baseline and returns are detached. The fixed scales \(c=20\) for CartPole and
+\(c=1\) for Pong match Part 1. No advantage standardization, critic bootstrap,
 entropy bonus, pointwise discount reset, or reward reshaping is introduced.
-Conditioning on the previous training history and current state, b_k is fixed,
-and E_a[grad log pi(a|s)]=sum_a grad pi(a|s)=0. Thus subtracting b_k leaves the
+Conditioning on the previous training history and current state, \(b_k\) is fixed,
+and \(\mathbb E_a[\nabla_\theta\log\pi_\theta(a\mid s)]
+=\sum_a\nabla_\theta\pi_\theta(a\mid s)=0\). Thus subtracting \(b_k\) leaves the
 expected gradient unchanged, including when episodes end at different times.
 It can change variance and individual optimizer steps, as intended.
 
@@ -297,6 +299,30 @@ python q3_policy_gradient.py evaluate \
   --episodes 500 --output-dir results/q3/cartpole/reproduction/evaluation_trained
 ```
 
+Reproduce the matched Pong reference from a fresh policy and output directory:
+
+```bash
+python fast_pg.py train --part 2 --game pong --episodes 10000 --lr 0.01 \
+  --reward-scale 1 --batch-episodes 16 --workers 8 --save-every 4 --device cuda \
+  --output-dir results/q3/pong/reproduction
+python fast_pg.py evaluate --checkpoint results/q3/pong/reproduction/checkpoint.pt \
+  --episodes 500 --workers 8 --device cuda \
+  --output-dir results/q3/pong/reproduction/evaluation_trained
+```
+
+Before CUDA execution, set the following variables, replacing the quoted GPU
+identifier with your one assigned card:
+
+```bash
+export CUDA_VISIBLE_DEVICES="your-assigned-GPU-UUID"
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
+```
+
+On a CPU-only machine use `--device cpu` in both commands; timings and
+floating-point trajectories can differ. The baseline
+defaults to the documented lagged EMA with decay 0.9. Additional CartPole seeds
+use `--seed 3818` and `--seed 3819` in separate output directories.
+
 The Part 2 checkpoint includes the policy, Adam state, baseline numerator/mass,
 action RNG, and completed history. Resume requires matching parameters. The
 Deepdish command, dependency queue, and monitoring paths are in DEEPDISH.md.
@@ -335,6 +361,69 @@ pilots. New observations helped early training, but recent training scores were
 optimistic relative to the final frozen evaluation. No successful Pong agent or
 robust multi-seed improvement is claimed. GPU work finished within the campaign
 budget; no further experiment was queued.
+
+
+## Internet-informed PPO performance follow-up
+
+Within a separate 20-minute budget, I tested a different policy-gradient approach
+on Deepdish: Stable Baselines3 PPO-Clip with a learned state-value baseline,
+GAE, normalized advantages, multiple minibatch updates, and clipping. The
+[original PPO paper](https://arxiv.org/abs/1707.06347) and
+[OpenAI explanation](https://spinningup.openai.com/en/latest/algorithms/ppo.html)
+motivate limiting policy changes. The
+[SB3 documentation](https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html)
+recommends CPU execution for small MLPs; both trials therefore used Deepdish CPUs.
+Pong adds image-derived object/motion features, motivated by
+[object-centric Atari research](https://arxiv.org/abs/2306.08649).
+
+This is a supplemental algorithm comparison, not the required basic REINFORCE
+experiment. It retains the assigned discounts, official environments, and Pong
+actions 2/3. No emulator RAM, downloaded pretrained agent, scripted action rule,
+reward shaping or Pong point reset was used. RESEARCH_20MIN.md explains the
+changes, hyperparameters, source citations, reproduction, and limitations.
+
+| Frozen stochastic policy | Games | Mean score | Sample SD | At cap / wins |
+|---|---:|---:|---:|---:|
+| CartPole PPO | 500 | 500.000 | 0.0000 | 500/500 at 500 |
+| Pong PPO, image-derived features | 500 | -9.772 | 4.0799 | 10/500 wins |
+
+Both improve over their prior Part 2 means (438.342 for CartPole; -18.492 for
+the earlier Pong CNN follow-up). The baseline, estimator, architecture, input
+representation and budgets differ, so this does not isolate a baseline effect.
+Each result is conditional on one training seed. CartPole's observed zero SD
+does not imply population certainty: its exact one-sided 95% lower bound on the
+probability of reaching the cap is 0.9940.
+
+![PPO CartPole training](results/research20/cartpole/training_rewards.png)
+
+**Figure 10.** Raw PPO CartPole screening scores and exact trailing 100-episode
+mean. The vertical line marks training-only checkpoint selection; later training
+was retained in the plot but did not determine the frozen test result.
+
+![PPO CartPole frozen evaluation](results/research20/cartpole/evaluation/reward_histogram.png)
+
+**Figure 11.** All 500 requested seeds reached the official time limit. These
+are time-limit truncations, rather than physical failure terminations.
+
+![PPO Pong training](results/research20/pong_selected/training_rewards.png)
+
+**Figure 12.** PPO Pong screening with 12 pixel-derived features. Its best
+trailing training mean was -7.10, versus -8.12 for a shorter second pilot adding
+approximate intercept features. The shorter pilot is inconclusive, not evidence
+that intercept features cannot help. Selection preceded all final Pong games.
+
+![PPO Pong frozen evaluation](results/research20/pong_selected/evaluation/reward_histogram.png)
+
+**Figure 13.** Exactly 500 fixed reserved seeds, stochastic learned actions, and
+full official games. All requested seeds must finish; faster extra autoreset
+games are ignored. The model SHA-256 and training-only selection were audited.
+The feature extractor passed synthetic centroid/motion/reset checks and matched
+4,135 official Pong transitions under the same actions. Execution used an
+isolated dependency directory, preserving the original assignment environment.
+
+The raw-data audit and selection evidence are under results/research20. Run
+`python audit_research_results.py` to recompute the statistics and training plots;
+`python validate_research_ppo.py` validates feature and environment behavior.
 
 ## With three additional months
 

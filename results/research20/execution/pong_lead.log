@@ -1,0 +1,239 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+pong_lead steps=4096 episodes=0 mean100=0.00 best=-inf
+pong_lead steps=8192 episodes=0 mean100=0.00 best=-inf
+pong_lead steps=12288 episodes=0 mean100=0.00 best=-inf
+pong_lead steps=16384 episodes=6 mean100=-20.67 best=-inf
+pong_lead steps=20480 episodes=10 mean100=-20.40 best=-inf
+pong_lead steps=24576 episodes=13 mean100=-20.23 best=-inf
+pong_lead steps=28672 episodes=15 mean100=-19.93 best=-inf
+pong_lead steps=32768 episodes=16 mean100=-20.00 best=-inf
+pong_lead steps=36864 episodes=16 mean100=-20.00 best=-inf
+pong_lead steps=40960 episodes=18 mean100=-19.89 best=-inf
+pong_lead steps=45056 episodes=19 mean100=-19.74 best=-inf
+pong_lead steps=49152 episodes=20 mean100=-19.75 best=-inf
+pong_lead steps=53248 episodes=21 mean100=-19.67 best=-inf
+pong_lead steps=57344 episodes=21 mean100=-19.67 best=-inf
+pong_lead steps=61440 episodes=24 mean100=-19.38 best=-inf
+pong_lead steps=65536 episodes=27 mean100=-19.04 best=-inf
+pong_lead steps=69632 episodes=27 mean100=-19.04 best=-inf
+pong_lead steps=73728 episodes=32 mean100=-18.47 best=-inf
+pong_lead steps=77824 episodes=32 mean100=-18.47 best=-inf
+pong_lead steps=81920 episodes=32 mean100=-18.47 best=-inf
+pong_lead steps=86016 episodes=33 mean100=-18.42 best=-inf
+pong_lead steps=90112 episodes=34 mean100=-18.35 best=-inf
+pong_lead steps=94208 episodes=34 mean100=-18.35 best=-inf
+pong_lead steps=98304 episodes=35 mean100=-18.20 best=-inf
+pong_lead steps=102400 episodes=36 mean100=-18.06 best=-inf
+pong_lead steps=106496 episodes=36 mean100=-18.06 best=-inf
+pong_lead steps=110592 episodes=36 mean100=-18.06 best=-inf
+pong_lead steps=114688 episodes=38 mean100=-18.08 best=-inf
+pong_lead steps=118784 episodes=38 mean100=-18.08 best=-inf
+pong_lead steps=122880 episodes=38 mean100=-18.08 best=-inf
+pong_lead steps=126976 episodes=38 mean100=-18.08 best=-inf
+pong_lead steps=131072 episodes=38 mean100=-18.08 best=-inf
+pong_lead steps=135168 episodes=39 mean100=-17.77 best=-inf
+pong_lead steps=139264 episodes=39 mean100=-17.77 best=-inf
+pong_lead steps=143360 episodes=41 mean100=-17.49 best=-inf
+pong_lead steps=147456 episodes=42 mean100=-17.26 best=-inf
+pong_lead steps=151552 episodes=43 mean100=-17.19 best=-inf
+pong_lead steps=155648 episodes=45 mean100=-16.87 best=-inf
+pong_lead steps=159744 episodes=45 mean100=-16.87 best=-inf
+pong_lead steps=163840 episodes=46 mean100=-16.80 best=-inf
+pong_lead steps=167936 episodes=47 mean100=-16.66 best=-inf
+pong_lead steps=172032 episodes=47 mean100=-16.66 best=-inf
+pong_lead steps=176128 episodes=49 mean100=-16.39 best=-inf
+pong_lead steps=180224 episodes=49 mean100=-16.39 best=-inf
+pong_lead steps=184320 episodes=49 mean100=-16.39 best=-inf
+pong_lead steps=188416 episodes=50 mean100=-16.24 best=-inf
+pong_lead steps=192512 episodes=51 mean100=-16.06 best=-inf
+pong_lead steps=196608 episodes=51 mean100=-16.06 best=-inf
+pong_lead steps=200704 episodes=52 mean100=-15.87 best=-inf
+pong_lead steps=204800 episodes=53 mean100=-15.72 best=-inf
+pong_lead steps=208896 episodes=53 mean100=-15.72 best=-inf
+pong_lead steps=212992 episodes=54 mean100=-15.76 best=-inf
+pong_lead steps=217088 episodes=54 mean100=-15.76 best=-inf
+pong_lead steps=221184 episodes=54 mean100=-15.76 best=-inf
+pong_lead steps=225280 episodes=55 mean100=-15.73 best=-inf
+pong_lead steps=229376 episodes=57 mean100=-15.65 best=-inf
+pong_lead steps=233472 episodes=59 mean100=-15.53 best=-inf
+pong_lead steps=237568 episodes=60 mean100=-15.48 best=-inf
+pong_lead steps=241664 episodes=61 mean100=-15.33 best=-inf
+pong_lead steps=245760 episodes=62 mean100=-15.23 best=-inf
+pong_lead steps=249856 episodes=62 mean100=-15.23 best=-inf
+pong_lead steps=253952 episodes=64 mean100=-15.05 best=-inf
+pong_lead steps=258048 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=262144 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=266240 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=270336 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=274432 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=278528 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=282624 episodes=65 mean100=-15.00 best=-inf
+pong_lead steps=286720 episodes=66 mean100=-14.92 best=-inf
+pong_lead steps=290816 episodes=66 mean100=-14.92 best=-inf
+pong_lead steps=294912 episodes=68 mean100=-14.78 best=-inf
+pong_lead steps=299008 episodes=68 mean100=-14.78 best=-inf
+pong_lead steps=303104 episodes=68 mean100=-14.78 best=-inf
+pong_lead steps=307200 episodes=68 mean100=-14.78 best=-inf
+pong_lead steps=311296 episodes=68 mean100=-14.78 best=-inf
+pong_lead steps=315392 episodes=68 mean100=-14.78 best=-inf
+pong_lead steps=319488 episodes=69 mean100=-14.70 best=-inf
+pong_lead steps=323584 episodes=69 mean100=-14.70 best=-inf
+pong_lead steps=327680 episodes=72 mean100=-14.53 best=-inf
+pong_lead steps=331776 episodes=72 mean100=-14.53 best=-inf
+pong_lead steps=335872 episodes=74 mean100=-14.43 best=-inf
+pong_lead steps=339968 episodes=75 mean100=-14.31 best=-inf
+pong_lead steps=344064 episodes=75 mean100=-14.31 best=-inf
+pong_lead steps=348160 episodes=76 mean100=-14.30 best=-inf
+pong_lead steps=352256 episodes=76 mean100=-14.30 best=-inf
+pong_lead steps=356352 episodes=78 mean100=-14.17 best=-inf
+pong_lead steps=360448 episodes=78 mean100=-14.17 best=-inf
+pong_lead steps=364544 episodes=78 mean100=-14.17 best=-inf
+pong_lead steps=368640 episodes=78 mean100=-14.17 best=-inf
+pong_lead steps=372736 episodes=79 mean100=-14.00 best=-inf
+pong_lead steps=376832 episodes=80 mean100=-13.94 best=-inf
+pong_lead steps=380928 episodes=80 mean100=-13.94 best=-inf
+pong_lead steps=385024 episodes=81 mean100=-13.81 best=-inf
+pong_lead steps=389120 episodes=82 mean100=-13.68 best=-inf
+pong_lead steps=393216 episodes=83 mean100=-13.64 best=-inf
+pong_lead steps=397312 episodes=83 mean100=-13.64 best=-inf
+pong_lead steps=401408 episodes=83 mean100=-13.64 best=-inf
+pong_lead steps=405504 episodes=83 mean100=-13.64 best=-inf
+pong_lead steps=409600 episodes=83 mean100=-13.64 best=-inf
+pong_lead steps=413696 episodes=83 mean100=-13.64 best=-inf
+pong_lead steps=417792 episodes=84 mean100=-13.54 best=-inf
+pong_lead steps=421888 episodes=84 mean100=-13.54 best=-inf
+pong_lead steps=425984 episodes=85 mean100=-13.52 best=-inf
+pong_lead steps=430080 episodes=86 mean100=-13.43 best=-inf
+pong_lead steps=434176 episodes=86 mean100=-13.43 best=-inf
+pong_lead steps=438272 episodes=87 mean100=-13.37 best=-inf
+pong_lead steps=442368 episodes=89 mean100=-13.37 best=-inf
+pong_lead steps=446464 episodes=90 mean100=-13.32 best=-inf
+pong_lead steps=450560 episodes=91 mean100=-13.29 best=-inf
+pong_lead steps=454656 episodes=92 mean100=-13.22 best=-inf
+pong_lead steps=458752 episodes=92 mean100=-13.22 best=-inf
+pong_lead steps=462848 episodes=94 mean100=-13.07 best=-inf
+pong_lead steps=466944 episodes=95 mean100=-12.98 best=-inf
+pong_lead steps=471040 episodes=95 mean100=-12.98 best=-inf
+pong_lead steps=475136 episodes=96 mean100=-12.81 best=-inf
+pong_lead steps=479232 episodes=97 mean100=-12.80 best=-inf
+pong_lead steps=483328 episodes=98 mean100=-12.70 best=-inf
+pong_lead steps=487424 episodes=98 mean100=-12.70 best=-inf
+pong_lead steps=491520 episodes=98 mean100=-12.70 best=-inf
+pong_lead steps=495616 episodes=98 mean100=-12.70 best=-inf
+pong_lead steps=499712 episodes=98 mean100=-12.70 best=-inf
+pong_lead steps=503808 episodes=98 mean100=-12.70 best=-inf
+pong_lead steps=507904 episodes=99 mean100=-12.69 best=-inf
+pong_lead steps=512000 episodes=99 mean100=-12.69 best=-inf
+pong_lead steps=516096 episodes=100 mean100=-12.54 best=-12.54
+pong_lead steps=520192 episodes=100 mean100=-12.54 best=-12.54
+pong_lead steps=524288 episodes=100 mean100=-12.54 best=-12.54
+pong_lead steps=528384 episodes=101 mean100=-12.49 best=-12.49
+pong_lead steps=532480 episodes=101 mean100=-12.49 best=-12.49
+pong_lead steps=536576 episodes=101 mean100=-12.49 best=-12.49
+pong_lead steps=540672 episodes=102 mean100=-12.40 best=-12.40
+pong_lead steps=544768 episodes=103 mean100=-12.22 best=-12.22
+pong_lead steps=548864 episodes=105 mean100=-11.95 best=-11.95
+pong_lead steps=552960 episodes=105 mean100=-11.95 best=-11.95
+pong_lead steps=557056 episodes=107 mean100=-11.72 best=-11.72
+pong_lead steps=561152 episodes=108 mean100=-11.64 best=-11.64
+pong_lead steps=565248 episodes=108 mean100=-11.64 best=-11.64
+pong_lead steps=569344 episodes=109 mean100=-11.50 best=-11.50
+pong_lead steps=573440 episodes=109 mean100=-11.50 best=-11.50
+pong_lead steps=577536 episodes=109 mean100=-11.50 best=-11.50
+pong_lead steps=581632 episodes=111 mean100=-11.24 best=-11.24
+pong_lead steps=585728 episodes=112 mean100=-11.16 best=-11.16
+pong_lead steps=589824 episodes=112 mean100=-11.16 best=-11.16
+pong_lead steps=593920 episodes=112 mean100=-11.16 best=-11.16
+pong_lead steps=598016 episodes=113 mean100=-10.99 best=-10.99
+pong_lead steps=602112 episodes=113 mean100=-10.99 best=-10.99
+pong_lead steps=606208 episodes=113 mean100=-10.99 best=-10.99
+pong_lead steps=610304 episodes=114 mean100=-10.86 best=-10.86
+pong_lead steps=614400 episodes=115 mean100=-10.78 best=-10.78
+pong_lead steps=618496 episodes=115 mean100=-10.78 best=-10.78
+pong_lead steps=622592 episodes=116 mean100=-10.60 best=-10.60
+pong_lead steps=626688 episodes=117 mean100=-10.47 best=-10.47
+pong_lead steps=630784 episodes=118 mean100=-10.37 best=-10.37
+pong_lead steps=634880 episodes=118 mean100=-10.37 best=-10.37
+pong_lead steps=638976 episodes=119 mean100=-10.29 best=-10.29
+pong_lead steps=643072 episodes=119 mean100=-10.29 best=-10.29
+pong_lead steps=647168 episodes=119 mean100=-10.29 best=-10.29
+pong_lead steps=651264 episodes=120 mean100=-10.14 best=-10.14
+pong_lead steps=655360 episodes=122 mean100=-9.97 best=-9.97
+pong_lead steps=659456 episodes=122 mean100=-9.97 best=-9.97
+pong_lead steps=663552 episodes=123 mean100=-9.87 best=-9.87
+pong_lead steps=667648 episodes=124 mean100=-9.72 best=-9.72
+pong_lead steps=671744 episodes=124 mean100=-9.72 best=-9.72
+pong_lead steps=675840 episodes=124 mean100=-9.72 best=-9.72
+pong_lead steps=679936 episodes=124 mean100=-9.72 best=-9.72
+pong_lead steps=684032 episodes=124 mean100=-9.72 best=-9.72
+pong_lead steps=688128 episodes=125 mean100=-9.67 best=-9.67
+pong_lead steps=692224 episodes=125 mean100=-9.67 best=-9.67
+pong_lead steps=696320 episodes=125 mean100=-9.67 best=-9.67
+pong_lead steps=700416 episodes=126 mean100=-9.60 best=-9.60
+pong_lead steps=704512 episodes=127 mean100=-9.47 best=-9.47
+pong_lead steps=708608 episodes=128 mean100=-9.41 best=-9.41
+pong_lead steps=712704 episodes=128 mean100=-9.41 best=-9.41
+pong_lead steps=716800 episodes=128 mean100=-9.41 best=-9.41
+pong_lead steps=720896 episodes=128 mean100=-9.41 best=-9.41
+pong_lead steps=724992 episodes=128 mean100=-9.41 best=-9.41
+pong_lead steps=729088 episodes=129 mean100=-9.34 best=-9.34
+pong_lead steps=733184 episodes=129 mean100=-9.34 best=-9.34
+pong_lead steps=737280 episodes=129 mean100=-9.34 best=-9.34
+pong_lead steps=741376 episodes=130 mean100=-9.22 best=-9.22
+pong_lead steps=745472 episodes=131 mean100=-9.09 best=-9.09
+pong_lead steps=749568 episodes=131 mean100=-9.09 best=-9.09
+pong_lead steps=753664 episodes=131 mean100=-9.09 best=-9.09
+pong_lead steps=757760 episodes=132 mean100=-8.92 best=-8.92
+pong_lead steps=761856 episodes=132 mean100=-8.92 best=-8.92
+pong_lead steps=765952 episodes=133 mean100=-8.81 best=-8.81
+pong_lead steps=770048 episodes=135 mean100=-8.62 best=-8.62
+pong_lead steps=774144 episodes=136 mean100=-8.59 best=-8.59
+pong_lead steps=778240 episodes=136 mean100=-8.59 best=-8.59
+pong_lead steps=782336 episodes=137 mean100=-8.35 best=-8.35
+pong_lead steps=786432 episodes=137 mean100=-8.35 best=-8.35
+pong_lead steps=790528 episodes=137 mean100=-8.35 best=-8.35
+pong_lead steps=794624 episodes=138 mean100=-8.28 best=-8.28
+pong_lead steps=798720 episodes=139 mean100=-8.31 best=-8.28
+pong_lead steps=802816 episodes=139 mean100=-8.31 best=-8.28
+pong_lead steps=806912 episodes=141 mean100=-8.21 best=-8.21
+pong_lead steps=811008 episodes=142 mean100=-8.15 best=-8.15
+pong_lead steps=815104 episodes=142 mean100=-8.15 best=-8.15
+pong_lead steps=819200 episodes=142 mean100=-8.15 best=-8.15
+pong_lead steps=823296 episodes=143 mean100=-8.12 best=-8.12
+pong_lead steps=827392 episodes=143 mean100=-8.12 best=-8.12
+pong_lead steps=831488 episodes=143 mean100=-8.12 best=-8.12
+pong_lead steps=835584 episodes=143 mean100=-8.12 best=-8.12
+pong_lead steps=839680 episodes=143 mean100=-8.12 best=-8.12
+pong_lead steps=843776 episodes=143 mean100=-8.12 best=-8.12
+pong_lead steps=847872 episodes=143 mean100=-8.12 best=-8.12

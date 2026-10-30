@@ -182,3 +182,23 @@ Rebuild it with `python build_report.py` using Pandoc and XeLaTeX. It incorporat
 all three sections, the budgeted CNN follow-up, and labels the failed Pong
 configurations honestly. The original runtime source is preserved at commit
 `5b1d407`; follow-up source snapshots accompany the tuning evidence.
+
+## Final review and Canvas submission
+
+See [FINAL_REVIEW.md](FINAL_REVIEW.md) for the independent rubric audit,
+verification results, remaining performance limitations, and final packaging
+checks. The earlier verification-review files are historical notes.
+
+Upload **output/pdf/assignment1_report.pdf** on Canvas. The assignment requests
+one PDF there; keep all assignment code in the linked GitHub repository and
+ensure the grader has access. Separate Markdown files, plots, checkpoints, and
+a source ZIP are not required Canvas uploads by the supplied assignment PDF.
+
+## Latest performance follow-up
+
+The internet-informed PPO trials ran on Deepdish: CartPole reached 500 in all
+500 evaluation games (mean 500, sample SD 0); Pong averaged -9.772 (sample SD
+4.0799) and won 10/500. See [RESEARCH_20MIN.md](RESEARCH_20MIN.md) for the
+source-supported approach, model-selection protocol and limitations. These are
+supplemental PPO results; the required basic REINFORCE experiments remain
+separately documented. All campaign jobs have stopped.

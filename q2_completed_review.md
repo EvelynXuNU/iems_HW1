@@ -1,5 +1,10 @@
 # Q2 review after the completed Deepdish run
 
+> **Historical review.** This note predates the final report and repository
+> packaging. Its statements about outdated reports and unpublished evidence
+> describe that earlier state. See [FINAL_REVIEW.md](FINAL_REVIEW.md) and the
+> current [submission PDF](output/pdf/assignment1_report.pdf) for the final status.
+
 The run is complete and the required result files check out. The main remaining
 risks are an outdated report, unpublished code/results, and limited learning
 performance. I found no implementation error that invalidates the run.

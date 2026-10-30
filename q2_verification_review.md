@@ -1,5 +1,10 @@
 # Policy gradient Part 1: independent review and runtime options
 
+> **Historical review.** This note predates the completed Pong experiment and
+> report. Its statements about missing figures and evaluations describe that
+> earlier state. See [FINAL_REVIEW.md](FINAL_REVIEW.md) and the current
+> [submission PDF](output/pdf/assignment1_report.pdf) for the final status.
+
 The implementation is sound, but this section is not ready for a full-credit
 submission. CartPole has the required results and plots. Pong still lacks its
 final training curve and the trained policy's 500-game histogram, mean, and

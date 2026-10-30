@@ -1,0 +1,6 @@
+# Supplemental PPO experiments; install separately from the reference environment.
+-r requirements-q2.txt
+stable-baselines3==2.9.2
+pandas==3.1.0
+python-dateutil==3.0.0
+six==1.17.0

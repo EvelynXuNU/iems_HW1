@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "episodes": 500,
+  "requested_episodes": 500,
+  "evaluation_seed_base": 1950000000,
+  "policy": "frozen stochastic PPO policy",
+  "seed_protocol": "fixed round-robin bank; wait for every requested seed; ignore extra games",
+  "model_sha256": "e7b8c4eee28f9e923d84f51f066dced7b986bdedd089422ea6894825a1759766",
+  "mean": 500.0,
+  "sample_standard_deviation": 0.0,
+  "min": 500.0,
+  "max": 500.0,
+  "mean_approx_95_ci": [
+    500.0,
+    500.0
+  ],
+  "wins": null,
+  "reached_500": 500,
+  "terminated_episodes": 0,
+  "truncated_episodes": 500
+}

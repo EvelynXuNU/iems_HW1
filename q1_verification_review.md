@@ -1,5 +1,10 @@
 # Value and policy iteration: independent review
 
+> **Historical review.** This note predates the completed report and repository
+> packaging. Its statements about missing deliverables describe that earlier
+> state. See [FINAL_REVIEW.md](FINAL_REVIEW.md) and the current
+> [submission PDF](output/pdf/assignment1_report.pdf) for the final status.
+
 The work has a strong case for all 30 technical points. I found no incorrect
 Bellman equation, implementation error, missing required plot, or unsupported
 numerical result. I would not call the submission ready yet: the required PDF

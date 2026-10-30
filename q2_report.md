@@ -166,8 +166,9 @@ approximately 0.6931 for a uniform binary policy. Poor scores combined with low
 entropy motivate checking premature action concentration; they do not prove
 that this caused the failure. A high-value next tuning experiment is matched,
 training-only learning-rate pilots at 0.01, 0.003, and 0.001, inspecting scores,
-discounted returns, and entropy. These smaller rates are untested candidates,
-not demonstrated fixes. Evaluation data must remain outside that selection.
+discounted returns, and entropy. These smaller rates remain untested for Part 1;
+the separate Part 2 rate screen later in this report did not establish them as
+fixes. Evaluation data must remain outside that selection.
 
 ### Fresh fixed-policy diagnostic controls
 
@@ -304,6 +305,23 @@ Use Python 3.11+ with requirements-q2.txt. The tested local environment used Pyt
 3.11.2. Every run saves its actual versions and configuration. Deepdish should use
 a compatible CUDA-enabled PyTorch installation and expose exactly one GPU.
 See README.md and DEEPDISH.md for complete commands and output locations.
+
+Reproduce the primary CartPole training and its required evaluation in a fresh
+directory (CPU is the default):
+
+```bash
+python q2_policy_gradient.py train --game cartpole --episodes 6000 --lr 0.003 \
+  --output-dir results/q2/cartpole/reproduction
+python q2_policy_gradient.py evaluate \
+  --checkpoint results/q2/cartpole/reproduction/checkpoint.pt \
+  --episodes 500 --output-dir results/q2/cartpole/reproduction/evaluation_trained
+```
+
+The optional random reference uses the same evaluate command with
+`--random-policy` and a different output directory. To repeat the additional
+training seeds, add `--seed 3818` or `--seed 3819` to train and choose a fresh
+directory for each run. The evaluator reads the training configuration from
+the checkpoint; it performs no training.
 
 This report covers Policy Gradient Part 1. The shuttle and baseline experiments
 are documented separately. All experiment source, figures, CSVs, metadata, and

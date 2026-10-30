@@ -11,7 +11,7 @@ def main():
     temporary.mkdir(parents=True,exist_ok=True)
     output=root/'output/pdf/assignment1_report.pdf'
     output.parent.mkdir(parents=True,exist_ok=True)
-    front='''---
+    front=r'''---
 title: "Assignment 1: Reinforcement Learning"
 author: "Jianong Xu (GitHub: EvelynXuNU)"
 date: "October 29, 2026"
@@ -27,6 +27,29 @@ The Pong reference configurations lost every evaluation game; they are documente
 as limited-learning results. Proposed improvements are distinguished from measured
 experiments. Source, checkpoints, episode data, and validation evidence accompany
 the report in the repository.
+
+The report follows the assignment's three technical parts. Each part includes
+its model or algorithm, labeled results, quantitative validation and edge cases,
+execution directions, and experiments proposed for three additional months.
+Part 2 also compares gradient variance directly and reports an additional,
+clearly labeled Pong tuning experiment.
+
+**Execution overview.** Use Python 3.11 or newer. From the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-q2.txt
+```
+
+The shuttle can also run with the smaller requirements.txt dependency set.
+The execution subsections provide training, evaluation, and validation commands.
+Fresh output directories preserve the recorded experiments. CUDA commands use
+exactly one assigned GPU; CPU validation is sufficient for the mathematical checks.
+
+\newpage
+\setcounter{tocdepth}{2}
+\tableofcontents
 
 '''
     sections=[(root/p).read_text() for p in ['q1_report.md','q2_report.md','q3_report.md']]
@@ -45,7 +68,7 @@ the report in the repository.
        '--pdf-engine='+xelatex,'--resource-path='+str(root),
        '--include-in-header='+str(root/'report/header.tex'),
        '--lua-filter='+str(root/'report/keep_figures.lua'),
-       '--toc','--toc-depth=2','-V','geometry:margin=0.8in','-V','fontsize:10pt',
+       '--toc-depth=2','-V','geometry:margin=0.8in','-V','fontsize:10pt',
        '-V','colorlinks:true','-V','urlcolor:blue']
     subprocess.run(command,cwd=root,env=environment,check=True)
     print(output)
