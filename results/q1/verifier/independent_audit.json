@@ -1,0 +1,29 @@
+{
+  "finite_all_times": {
+    "compared_values": 100701,
+    "compared_actions": 100500,
+    "max_value_error": 3.183231456205249e-12,
+    "action_disagreements": 0,
+    "last_epoch_all_wait": true
+  },
+  "independent_infinite_certificate": {
+    "policy": "wait 0..12; dispatch 13..200",
+    "value_at_0": 576.6701677662195,
+    "bellman_residual": 9.094947017729282e-13,
+    "value_error_bound": 1.8189894035458565e-11,
+    "minimum_action_gap": 3.7780043854958194,
+    "max_error_to_saved_pi": 0.0,
+    "max_error_to_saved_vi": 9.62381818681024e-09,
+    "action_gap_at_12": -3.7780043854958194,
+    "action_gap_at_13": 4.0996632537192
+  },
+  "threshold_enumeration": {
+    "thresholds_evaluated": 202,
+    "states_per_threshold": 201,
+    "best_from_empty": 13,
+    "threshold_12_cost_at_0": 581.6642644314329,
+    "threshold_13_cost_at_0": 576.6701677662195,
+    "threshold_14_cost_at_0": 581.5812912907398,
+    "threshold_15_cost_at_0": 597.355975269838
+  }
+}

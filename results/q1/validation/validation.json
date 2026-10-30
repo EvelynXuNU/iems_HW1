@@ -1,0 +1,100 @@
+{
+  "Bellman optimality certificate and solver agreement": {
+    "pi_residual": 4.547473508864641e-13,
+    "pi_value_error_bound": 9.094947017729274e-12,
+    "vi_residual": 4.82032191939652e-10,
+    "max_value_difference": 9.62381818681024e-09,
+    "policy_disagreements": 0,
+    "pi_evaluations": 6,
+    "minimum_action_gap": 3.778004385495933
+  },
+  "Literal decision-tree enumeration on a tiny MDP": {
+    "comparisons": 35,
+    "max_absolute_error": 0.0,
+    "horizons": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "states": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "purpose": "Independent oracle tests adaptive minimization and arrival expectations"
+  },
+  "Zero arrivals: independent closed-form clearing-or-waiting solution": {
+    "states_checked": 201,
+    "max_absolute_error": 1.8189894035458565e-12,
+    "costs_at_states_0_1_2_3": [
+      -2.243819165558211e-13,
+      39.99999999999949,
+      79.99999999999949,
+      99.99999999999979
+    ],
+    "interpretation": "Discounting makes leaving one or two passengers forever optimal"
+  },
+  "Deterministic arrivals: cycle formula and first ten decisions": {
+    "analytic_cost_at_0": 569.7530187138842,
+    "computed_cost_at_0": 569.7530187138831,
+    "absolute_error": 1.1368683772161603e-12,
+    "trace_file": "deterministic_first_10_steps.csv"
+  },
+  "Analytical economic limits": {
+    "zero_holding_cost_max_value": 0.0,
+    "free_dispatch_max_value_states_0_to_15": 1.974560865691226e-12,
+    "gamma_zero_dispatch_states": 0,
+    "zero_capacity_zero_arrivals_max_error": 9.094947017729282e-13,
+    "tie_handling": "Exact ties choose wait; at s=0 with free dispatch the actions coincide"
+  },
+  "Finite-horizon terminal behavior and convergence": {
+    "final_epoch_dispatch_states": 0,
+    "finite_500_max_error": 4.940829967381433e-09,
+    "finite_500_tail_bound": 6.838022067752704e-08,
+    "finite_500_policy_disagreements": 0,
+    "final_epoch_explanation": "One shuttle saves at most 2*15=30 holding cost but costs 100"
+  },
+  "Queue-cap aggregation and sensitivity": {
+    "wait_at_198_probability_to_199": 0.2,
+    "wait_at_198_probability_to_200": 0.8,
+    "optimal_largest_next_state_from_0_to_200": 190,
+    "baseline_cap_200_vs_300_max_value_difference": 4.547473508864641e-13,
+    "baseline_cap_policy_disagreements": 0,
+    "expensive_dispatch_cap_value_difference_at_200": 1863.4459624565025,
+    "implication": "Cap assumption is inactive under the baseline optimum, but consequential in other regimes"
+  },
+  "Economic sensitivity across all states": {
+    "experiments": 12,
+    "predictions": "Higher costs or gamma cannot lower optimal discounted cost; higher capacity cannot raise it",
+    "capacity_5_dispatch_interval": [
+      5,
+      192
+    ],
+    "capacity_5_implication": "Free overflow can destroy a global threshold policy: wait again at states 193..200"
+  },
+  "Exact comparisons with dispatch baselines": {
+    "cost_at_0": {
+      "optimal": 576.6701677662195,
+      "always_wait": 2203.913256096553,
+      "always_dispatch": 2000.0000000000075,
+      "wait_until_full_15": 597.355975269838
+    },
+    "states_checked_per_baseline": 201
+  },
+  "Independent Monte Carlo policy evaluation": {
+    "experiments": 7,
+    "episodes_per_experiment": 20000,
+    "horizon": 400,
+    "seed": 3817,
+    "tail_upper_bound": 1.154968046482667e-05,
+    "max_absolute_standardized_error": 1.5642108441627567,
+    "deterministic_max_error": 2.2737367544323206e-12,
+    "caveat": "CIs target 400-period cost and quantify sampling error only; diagnostic tolerance is 5 SE"
+  }
+}

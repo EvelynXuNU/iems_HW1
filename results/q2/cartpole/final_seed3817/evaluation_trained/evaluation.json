@@ -1,0 +1,33 @@
+{
+  "env_id": "CartPole-v1",
+  "episodes": 500,
+  "mean": 181.612,
+  "sample_standard_deviation": 97.23037049138394,
+  "population_standard_deviation": 97.13309145703127,
+  "mean_approx_95_ci": [
+    173.08938225846802,
+    190.13461774153197
+  ],
+  "min": 20.0,
+  "max": 500.0,
+  "discounted_return_mean": 19.902657716799848,
+  "terminated_episodes": 485,
+  "truncated_episodes": 15,
+  "win_fraction": null,
+  "cartpole_500_fraction": 0.03,
+  "policy": "trained stochastic policy",
+  "training_episodes": 6000,
+  "training_seed": 3817,
+  "evaluation_seed": 1500000000,
+  "checkpoint": "/Users/evelynxu/Desktop/iems_HW1/results/q2/cartpole/final_seed3817/checkpoint.pt",
+  "checkpoint_sha256": "84e0813f2fdfa421f66bf761d51729a9abdce96610f39ff179d6eb1870e0458b",
+  "versions": {
+    "python": "3.13.13",
+    "platform": "macOS-14.5-arm64-arm-64bit-Mach-O",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "ale-py": "0.12.1",
+    "matplotlib": "3.11.2"
+  }
+}

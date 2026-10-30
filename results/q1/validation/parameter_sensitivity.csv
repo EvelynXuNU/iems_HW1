@@ -1,0 +1,13 @@
+parameter,setting,cost_at_0,first_dispatch_state,is_threshold_policy
+dispatch_cost,50,381.88966208662004,11,True
+dispatch_cost,100,576.6701677662195,13,True
+dispatch_cost,200,930.7037006525086,14,True
+holding_cost,1,465.3518503262543,14,True
+holding_cost,2,576.6701677662195,13,True
+holding_cost,4,763.7793241732401,11,True
+capacity,5,1177.9999999999998,5,False
+capacity,15,576.6701677662195,13,True
+capacity,30,549.7672134013368,17,True
+discount,0.5,12.000000000000002,,True
+discount,0.8,96.70570310190561,14,True
+discount,0.95,576.6701677662195,13,True

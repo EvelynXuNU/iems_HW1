@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+tmp/
+.DS_Store
+
+# Local credentials, setup reports, and machine configuration
+.env
+.env.*
+*.pem
+*.key
+mlds-setup-report.json
+deepdish.local.env

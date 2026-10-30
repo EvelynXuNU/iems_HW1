@@ -1,0 +1,5 @@
+episode,seed,score,discounted_return,length,terminated,truncated
+1,3817,-21.0,-1.5487054567086858,888,True,False
+2,3818,-21.0,-1.1847722162338905,1008,True,False
+3,3819,-21.0,-1.3745273167787393,888,True,False
+4,3820,-21.0,-0.7370208486513241,1067,True,False

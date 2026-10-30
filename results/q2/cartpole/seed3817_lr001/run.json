@@ -1,0 +1,27 @@
+{
+  "config": {
+    "game": "cartpole",
+    "seed": 3817,
+    "learning_rate": 0.01,
+    "hidden": 64,
+    "batch_episodes": 16,
+    "reward_scale": 20.0
+  },
+  "gamma": 0.95,
+  "env_id": "CartPole-v1",
+  "device": "cpu",
+  "versions": {
+    "python": "3.13.13",
+    "platform": "macOS-14.5-arm64-arm-64bit-Mach-O",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "ale-py": "0.12.1",
+    "matplotlib": "3.11.2"
+  },
+  "target_episodes": 3000,
+  "max_episode_steps": 500,
+  "objective": "E[sum_t gamma^t r_t]",
+  "baseline": null,
+  "evaluation_policy": "stochastic, sampled from trained policy"
+}

@@ -1,0 +1,280 @@
+{
+  "seed": 82431,
+  "models": 30,
+  "total_policies_enumerated": 1920,
+  "max_pi_value_error": 1.1937117960769683e-12,
+  "max_vi_value_error": 9.97488314169459e-09,
+  "max_action_suboptimality": 0.0,
+  "cases": [
+    {
+      "case": 0,
+      "policies_enumerated": 64,
+      "pi_value_error": 2.1316282072803006e-14,
+      "vi_value_error": 9.925471999849833e-09,
+      "returned_policy_value_error": 2.1316282072803006e-14,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 1,
+      "policies_enumerated": 64,
+      "pi_value_error": 5.175657408399552e-15,
+      "vi_value_error": 4.9302396871666225e-15,
+      "returned_policy_value_error": 5.175657408399552e-15,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 2,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 0.0,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 3,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.951733659363526e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 4,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 0.0,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 5,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.917727084030048e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 6,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 6.929177231995709e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 7,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.892914931697305e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 8,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 8.637762505259161e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 9,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.933728506439365e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 10,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.971415693144081e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 11,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.10555542077418e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 12,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 8.562253128729935e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 13,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 2.339695992503721e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 14,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 4.606445225263656e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 15,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 5.133619751518381e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 16,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.068738648920771e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 17,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 8.26425150535215e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 18,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.872564987745136e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 19,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 5.014356929677888e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 20,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 8.124899864014878e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 21,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.97488314169459e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 22,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.112010701528561e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 23,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.905136266752379e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 24,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 9.927475730364677e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 25,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 2.8898243797925716e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 26,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 5.588756124552674e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 27,
+      "policies_enumerated": 64,
+      "pi_value_error": 0.0,
+      "vi_value_error": 8.62621396535701e-09,
+      "returned_policy_value_error": 0.0,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 28,
+      "policies_enumerated": 64,
+      "pi_value_error": 7.105427357601002e-15,
+      "vi_value_error": 9.853501126144693e-09,
+      "returned_policy_value_error": 7.105427357601002e-15,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    },
+    {
+      "case": 29,
+      "policies_enumerated": 64,
+      "pi_value_error": 1.1937117960769683e-12,
+      "vi_value_error": 9.910195331030991e-09,
+      "returned_policy_value_error": 1.1937117960769683e-12,
+      "pi_action_suboptimality": 0.0,
+      "vi_action_suboptimality": 0.0
+    }
+  ]
+}
