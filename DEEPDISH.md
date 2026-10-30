@@ -179,9 +179,8 @@ solved. In particular, inspect win fraction, score distribution, truncations,
 and the recorded environment limits. Re-run compare_policy_gradients.py after
 retrieving completed results to rebuild the Part 1/Part 2 comparisons.
 
-## Subsequent 20-minute PPO campaign
+## Single-GPU PPO follow-up
 
-The supplemental PPO trials ran on Deepdish CPUs, following SB3 guidance for
-small MLPs. CartPole reached 500 in all 500 evaluation games; Pong averaged
--9.772 and won 10/500. All processes stopped before the 20-minute deadline.
-See RESEARCH_20MIN.md for sources, models, raw data and scope limitations.
+Fresh PPO trials use CUDA on the assigned RTX PRO 5000, with exactly one
+visible GPU. CPU-only PPO code/results were removed; required original
+experiments and the CPU environment workers feeding GPU training are preserved.

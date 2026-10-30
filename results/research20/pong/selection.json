@@ -1,6 +1,0 @@
-{
-  "training_episodes_observed": 201,
-  "training_timesteps": 1191584,
-  "last100_training_score_mean": -7.1,
-  "selected_using": "training episodes only"
-}

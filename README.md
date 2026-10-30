@@ -3,6 +3,11 @@
 GitHub username: **EvelynXuNU**. Repository: **iems_HW1**.
 Repository URL: https://github.com/EvelynXuNU/iems_HW1
 
+**Submit:** [final report PDF](output/pdf/assignment1_report.pdf).
+[SUBMISSION.md](SUBMISSION.md) lists the remaining Canvas and grader-access steps.
+All code, raw evidence, figures, selected models, and report sources are in this
+repository. Supplemental PPO results are separated from the required experiments.
+
 This project covers **Value and Policy Iteration** (Section 2) and
 **Policy Gradient Parts 1 and 2** (Section 3). Both CartPole methods have completed
 6,000-episode training and 500-game evaluation for three training seeds.
@@ -60,8 +65,8 @@ differences in the last digits can occur across NumPy/linear algebra implementat
 - `verify_q2_independent.py`, `verify_q2_completed_collector.py`,
   `verify_q2_pong_controls.py`: reproducible independent checks and controls.
 - `DEEPDISH.md`, `run_pong_deepdish.sh`: remote single-GPU execution and resume.
-- `results/q2/`: CartPole pilots, final 6,000-episode run, 500-game evaluation
-  and random reference, validation evidence, and the small Pong smoke run.
+- `results/q2/`: CartPole pilots and three final 6,000-episode runs, the completed
+  10,000-episode Pong run, 500-game evaluations, controls, and validation evidence.
 - `q3_policy_gradient.py`, `validate_q3.py`, `q3_report.md`: Part 2's lagged EMA
   baseline, exact-gradient and variance experiments, results, and discussion.
 - `verify_q3_completed.py`: independent reconstruction of all 2,030 saved Part 2
@@ -177,10 +182,10 @@ to the grader according to the course's submission rules.
 
 ## Report PDF
 
-The complete reference-results report is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
+The final submission report is [output/pdf/assignment1_report.pdf](output/pdf/assignment1_report.pdf).
 Rebuild it with `python build_report.py` using Pandoc and XeLaTeX. It incorporates
-all three sections, the budgeted CNN follow-up, and labels the failed Pong
-configurations honestly. The original runtime source is preserved at commit
+all three sections, the CNN and PPO follow-ups, and the limitations of every
+configuration. The original runtime source is preserved at commit
 `5b1d407`; follow-up source snapshots accompany the tuning evidence.
 
 ## Final review and Canvas submission
@@ -194,11 +199,9 @@ one PDF there; keep all assignment code in the linked GitHub repository and
 ensure the grader has access. Separate Markdown files, plots, checkpoints, and
 a source ZIP are not required Canvas uploads by the supplied assignment PDF.
 
-## Latest performance follow-up
+## Single-GPU PPO follow-up
 
-The internet-informed PPO trials ran on Deepdish: CartPole reached 500 in all
-500 evaluation games (mean 500, sample SD 0); Pong averaged -9.772 (sample SD
-4.0799) and won 10/500. See [RESEARCH_20MIN.md](RESEARCH_20MIN.md) for the
-source-supported approach, model-selection protocol and limitations. These are
-supplemental PPO results; the required basic REINFORCE experiments remain
-separately documented. All campaign jobs have stopped.
+Fresh PPO trials are running on exactly one Deepdish GPU. The CPU-only PPO
+campaign and its scores were removed at the author's request. Required original
+experiments and CPU environment workers for GPU training are preserved. Final
+GPU results will be documented in PPO_GPU.md after evaluation completes.

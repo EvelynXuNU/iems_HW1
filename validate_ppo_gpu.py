@@ -5,7 +5,7 @@ from pathlib import Path
 import gymnasium as gym
 import numpy as np
 
-from research_ppo import PongPixels, PongPixelsLead
+from ppo_gpu import PongPixels, PongPixelsLead
 
 
 def frame(ball_x=78,ball_y=100):
@@ -63,7 +63,7 @@ def main():
         'official_v5_rewards_and_endings_identical':True,'actual_episodes':4,
         'transitions_checked':transitions,'action_mapping':'policy 0/1 maps to official RIGHT/LEFT 2/3',
         'privileged_RAM_or_scripted_actions':False,'synthetic_kinematic_feature_correct':True}
-    path=Path('results/research20/feature_validation.json');path.parent.mkdir(parents=True,exist_ok=True)
+    path=Path('results/ppo_gpu/feature_validation.json');path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(output,indent=2)+'\n');print(json.dumps(output,indent=2))
 
 

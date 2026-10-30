@@ -44,6 +44,3 @@ results/q3/comparison, and results/pong_tuning. Final checkpoints, episode CSVs,
 and figures remain available beside each experiment. The repository is private;
 Canvas submission and grader access must be handled through the course workflow.
 
-A subsequent, separately labeled PPO study improved CartPole to mean 500
-(500/500 at the cap) and Pong to -9.772 with 10/500 wins. See RESEARCH_20MIN.md.
-PPO changes the algorithm and does not replace the required REINFORCE results.

@@ -363,68 +363,6 @@ robust multi-seed improvement is claimed. GPU work finished within the campaign
 budget; no further experiment was queued.
 
 
-## Internet-informed PPO performance follow-up
-
-Within a separate 20-minute budget, I tested a different policy-gradient approach
-on Deepdish: Stable Baselines3 PPO-Clip with a learned state-value baseline,
-GAE, normalized advantages, multiple minibatch updates, and clipping. The
-[original PPO paper](https://arxiv.org/abs/1707.06347) and
-[OpenAI explanation](https://spinningup.openai.com/en/latest/algorithms/ppo.html)
-motivate limiting policy changes. The
-[SB3 documentation](https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html)
-recommends CPU execution for small MLPs; both trials therefore used Deepdish CPUs.
-Pong adds image-derived object/motion features, motivated by
-[object-centric Atari research](https://arxiv.org/abs/2306.08649).
-
-This is a supplemental algorithm comparison, not the required basic REINFORCE
-experiment. It retains the assigned discounts, official environments, and Pong
-actions 2/3. No emulator RAM, downloaded pretrained agent, scripted action rule,
-reward shaping or Pong point reset was used. RESEARCH_20MIN.md explains the
-changes, hyperparameters, source citations, reproduction, and limitations.
-
-| Frozen stochastic policy | Games | Mean score | Sample SD | At cap / wins |
-|---|---:|---:|---:|---:|
-| CartPole PPO | 500 | 500.000 | 0.0000 | 500/500 at 500 |
-| Pong PPO, image-derived features | 500 | -9.772 | 4.0799 | 10/500 wins |
-
-Both improve over their prior Part 2 means (438.342 for CartPole; -18.492 for
-the earlier Pong CNN follow-up). The baseline, estimator, architecture, input
-representation and budgets differ, so this does not isolate a baseline effect.
-Each result is conditional on one training seed. CartPole's observed zero SD
-does not imply population certainty: its exact one-sided 95% lower bound on the
-probability of reaching the cap is 0.9940.
-
-![PPO CartPole training](results/research20/cartpole/training_rewards.png)
-
-**Figure 10.** Raw PPO CartPole screening scores and exact trailing 100-episode
-mean. The vertical line marks training-only checkpoint selection; later training
-was retained in the plot but did not determine the frozen test result.
-
-![PPO CartPole frozen evaluation](results/research20/cartpole/evaluation/reward_histogram.png)
-
-**Figure 11.** All 500 requested seeds reached the official time limit. These
-are time-limit truncations, rather than physical failure terminations.
-
-![PPO Pong training](results/research20/pong_selected/training_rewards.png)
-
-**Figure 12.** PPO Pong screening with 12 pixel-derived features. Its best
-trailing training mean was -7.10, versus -8.12 for a shorter second pilot adding
-approximate intercept features. The shorter pilot is inconclusive, not evidence
-that intercept features cannot help. Selection preceded all final Pong games.
-
-![PPO Pong frozen evaluation](results/research20/pong_selected/evaluation/reward_histogram.png)
-
-**Figure 13.** Exactly 500 fixed reserved seeds, stochastic learned actions, and
-full official games. All requested seeds must finish; faster extra autoreset
-games are ignored. The model SHA-256 and training-only selection were audited.
-The feature extractor passed synthetic centroid/motion/reset checks and matched
-4,135 official Pong transitions under the same actions. Execution used an
-isolated dependency directory, preserving the original assignment environment.
-
-The raw-data audit and selection evidence are under results/research20. Run
-`python audit_research_results.py` to recompute the statistics and training plots;
-`python validate_research_ppo.py` validates feature and environment behavior.
-
 ## With three additional months
 
 **Month 1: stronger variance estimates and optimization comparisons.** Repeat

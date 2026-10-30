@@ -1,4 +1,4 @@
-# First question: value and policy iteration for shuttle dispatching
+# Value and Policy Iteration: Shuttle Dispatching
 
 All results below use the specified parameters
 \(K=15\), \(c_f=100\), \(c_h=2\), \(\gamma=0.95\), and uniform integer arrivals

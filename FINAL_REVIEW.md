@@ -1,9 +1,8 @@
 # Final assignment review
 
-> This review predates the subsequent 20-minute PPO campaign. Its zero-win
-> limitation refers to the original REINFORCE experiments. The later PPO
-> follow-up reached CartPole mean 500 and Pong mean -9.772 with 10/500 wins.
-> See RESEARCH_20MIN.md and the updated PDF for the supplemental results.
+> This review concerns the original required experiments and CNN follow-up.
+> A fresh single-GPU PPO study is being evaluated separately. The removed CPU-only
+> PPO campaign is not part of the current submission.
 
 Review date: October 29, 2026. A separate verifier independently read the full
 assignment and rubric, reviewed the reports and principal implementation, and

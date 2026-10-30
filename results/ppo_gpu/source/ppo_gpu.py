@@ -110,10 +110,12 @@ def vector(game,base,count):
     return SubprocVecEnv([partial(make_environment,game,base,i,count) for i in range(count)],start_method='spawn')
 
 
-def evaluate(model,game,root,deadline,count=500,base=1950000000,workers=16):
+def evaluate(model,game,root,deadline,count=500,base=1960000000,workers=16):
+    assert model.device.type=='cuda' and torch.cuda.device_count()==1
     env=vector(game,base,workers)
     torch.manual_seed(base)
     rows={}
+    last_printed=-1
     obs=env.reset()
     try:
         while len(rows)<count and time.time()<deadline:
@@ -125,14 +127,21 @@ def evaluate(model,game,root,deadline,count=500,base=1950000000,workers=16):
                     assert seed not in rows
                     rows[seed]={'episode':seed-base+1,'seed':seed,'score':info['episode']['r'],
                         'length':info['episode']['l'],'terminated':info['terminated'],'truncated':info['truncated']}
-            if len(rows) and len(rows)%50==0:print(f'evaluation {game} {len(rows)}/{count}',flush=True)
+            milestone=len(rows)//50
+            if milestone>last_printed:
+                last_printed=milestone
+                print(f'evaluation {game} {len(rows)}/{count}',flush=True)
     finally:env.close()
     ordered=[rows[k] for k in sorted(rows)]
     write_csv(root/'evaluation/episodes.csv',ordered)
     result={'complete':len(rows)==count,'episodes':len(rows),'requested_episodes':count,
         'evaluation_seed_base':base,'policy':'frozen stochastic PPO policy',
         'seed_protocol':'fixed round-robin bank; wait for every requested seed; ignore extra games',
-        'model_sha256':hashlib.sha256((root/'selected_model.zip').read_bytes()).hexdigest()}
+        'model_sha256':hashlib.sha256((root/'selected_model.zip').read_bytes()).hexdigest(),
+        'device':str(model.device),'visible_gpu_count':torch.cuda.device_count(),
+        'gpu_name':torch.cuda.get_device_name(0),
+        'cuda_visible_devices':os.environ.get('CUDA_VISIBLE_DEVICES'),
+        'all_policy_parameters_on_cuda':all(p.device.type=='cuda' for p in model.policy.parameters())}
     if len(rows)==count:
         scores=np.array([r['score'] for r in ordered])
         mean,sd=float(scores.mean()),float(scores.std(ddof=1))
@@ -180,14 +189,20 @@ def train(args):
         'gamma':gamma,'sb3_version':__version__,'torch_version':torch.__version__,
         'gymnasium_version':gym.__version__,'numpy_version':np.__version__,
         'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        'device':'cpu on Deepdish; small MLP, per SB3 recommendation',
+        'device':args.device,'visible_gpu_count':torch.cuda.device_count(),
+        'gpu_name':torch.cuda.get_device_name(0),'cuda_runtime':torch.version.cuda,
+        'cuda_visible_devices':os.environ.get('CUDA_VISIBLE_DEVICES'),
         'selection_rule':'best completed trailing 100 training episodes, no test use',
-        'evaluation_games':500,'evaluation_seed_base':1950000000,
+        'evaluation_games':500,'evaluation_seed_base':1960000000,
         'observation':('14 image-derived motion and kinematic features' if args.game=='pong_lead' else '12 image-derived centroid/motion features') if args.game.startswith('pong') else 'official four-state observation'}
     (root/'plan.json').write_text(json.dumps(plan,indent=2)+'\n')
     rows=[];window=deque(maxlen=100)
     class BudgetCallback(BaseCallback):
         def __init__(self):super().__init__();self.best=-float('inf')
+        def _on_training_start(self):
+            assert self.model.device.type=='cuda'
+            assert all(p.device.type=='cuda' for p in self.model.policy.parameters())
+            print(f'Training on {self.model.device}; visible GPUs={torch.cuda.device_count()}; GPU={torch.cuda.get_device_name(0)}',flush=True)
         def _on_step(self):
             for info in self.locals['infos']:
                 if 'episode' in info:
@@ -198,6 +213,7 @@ def train(args):
                 mean=float(np.mean(window))
                 if mean>self.best:
                     self.best=mean;self.model.save(root/'selected_model.zip')
+                    write_csv(root/'training.csv',rows)
                     (root/'selection.json').write_text(json.dumps({'training_episodes_observed':len(rows),
                         'training_timesteps':self.num_timesteps,'last100_training_score_mean':mean,
                         'selected_using':'training episodes only'},indent=2)+'\n')
@@ -211,7 +227,7 @@ def train(args):
             batch_size=256,n_epochs=4 if args.game.startswith('pong') else 10,
             gamma=gamma,gae_lambda=.95,clip_range=.2,ent_coef=.01 if args.game.startswith('pong') else 0.,
             vf_coef=.5,max_grad_norm=.5,policy_kwargs={'net_arch':dict(pi=[64,64],vf=[64,64])},
-            seed=args.seed,device='cpu',verbose=0)
+            seed=args.seed,device=args.device,verbose=0)
         model.learn(total_timesteps=args.steps,callback=BudgetCallback())
         model.save(root/'final_model.zip')
         if not (root/'selected_model.zip').exists():model.save(root/'selected_model.zip')
@@ -227,10 +243,14 @@ def train(args):
     ax.set(xlabel='Completed training episode',ylabel='Undiscounted episode score',title=f'{args.game}: supplemental PPO training')
     ax.legend();fig.savefig(root/'training_rewards.png');plt.close(fig)
     if not args.training_only:
-        selected=PPO.load(root/'selected_model.zip',device='cpu')
+        selected=PPO.load(root/'selected_model.zip',device=args.device)
         evaluate(selected,args.game,root,final_end,workers=args.workers)
     (root/'complete.json').write_text(json.dumps({'finished_at':datetime.now(timezone.utc).isoformat(),
-        'training_timesteps':model.num_timesteps,'training_episodes':len(rows),'new_runs_queued':False},indent=2)+'\n')
+        'training_timesteps':model.num_timesteps,'training_episodes':len(rows),'new_runs_queued':False,
+        'training_device':str(model.device),'evaluation_device':args.device,
+        'all_policy_parameters_on_cuda':all(p.device.type=='cuda' for p in model.policy.parameters()),
+        'optimizer_state_tensor_devices':sorted({str(v.device) for state in model.policy.optimizer.state.values() for k,v in state.items() if torch.is_tensor(v) and k!='step'}),
+        'cuda_peak_allocated_bytes':torch.cuda.max_memory_allocated()},indent=2)+'\n')
 
 
 if __name__=='__main__':
@@ -244,5 +264,9 @@ if __name__=='__main__':
     parser.add_argument('--workers',type=int,default=16)
     parser.add_argument('--seed',type=int,default=3817)
     parser.add_argument('--lr',type=float,default=.0003)
+    parser.add_argument('--device',choices=['cuda'],default='cuda')
     torch.set_num_threads(1)
-    train(parser.parse_args())
+    args=parser.parse_args()
+    if args.device=='cuda' and (not torch.cuda.is_available() or torch.cuda.device_count()!=1):
+        raise RuntimeError('Expose exactly one assigned GPU with CUDA_VISIBLE_DEVICES')
+    train(args)
